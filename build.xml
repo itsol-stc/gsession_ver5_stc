@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=================================================================================
+  GroupSession
+  create    2007.05.28  JTS
+  update    2008.08.07  JTS
+  update    2008.12.09  JTS
+  update    2010.06.09  JTS
+  update    2011.04.22  JTS
+  update    2011.08.10  JTS
+  update    2012.10.10  JTS
+  update    2013.04.09  JTS
+=================================================================================
+-->
+
+<project name="GroupSession for Developer" default="build" basedir=".">
+<!--
+=================================================================================
+Properties: 変数の定義
+=================================================================================
+ -->
+
+<!-- ディレクトリ名の定義 -->
+<property name="CMN.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="SML.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="ZSK.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="RSV.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="SCH.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="PRJ.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="LIC.CLS.DIR"      value="./WEB-INF/plugin/license/classes" />
+<property name="MOB.CLS.DIR"      value="./WEB-INF/plugin/mobile/classes" />
+<property name="CIR.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="RNG.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="BLT.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="WML.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="PTL.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="CHT.CLS.DIR"      value="./WEB-INF/classes" />
+<property name="MEM.CLS.DIR"      value="./WEB-INF/classes" />
+
+<property name="PLGIN.CMN.DIR"    value="./WEB-INF/plugin/common" />
+<property name="PLGIN.BBS.DIR"    value="./WEB-INF/plugin/bulletin" />
+<property name="PLGIN.RSV.DIR"    value="./WEB-INF/plugin/reserve" />
+<property name="PLGIN.RNG.DIR"    value="./WEB-INF/plugin/ringi" />
+<property name="PLGIN.TCD.DIR"    value="./WEB-INF/plugin/timecard" />
+<property name="PLGIN.PRJ.DIR"    value="./WEB-INF/plugin/project" />
+<property name="PLGIN.RSS.DIR"    value="./WEB-INF/plugin/rss" />
+<property name="PLGIN.IPK.DIR"    value="./WEB-INF/plugin/ipkanri" />
+<property name="PLGIN.ADR.DIR"    value="./WEB-INF/plugin/address" />
+<property name="PLGIN.BMK.DIR"    value="./WEB-INF/plugin/bookmark" />
+<property name="PLGIN.FIL.DIR"    value="./WEB-INF/plugin/file" />
+<property name="PLGIN.WML.DIR"    value="./WEB-INF/plugin/webmail" />
+<property name="PLGIN.PTL.DIR"    value="./WEB-INF/plugin/portal" />
+<property name="PLGIN.ANP.DIR"    value="./WEB-INF/plugin/anpi" />
+<property name="PLGIN.ENQ.DIR"    value="./WEB-INF/plugin/enquete" />
+<property name="PLGIN.API.DIR"    value="./WEB-INF/plugin/api" />
+<property name="PLGIN.CHT.DIR"    value="./WEB-INF/plugin/cht" />
+<property name="PLGIN.MEM.DIR"    value="./WEB-INF/plugin/memo" />
+
+
+<!-- Compile Options -->
+<property  name="BLD.TARGET"   value="11" />
+<property  name="DEBUG"        value="yes" />
+<property  name="DEPRECATION"  value="true" />
+<property  name="SRC.ENC"      value="UTF-8" />
+<property  name="PROP.ENC"     value="Windows-31J" />
+<property  name="ANT.RUNTIME"  value="no" />
+
+<!-- Java Doc Properties -->
+<property  name="DOC.DIR"      value="./doc"/>
+<property  name="API.DIR"      value="${DOC.DIR}/api"/>
+<property  name="DOC.AUTHOR"   value="true" />
+<property  name="DOC.VERSION"  value="true" />
+<property  name="DOC.PRIVATE"  value="true" />
+<property  name="DOC.WINTITLE" value="Group Session" />
+<property  name="DOC.DOCTITLE" value="${DOC.WINTITLE} API Specification" />
+<property  name="DOC.ENCODING" value="UTF-8" />
+<property  name="DOC.FOOTER"   value="${DOC.WINTITLE} API" />
+
+
+<!-- ClassPath -->
+<path id="app_classpath">
+
+  <!-- OSのクラスパス -->
+  <pathelement path="${classpath}" />
+
+  <!-- LIBディレクトリ -->
+  <pathelement location="./WEB-INF/convert/lib/jsp-api.jar"/>
+  <pathelement location="./WEB-INF/convert/lib/servlet-api.jar"/>
+  <pathelement location="./WEB-INF/build/lib/websocket-api.jar"/>
+
+  <fileset dir="./WEB-INF/lib">
+    <include name="**/*.jar"/>
+    <include name="**/*.zip"/>
+  </fileset>
+
+  <!-- アプリケーション メインクラス -->
+  <pathelement location="${CMN.CLS.DIR}" />
+  <!-- モバイルクラス -->
+  <pathelement location="${MOB.CLS.DIR}" />
+  <!-- ライセンス -->
+  <pathelement location="${LIC.CLS.DIR}" />
+
+</path>
+
+<!--
+=================================================================================
+BUILD: 初期化
+=================================================================================
+ -->
+<target name="init"
+        description="init"
+  >
+  <tstamp>
+    <format property="YMDHMS"
+            pattern="yyyy.MM.dd hh:mm:ss"
+    />
+  </tstamp>
+  <echo message="Project Name  = ${ant.project.name}" />
+  <echo message="Project Root  = ${basedir}" />
+  <echo message="JDK Version   = ${ant.java.version}" />
+  <echo message="Building Time = ${YMDHMS}" />
+  <echo message="" />
+
+</target>
+
+<!--
+=================================================================================
+BUILD: Classファイルの作成(コンパイル)
+=================================================================================
+ -->
+
+<target name="build">
+
+    <!-- ファイル管理のビルド1 -->
+    <property name="FIL.CLS.DIR" value="WEB-INF/classes" />
+    <property name="FIL.SRC.DIR" value="WEB-INF/plugin/file/src" />
+    <mkdir dir="${FIL.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${FIL.CLS.DIR}"
+      source       = "${BLD.TARGET}"
+      target       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${FIL.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/GSConstFile.java"/>
+    </javac>
+
+      <!-- 共通クラスのビルド -->
+      <property  name="CMN.SRC.DIR"      value="./WEB-INF/plugin/common/src" />
+      <mkdir dir="${CMN.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${CMN.CLS.DIR}"
+        source       = "${BLD.TARGET}"
+        target       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${CMN.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/test/**" />
+        <exclude name="**/*Test.java" />
+        <exclude name="jp/groupsession/v2/usr/AutoImportListnerImpl.java"/>
+        <exclude name="jp/groupsession/v2/man/man420/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man420kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man440/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man450/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man450kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man460/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man460kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man470/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man470kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man470/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man470kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man480/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man480kn/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man491/*.java"/>
+        <exclude name="jp/groupsession/v2/man/man491kn/*.java"/>
+      </javac>
+
+      <!-- 共有メッセージの配置 -->
+      <native2ascii encoding="${PROP.ENC}"
+        src="${PLGIN.CMN.DIR}"
+        dest="${PLGIN.CMN.DIR}"
+        includes="**/Messages.properties.SJIS" ext="" />
+
+      <!-- ショートメールのビルド -->
+      <property name="SML.SRC.DIR" value="WEB-INF/plugin/smail/src" />
+      <mkdir dir="${SML.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${SML.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${SML.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java" />
+      </javac>
+
+      <!-- 掲示版のビルド -->
+      <property name="BLT.CLS.DIR" value="WEB-INF/classes" />
+      <property name="BLT.SRC.DIR" value="WEB-INF/plugin/bulletin/src" />
+      <mkdir dir="${BLT.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${BLT.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${BLT.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java" />
+      </javac>
+
+      <!-- Native2ascii -->
+      <native2ascii encoding="${SRC.ENC}"
+        src="${PLGIN.BBS.DIR}"
+        dest="${PLGIN.BBS.DIR}"
+        includes="**/Messages.properties.SJIS" ext="" />
+
+      <!-- 回覧板のビルド -->
+      <property name="CIR.CLS.DIR" value="WEB-INF/classes" />
+      <property name="CIR.SRC.DIR" value="WEB-INF/plugin/circular/src" />
+      <mkdir dir="${CIR.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${CIR.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${CIR.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java" />
+      </javac>
+      <!-- アドレス帳のビルド0 -->
+      <property name="ADR.CLS.DIR" value="WEB-INF/classes" />
+      <property name="ADR.SRC.DIR" value="WEB-INF/plugin/address/src" />
+      <mkdir dir="${ADR.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${ADR.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${ADR.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/adr/model/AdrContactModel.java"/>
+        <include name="jp/groupsession/v2/adr/dao/AdrAddressDao.java"/>
+        <include name="jp/groupsession/v2/adr/dao/AdrCompanyDao.java"/>
+        <include name="jp/groupsession/v2/adr/dao/AdrCompanyBaseDao.java"/>
+        <include name="jp/groupsession/v2/adr/dao/AdrContactDao.java"/>
+      </javac>
+
+    <!-- 施設予約のビルド0 -->
+    <property name="RSV.CLS.DIR" value="WEB-INF/classes" />
+    <property name="RSV.SRC.DIR" value="WEB-INF/plugin/reserve/src" />
+    <mkdir dir="${RSV.CLS.DIR}"/>
+    <javac
+      classpathref      = "app_classpath"
+      destdir           = "${RSV.CLS.DIR}"
+      source            = "${BLD.TARGET}"
+      target            = "${BLD.TARGET}"
+      debug             = "${DEBUG}"
+      deprecation       = "${DEPRECATION}"
+      encoding          = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${RSV.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="jp/groupsession/v2/rsv/GSConstReserve.java"/>
+      <include name="jp/groupsession/v2/rsv/model/*Model.java"/>
+      <include name="jp/groupsession/v2/rsv/biz/IRsvYoyakuRegister.java"/>
+    </javac>
+
+      <!-- 施設予約のビルド0 -->
+      <property name="RSV.CLS.DIR" value="WEB-INF/classes" />
+      <property name="RSV.SRC.DIR" value="WEB-INF/plugin/reserve/src" />
+      <mkdir dir="${RSV.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${RSV.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${RSV.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/rsv/GSConstReserve.java"/>
+        <include name="jp/groupsession/v2/rsv/model/*Model.java" />
+      </javac>
+
+    <!-- スケジュールのビルド1 -->
+    <property name="SCH.CLS.DIR" value="WEB-INF/classes" />
+    <property name="SCH.SRC.DIR" value="WEB-INF/plugin/schedule/src" />
+    <mkdir dir="${SCH.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${SCH.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${SCH.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/sch/biz/SchCommonBiz.java"/>
+        <include name="jp/groupsession/v2/sch/model/SchAdmConfModel.java"/>
+        <include name="jp/groupsession/v2/cmn/GSConstSchedule.java"/>
+        <include name="jp/groupsession/v2/sch/model/SchPushListModel.java"/>
+        <include name="jp/groupsession/v2/sch/biz/ISchRegister.java"/>
+    </javac>
+
+      <!-- 施設予約のビルド1 -->
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${RSV.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${RSV.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java" />
+        <exclude name="jp/groupsession/v2/rsv/rsv310/*.java"/>
+      </javac>
+      <!-- Native2ascii -->
+      <native2ascii encoding="${SRC.ENC}"
+        src="${PLGIN.RSV.DIR}"
+        dest="${PLGIN.RSV.DIR}"
+        includes="**/Messages.properties.SJIS" ext="" />
+
+      <!-- 在席管理のビルド -->
+      <property name="ZSK.SRC.DIR" value="WEB-INF/plugin/zaiseki/src" />
+      <mkdir dir="${ZSK.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${ZSK.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${ZSK.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="**/*.java"/>
+        <exclude name="**/*Test.java" />
+        <exclude name="jp/groupsession/v2/zsk/maingrp/*.java"/>
+        <exclude name="jp/groupsession/v2/zsk/ptl*/*.java" />
+        <exclude name="jp/groupsession/v2/zsk/zsk130/*.java"/>
+        <exclude name="jp/groupsession/v2/zsk/zsk130kn/*.java"/>
+      </javac>
+
+      <!-- アドレス帳のビルド1 -->
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${ADR.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${ADR.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/adr/dao/AddressDao.java" />
+        <exclude name="**/*Test.java" />
+      </javac>
+
+
+    <!-- スケジュールのビルド2 -->
+    <property name="SCH.CLS.DIR" value="WEB-INF/classes" />
+    <property name="SCH.SRC.DIR" value="WEB-INF/plugin/schedule/src" />
+    <mkdir dir="${SCH.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${SCH.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${SCH.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- 施設予約のビルド2 -->
+    <property name="RSV.CLS.DIR" value="WEB-INF/classes" />
+    <property name="RSV.SRC.DIR" value="WEB-INF/plugin/reserve/src" />
+    <mkdir dir="${RSV.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${RSV.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${RSV.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- 在席管理のビルド -->
+    <property name="ZSK.SRC.DIR" value="WEB-INF/plugin/zaiseki/src" />
+    <mkdir dir="${ZSK.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${ZSK.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${ZSK.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- タイムカードのビルド -->
+    <property name="TCD.CLS.DIR" value="WEB-INF/classes" />
+    <property name="TCD.SRC.DIR" value="WEB-INF/plugin/timecard/src" />
+    <mkdir dir="${TCD.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${TCD.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${TCD.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.TCD.DIR}"
+      dest="${PLGIN.TCD.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- 稟議のビルド -->
+    <property name="RNG.CLS.DIR" value="WEB-INF/classes" />
+    <property name="RNG.SRC.DIR" value="WEB-INF/plugin/ringi/src" />
+    <mkdir dir="${RNG.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${RNG.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${RNG.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.RNG.DIR}"
+      dest="${PLGIN.RNG.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- プロジェクト管理のビルド -->
+    <property name="PRJ.SRC.DIR" value="WEB-INF/plugin/project/src" />
+    <mkdir dir="${PRJ.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${PRJ.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${PRJ.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.PRJ.DIR}"
+      dest="${PLGIN.PRJ.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- RSSのビルド -->
+    <property name="RSS.CLS.DIR" value="WEB-INF/classes" />
+    <property name="RSS.SRC.DIR" value="WEB-INF/plugin/rss/src" />
+    <mkdir dir="${RSS.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${RSS.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${RSS.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.RSS.DIR}"
+      dest="${PLGIN.RSS.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- IP管理のビルド -->
+    <property name="IPK.CLS.DIR" value="WEB-INF/classes" />
+    <property name="IPK.SRC.DIR" value="WEB-INF/plugin/ipkanri/src" />
+    <mkdir dir="${IPK.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${IPK.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${IPK.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.IPK.DIR}"
+      dest="${PLGIN.IPK.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+
+    <!-- アドレス帳のビルド2 -->
+    <property name="ADR.SRC.DIR" value="WEB-INF/plugin/address/src" />
+    <mkdir dir="${ADR.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${ADR.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${ADR.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.ADR.DIR}"
+      dest="${PLGIN.ADR.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+
+    <!-- ブックマークのビルド -->
+    <property name="BMK.CLS.DIR" value="WEB-INF/classes" />
+    <property name="BMK.SRC.DIR" value="WEB-INF/plugin/bookmark/src" />
+    <mkdir dir="${BMK.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${BMK.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${BMK.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.BMK.DIR}"
+      dest="${PLGIN.BMK.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- ファイル管理のビルド2 -->
+    <property name="FIL.CLS.DIR" value="WEB-INF/classes" />
+    <property name="FIL.SRC.DIR" value="WEB-INF/plugin/file/src" />
+    <mkdir dir="${FIL.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${FIL.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${FIL.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- WEBメールのビルド -->
+    <property name="WML.CLS.DIR" value="WEB-INF/classes" />
+    <property name="WML.SRC.DIR" value="WEB-INF/plugin/webmail/src" />
+    <mkdir dir="${WML.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${WML.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${WML.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+    <!-- Native2ascii -->
+    <native2ascii encoding="${SRC.ENC}"
+      src="${PLGIN.WML.DIR}"
+      dest="${PLGIN.WML.DIR}"
+      includes="**/Messages.properties.SJIS" ext="" />
+
+    <!-- ポータルのビルド -->
+    <property name="PTL.CLS.DIR" value="WEB-INF/classes" />
+    <property name="PTL.SRC.DIR" value="WEB-INF/plugin/portal/src" />
+    <mkdir dir="${PTL.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${PTL.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${PTL.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- 日報のビルド -->
+    <property name="NTP.CLS.DIR" value="WEB-INF/classes" />
+    <property name="NTP.SRC.DIR" value="WEB-INF/plugin/nippou/src" />
+    <mkdir dir="${NTP.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${NTP.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${NTP.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- 安否確認のビルド -->
+    <property name="ANP.CLS.DIR" value="WEB-INF/classes" />
+    <property name="ANP.SRC.DIR" value="WEB-INF/plugin/anpi/src" />
+    <mkdir dir="${ANP.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${ANP.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${ANP.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- アンケートのビルド -->
+    <property name="ENQ.CLS.DIR" value="WEB-INF/classes" />
+    <property name="ENQ.SRC.DIR" value="WEB-INF/plugin/enquete/src" />
+    <mkdir dir="${ENQ.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${ENQ.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${ENQ.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- チャットのビルド -->
+    <property name="CHT.CLS.DIR" value="WEB-INF/classes" />
+    <property name="CHT.SRC.DIR" value="WEB-INF/plugin/chat/src" />
+    <mkdir dir="${CHT.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${CHT.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${CHT.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- メモのビルド -->
+    <property name="MEM.CLS.DIR" value="WEB-INF/classes" />
+    <property name="MEM.SRC.DIR" value="WEB-INF/plugin/memo/src" />
+    <mkdir dir="${MEM.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${MEM.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${MEM.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+      <!-- ユーザ自動連携クラスのビルド -->
+      <property  name="CMN.SRC.DIR"      value="./WEB-INF/plugin/common/src" />
+      <mkdir dir="${CMN.CLS.DIR}"/>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${CMN.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${CMN.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/usr/AutoImportListnerImpl.java"/>
+        <include name="jp/groupsession/v2/man/man420/*.java"/>
+        <include name="jp/groupsession/v2/man/man420kn/*.java"/>
+      </javac>
+      <javac
+        classpathref = "app_classpath"
+        destdir      = "${CMN.CLS.DIR}"
+        target       = "${BLD.TARGET}"
+        source       = "${BLD.TARGET}"
+        debug        = "${DEBUG}"
+        deprecation  = "${DEPRECATION}"
+        encoding     = "${SRC.ENC}"
+        includeAntRuntime = "${ANT.RUNTIME}">
+        <src path="${CMN.SRC.DIR}" />
+        <compilerarg value="-Xlint:unchecked" />
+        <include name="jp/groupsession/v2/man/man440/*.java"/>
+        <include name="jp/groupsession/v2/man/man450/*.java"/>
+        <include name="jp/groupsession/v2/man/man450kn/*.java"/>
+        <include name="jp/groupsession/v2/man/man460/*.java"/>
+        <include name="jp/groupsession/v2/man/man460kn/*.java"/>
+        <include name="jp/groupsession/v2/man/man470/*.java"/>
+        <include name="jp/groupsession/v2/man/man470kn/*.java"/>
+        <include name="jp/groupsession/v2/man/man470/*.java"/>
+        <include name="jp/groupsession/v2/man/man470kn/*.java"/>
+        <include name="jp/groupsession/v2/man/man480/*.java"/>
+        <include name="jp/groupsession/v2/man/man480kn/*.java"/>
+        <include name="jp/groupsession/v2/man/man491/*.java"/>
+        <include name="jp/groupsession/v2/man/man491kn/*.java"/>
+      </javac>
+
+
+    <!-- WEB APIのビルド -->
+    <property name="API.CLS.DIR" value="WEB-INF/classes" />
+    <property name="API.SRC.DIR" value="WEB-INF/plugin/api/src" />
+    <mkdir dir="${API.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${API.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${API.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+    <!-- ヘルプのビルド -->
+    <property name="HLP.CLS.DIR" value="WEB-INF/classes" />
+    <property name="HLP.SRC.DIR" value="WEB-INF/plugin/help/src" />
+    <mkdir dir="${HLP.CLS.DIR}"/>
+    <javac
+      classpathref = "app_classpath"
+      destdir      = "${HLP.CLS.DIR}"
+      target       = "${BLD.TARGET}"
+      source       = "${BLD.TARGET}"
+      debug        = "${DEBUG}"
+      deprecation  = "${DEPRECATION}"
+      encoding     = "${SRC.ENC}"
+      includeAntRuntime = "${ANT.RUNTIME}">
+      <src path="${HLP.SRC.DIR}" />
+      <compilerarg value="-Xlint:unchecked" />
+      <include name="**/*.java"/>
+      <exclude name="**/*Test.java" />
+    </javac>
+
+</target>
+
+<!--
+=================================================================================
+JavaDoc:
+=================================================================================
+ -->
+
+<target name="javadoc">
+
+  <antcall target="init" />
+
+  <mkdir dir="${API.DIR}"/>
+
+  <javadoc
+    packagenames = "jp.co.sjts.*,jp.groupsession.*"
+    destdir      = "${API.DIR}"
+    classpathref = "app_classpath"
+    author       = "${DOC.AUTHOR}"
+    version      = "${DOC.VERSION}"
+    Windowtitle  = "${DOC.WINTITLE}"
+    Doctitle     = "${DOC.DOCTITLE}"
+    Private      = "${DOC.PRIVATE}"
+    bottom       = "${DOC.FOOTER}"
+    encoding     = "${SRC.ENC}"
+    charset      = "${DOC.ENCODING}"
+    docencoding  = "${DOC.ENCODING}"
+    additionalparam="-J-Xmx256m"
+    >
+   <sourcepath>
+    <dirset dir="WEB-INF/plugin">
+      <include name="**/src"/>
+    </dirset>
+   </sourcepath>
+  </javadoc>
+
+</target>
+
+<!--
+=================================================================================
+CLEAN:*.*~ファイル、*.classファイルを削除します。
+=================================================================================
+ -->
+<target name="clean">
+
+      <antcall target="init" />
+
+      <delete dir="${DOC.DIR}" />
+
+      <delete>
+        <fileset dir="." defaultexcludes="no" includes="**/*.*~,**/Thumbs.db" />
+      </delete>
+
+      <delete includeEmptyDirs="true">
+        <fileset dir="./WEB-INF/classes" defaultexcludes="no" includes="**/*.class" />
+      </delete>
+
+      <delete includeEmptyDirs="true" >
+        <fileset dir="WEB-INF/plugin">
+          <include name="**/classes/" />
+          <exclude name="**/mobile/**/*" />
+          <exclude name="**/license/**/*" />
+        </fileset>
+      </delete>
+
+      <delete includeEmptyDirs="true" >
+        <fileset dir="WEB-INF/plugin">
+          <include name="**/Messages.properties"/>
+          <exclude name="**/mobile/*" />
+          <exclude name="**/license/*" />
+        </fileset>
+      </delete>
+
+</target>
+
+<!--
+=================================================================================
+HELP:
+=================================================================================
+ -->
+<target name="help">
+  <echo message="Ant Build Targets" />
+  <echo message="" />
+  <echo message="  init          初期化を行います。" />
+  <echo message="  build         コンパイルを行います。" />
+  <echo message="  javadoc       javadocを作成します。" />
+  <echo message="  clean         生成物を削除します。" />
+</target>
+
+<target name="targets" depends="help" />
+
+</project>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title>[GROUPSESSION ヘルプ] チャット 個人設定メニュー</title>
+<link rel=stylesheet href="../../help/css/default.css" type="text/css">
+<link rel=stylesheet href="../../help/css/help.css" type="text/css">
+<script src='../../common/js/jquery-1.5.2.min.js'></script>
+<script type="text/javascript" src="../../help/js/help.js"></script>
+
+</head>
+<!-- '../help_ajax/ajax_xxx_left_list.html' を編集 -->
+<body onLoad="ajaxGetContents('help-left-func-in', '../help_ajax/ajax_cht_left_list.html');chengeHeaderText('[ チャット 一覧 ]');">
+<div id="container"><a name="top"></a>
+
+
+	<div align="right" class="help-align-right">
+	<input type="button" value="チャット トップへ" class="btn_base0" onClick="commonHelpLocationChange('./index.html');">
+	</div>
+    <!-- ナビゲーション -->
+	<div id="help-left-func">
+	  <div class="help-content-tr"><div class="help-content-tl"><img src="../../help/images/help_content_text_dsp.gif" alt="画面一覧" height="30"></div></div>
+      <div class="help-content-mr"><div class="help-content-ml">
+		  <div id="help-left-func-in">
+            <!-- ここにajax_xxx_left_list.htmlが入ります -->
+		  </div>
+	  </div></div>
+        <div class="help-content-br"><div class="help-content-bl"><img src="../../help/images/spacer.gif" width="1" height="15" alt=""></div>
+      </div>
+	</div>
+
+    <!-- コンテンツ -->
+    <div id="help-right-func">
+    <div class="help-content-tr"><div class="help-content-tl"><img src="../../help/images/help_content_text_func.gif" alt="機能詳細" height="30"></div></div>
+        <div class="help-content-mr"><div class="help-content-ml pad">
+    <p>メッセージの送受信と、チャットグループの作成・編集・削除を行うことができます。</p>
+        <!-- img要素のsrc,alt属性を編集 -->
+        <h1 class="help-right-func-img"><img src="images/scr_help_big_cht010.gif" alt="チャット 一覧画面 機能詳細"></h1>
+    <p class="help-right-func-p">機能説明</p>
+        <table summary="機能詳細" class="help-right-func-more" cellpadding="0" cellspacing="0">
+        <!-- h2要素の中身と、p要素の中身を編集。項目数の調整 -->
+        <tr>
+        <th>
+          <h2 class="num-back01">再接続ボタン</h2>
+          <p>チャットの再接続を行います。</p>
+        </th>
+        <td>
+          <h2 class="num-back02">管理者設定ボタン</h2>
+          <p>管理者設定メニュー画面へ遷移します。管理者グループに所属していないユーザの場合、ボタンは表示されません。</p>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+        <h2 class="num-back03">個人設定ボタン</h2>
+          <p>個人設定メニュー画面へ遷移します。</p>
+        </td>
+        <th>
+          <h2 class="num-back04">全てタブ</h2>
+          <p>お気に入りチャット、チャットグループ、ユーザ間チャットを表示します。</p>
+        </th>
+        </tr>
+
+        <tr>
+        <th>
+        <h2 class="num-back05">タイムラインタブ</h2>
+          <p>チャットの履歴を一覧で表示します。</p>
+        </th>
+        <td>
+          <h2 class="num-back06">
+          お気に入りチャットグループ
+          </h2>
+          <p>お気に入り設定したチャットグループ一覧を表示します。</p>
+        </td>
+        </tr>
+
+        <tr>
+        <td>
+          <h2 class="num-back07">お気に入りユーザ間チャット</h2>
+          <p>お気に入り設定したユーザ一覧を表示します。</p>
+        </td>
+         <th>
+          <h2 class="num-back08">
+          <a href="h_cht010_2.html"><span class="linkTitle">グループ管理アイコン</span></a>
+          </h2>
+          <p>チャットグループの登録、編集、削除を行います。チャットグループの作成が制限されている、かつチャットグループの編集権限を一つももっていない場合、アイコンは表示されません。</p>
+        </th>
+        </tr>
+
+        <tr>
+                <th>
+        <h2 class="num-back09">チャットグループ</h2>
+          <p>所属しているチャットグループ一覧を表示します。</p>
+        </th>
+
+        <td>
+          <h2 class="num-back10">アーカイブの表示</h2>
+          <p>アーカイブ状態のチャットグループを表示/非表示します。</p>
+        </td>
+
+        </tr>
+
+       <tr>
+       <td>
+        <h2 class="num-back11">グループボタン</h2>
+          <p>グループ選択画面を開きます。 グループ選択画面でグループをクリックすると、 クリックしたグループが選択グループに表示されます。</p>
+        </td>
+
+        <th>
+          <h2 class="num-back12">ユーザ間チャット</h2>
+          <p>ユーザ一覧を表示します。</p>
+        </th>
+
+        </tr>
+
+
+        <tr>
+        <th>
+        <h2 class="num-back13">お気に入りアイコン</h2>
+          <p>チャットグループ、ユーザ間チャットをお気に入りに登録、削除します。</p>
+        </th>
+        <td>
+          <h2 class="num-back14">インフォメーションアイコン</h2>
+          <p>チャットグループの場合はグループ情報、ユーザ間チャットの場合はユーザ情報を表示します。</p>
+        </td>
+        </tr>
+
+       <tr>
+        <td>
+        <h2 class="num-back15">チェックアイコン</h2>
+          <p>一括ダウンロード画面を表示/非表示します。</p>
+        </td>
+        <th>
+        <h2 class="num-back16">チャットエリア</h2>
+          <p>選択中のチャットグループ/ユーザ間チャットを表示します。</p>
+        </th>
+        </tr>
+
+        <tr>
+
+        <th>
+          <h2 class="num-back17">Enter送信</h2>
+          <p>入力したメッセージをEnterキーにより送信するか、Shift+Enterキーにより送信するかを設定します。</p>
+        </th>
+
+        <td>
+          <h2 class="num-back18">添付ボタン</h2>
+          <p>添付ファイル選択画面をポップアップで表示します。ファイルを選択し、確定すると添付のリストに選択したファイルが送信されます。</p>
+        </td>
+
+        </tr>
+
+
+        <tr>
+        <td>
+        <h2 class="num-back19">送信ボタン</h2>
+          <p>入力したメッセージを送信します。</p>
+        </td>
+        <th>
+        <h2 class="num-back20">バツアイコン</h2>
+          <p>一括ダウンロードから添付ファイルを外します。</p>
+        </th>
+        </tr>
+                <tr>
+
+
+
+                <th>
+          <h2 class="num-back21">ダウンロードボタン</h2>
+          <p>選択した添付ファイルを一括でダウンロードします。</p>
+        </th>
+                <td>
+          <h2 class="num-back22">閉じる</h2>
+          <p>一括ダウンロード画面を閉じます。</p>
+        </td>
+        </tr>
+
+        </table>
+
+        <!-- 項目の説明 -->
+<p class="help-right-func-p">表示・入力項目説明</p>
+    <div class="help-right-func-item">
+    <h2>メッセージ</h2>
+    <p>メッセージを入力します。３０００文字以上のメッセージを入力して送信すると、３０００字毎にメッセージが分割されて送信されます。</p>
+        </div>
+        </div></div>
+    <div class="help-content-br"><div class="help-content-bl"><img src="../../help/images/spacer.gif" width="1" height="15" alt=""></div></div>
+
+    <div class="help-align-right"><a href="#top">▲画面トップへ</a></div>
+    </div>
+</div>
+</body>
+</html>

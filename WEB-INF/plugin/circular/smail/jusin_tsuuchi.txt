@@ -1,0 +1,15 @@
+◎Group Session 回覧板受信通知
+
+┏━
+┃$TITLE
+┃　$DATE
+┗━
+URL:$URL
+
+発信者:$NAME
+
+添付:$FILES
+
+◆内容
+${BODY}
+

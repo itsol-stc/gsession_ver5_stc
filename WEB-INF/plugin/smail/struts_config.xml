@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="smlmainForm" type="jp.groupsession.v2.sml.main.SmlMainForm" />
+        <form-bean name="sml010Form" type="jp.groupsession.v2.sml.sml010.Sml010Form" />
+        <form-bean name="sml020Form" type="jp.groupsession.v2.sml.sml020.Sml020Form" />
+        <form-bean name="sml020knForm" type="jp.groupsession.v2.sml.sml020kn.Sml020knForm" />
+        <form-bean name="sml030Form" type="jp.groupsession.v2.sml.sml030.Sml030Form" />
+        <form-bean name="sml040Form" type="jp.groupsession.v2.sml.sml040.Sml040Form" />
+        <form-bean name="sml050Form" type="jp.groupsession.v2.sml.sml050.Sml050Form" />
+        <form-bean name="sml060Form" type="jp.groupsession.v2.sml.sml060.Sml060Form" />
+        <form-bean name="sml070Form" type="jp.groupsession.v2.sml.sml070.Sml070Form" />
+        <form-bean name="sml090Form" type="jp.groupsession.v2.sml.sml090.Sml090Form" />
+        <form-bean name="sml100Form" type="jp.groupsession.v2.sml.sml100.Sml100Form" />
+        <form-bean name="sml110Form" type="jp.groupsession.v2.sml.sml110.Sml110Form" />
+        <form-bean name="sml120Form" type="jp.groupsession.v2.sml.sml120.Sml120Form" />
+        <form-bean name="sml130Form" type="jp.groupsession.v2.sml.sml130.Sml130Form" />
+        <form-bean name="sml130knForm" type="jp.groupsession.v2.sml.sml130kn.Sml130knForm" />
+        <form-bean name="sml140Form" type="jp.groupsession.v2.sml.sml140.Sml140Form" />
+        <form-bean name="sml140knForm" type="jp.groupsession.v2.sml.sml140kn.Sml140knForm" />
+        <form-bean name="sml150Form" type="jp.groupsession.v2.sml.sml150.Sml150Form" />
+        <form-bean name="sml150knForm" type="jp.groupsession.v2.sml.sml150kn.Sml150knForm" />
+        <form-bean name="sml160Form" type="jp.groupsession.v2.sml.sml160.Sml160Form" />
+        <form-bean name="sml160knForm" type="jp.groupsession.v2.sml.sml160kn.Sml160knForm" />
+        <form-bean name="sml170Form" type="jp.groupsession.v2.sml.sml170.Sml170Form" />
+        <form-bean name="sml200Form" type="jp.groupsession.v2.sml.sml200.Sml200Form" />
+        <form-bean name="sml210Form" type="jp.groupsession.v2.sml.sml210.Sml210Form" />
+        <form-bean name="sml220Form" type="jp.groupsession.v2.sml.sml220.Sml220Form" />
+        <form-bean name="sml230Form" type="jp.groupsession.v2.sml.sml230.Sml230Form" />
+        <form-bean name="sml240Form" type="jp.groupsession.v2.sml.sml240.Sml240Form" />
+        <form-bean name="sml250Form" type="jp.groupsession.v2.sml.sml250.Sml250Form" />
+        <form-bean name="sml250knForm" type="jp.groupsession.v2.sml.sml250kn.Sml250knForm" />
+        <form-bean name="sml260Form" type="jp.groupsession.v2.sml.sml260.Sml260Form" />
+        <form-bean name="sml260knForm" type="jp.groupsession.v2.sml.sml260kn.Sml260knForm" />
+        <form-bean name="sml270Form" type="jp.groupsession.v2.sml.sml270.Sml270Form" />
+        <form-bean name="sml280Form" type="jp.groupsession.v2.sml.sml280.Sml280Form" />
+        <form-bean name="sml280knForm" type="jp.groupsession.v2.sml.sml280kn.Sml280knForm" />
+        <form-bean name="sml290Form" type="jp.groupsession.v2.sml.sml290.Sml290Form" />
+        <form-bean name="sml300Form" type="jp.groupsession.v2.sml.sml300.Sml300Form" />
+        <form-bean name="sml300knForm" type="jp.groupsession.v2.sml.sml300kn.Sml300knForm" />
+        <form-bean name="sml310Form" type="jp.groupsession.v2.sml.sml310.Sml310Form" />
+        <form-bean name="sml320Form" type="jp.groupsession.v2.sml.sml320.Sml320Form" />
+        <form-bean name="sml320knForm" type="jp.groupsession.v2.sml.sml320kn.Sml320knForm" />
+        <form-bean name="sml330Form" type="jp.groupsession.v2.sml.sml330.Sml330Form" />
+        <form-bean name="sml340Form" type="jp.groupsession.v2.sml.sml340.Sml340Form" />
+        <form-bean name="sml340knForm" type="jp.groupsession.v2.sml.sml340kn.Sml340knForm" />
+        <form-bean name="sml350Form" type="jp.groupsession.v2.sml.sml350.Sml350Form" />
+        <form-bean name="sml360Form" type="jp.groupsession.v2.sml.sml360.Sml360Form" />
+        <form-bean name="sml360knForm" type="jp.groupsession.v2.sml.sml360kn.Sml360knForm" />
+        <form-bean name="sml370Form" type="jp.groupsession.v2.sml.sml370.Sml370Form" />
+        <form-bean name="sml380Form" type="jp.groupsession.v2.sml.sml380.Sml380Form" />
+        <form-bean name="sml390Form" type="jp.groupsession.v2.sml.sml390.Sml390Form" />
+        <form-bean name="sml390knForm" type="jp.groupsession.v2.sml.sml390kn.Sml390knForm" />
+        <form-bean name="sml400Form" type="jp.groupsession.v2.sml.sml400.Sml400Form" />
+        <form-bean name="sml400knForm" type="jp.groupsession.v2.sml.sml400kn.Sml400knForm" />
+    </form-beans>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="gf_smlNew" path="/smail/sml010.do" redirect="false"/>
+        <forward name="smlUserAccountList" path="/smail/sml270.do" />
+        <forward name="smlAccountManager" path="/smail/sml240.do" />
+        <forward name="smlConfAccount" path="/smail/sml250.do" />
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- メイン -->
+       <action
+            name="smlmainForm"
+            path="/smail/smlmain"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/smlmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.main.SmlMainAction">
+       </action>
+
+        <!-- メッセージ一覧画面 -->
+        <action
+            name="sml010Form"
+            path="/smail/sml010"
+            input="/WEB-INF/plugin/smail/jsp/sml010.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml010.Sml010Action">
+            <forward name="redraw" path="/smail/sml010.do" />
+            <forward name="createMsg" path="/smail/sml020.do" />
+            <forward name="detail" path="/smail/sml030.do" />
+            <forward name="kojinEdit" path="/smail/sml120.do" />
+            <forward name="hinaEdit" path="/smail/sml050.do" />
+            <forward name="smlAdmConf" path="/smail/sml100.do" />
+            <forward name="accountConf" path="/smail/sml270.do" />
+            <forward name="main" path="/main/man001.do" />
+        </action>
+
+        <!-- ショートメール作成画面 -->
+        <action
+            name="sml020Form"
+            path="/smail/sml020"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml020.Sml020Action">
+        </action>
+
+        <!-- ショートメール作成確認画面 -->
+        <action
+            name="sml020knForm"
+            path="/smail/sml020kn"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml020kn.Sml020knAction">
+
+        </action>
+
+        <!-- ショートメール内容確認画面 -->
+        <action
+            name="sml030Form"
+            path="/smail/sml030"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml030.Sml030Action">
+            <forward name="redraw" path="/smail/sml010.do" />
+        </action>
+
+        <!-- ショートメール個人設定画面 -->
+        <action
+            name="sml040Form"
+            path="/smail/sml040"
+            input="/WEB-INF/plugin/smail/jsp/sml040.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml040.Sml040Action">
+            <forward name="backToList" path="/smail/sml120.do" />
+        </action>
+
+        <!-- ひな形一覧画面 -->
+        <action
+            name="sml050Form"
+            path="/smail/sml050"
+            input="/WEB-INF/plugin/smail/jsp/sml050.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml050.Sml050Action">
+            <forward name="backToMsgList" path="/smail/sml010.do" />
+            <forward name="hinaInput" path="/smail/sml060.do" />
+            <forward name="backToAdmSetting" path="/smail/sml100.do" />
+        </action>
+
+        <!-- ひな形追加画面 -->
+        <action
+            name="sml060Form"
+            path="/smail/sml060"
+            input="/WEB-INF/plugin/smail/jsp/sml060.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml060.Sml060Action">
+            <forward name="backToHinaList" path="/smail/sml050.do" />
+            <forward name="redraw" path="/smail/sml060.do" />
+        </action>
+
+        <!-- ショートメール検索画面 -->
+        <action
+            name="sml090Form"
+            path="/smail/sml090"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml090.Sml090Action">
+            <forward name="redraw" path="/smail/sml010.do" />
+        </action>
+
+        <!-- ショートメール管理者設定画面 -->
+        <action
+            name="sml100Form"
+            path="/smail/sml100"
+            input="/WEB-INF/plugin/smail/jsp/sml100.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml100.Sml100Action">
+            <forward name="backToList" path="/smail/sml010.do" />
+            <forward name="fwconf" path="/smail/sml110.do" />
+            <forward name="smailAutoDelete" path="/smail/sml150.do" />
+            <forward name="smailManualDelete" path="/smail/sml160.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+            <forward name="cmnSmailTemplate" path="/smail/sml050.do" />
+            <forward name="accountList" path="/smail/sml240.do" />
+            <forward name="smlConfAccount" path="/smail/sml280.do" />
+            <forward name="smlBanDestination" path="/smail/sml380.do" />
+            <forward name="smlLogCount" path="/smail/sml370.do" />
+            <forward name="smlAdmDspConf" path="/smail/sml400.do" />
+        </action>
+
+        <!-- ショートメール管理者転送設定画面 -->
+        <action
+            name="sml110Form"
+            path="/smail/sml110"
+            input="/WEB-INF/plugin/smail/jsp/sml110.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml110.Sml110Action">
+            <forward name="backToMenu" path="/smail/sml100.do" />
+            <forward name="changeOk" path="/smail/sml110.do?CMD=sml110commit" />
+            <forward name="changeCancel" path="/smail/sml110.do" />
+        </action>
+
+        <!-- ショートメール個人設定画面 -->
+        <action
+            name="sml120Form"
+            path="/smail/sml120"
+            input="/WEB-INF/plugin/smail/jsp/sml120.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml120.Sml120Action">
+            <forward name="backToMailList" path="/smail/sml010.do" />
+            <forward name="smailKsetting" path="/smail/sml040.do" />
+            <forward name="smailForwardsetting" path="/smail/sml170.do" />
+            <forward name="smailManualDelete" path="/smail/sml140.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+            <forward name="smailAccount" path="/smail/sml270.do" />
+        </action>
+
+
+        <!-- ショートメール手動削除画面 -->
+        <action
+            name="sml140Form"
+            path="/smail/sml140"
+            input="/WEB-INF/plugin/smail/jsp/sml140.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml140.Sml140Action">
+            <forward name="kjntool" path="/smail/sml120.do" />
+            <forward name="syudo_del_kakunin" path="/smail/sml140kn.do" />
+        </action>
+
+        <!-- ショートメール手動削除確認画面 -->
+        <action
+            name="sml140knForm"
+            path="/smail/sml140kn"
+            input="/WEB-INF/plugin/smail/jsp/sml140kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml140kn.Sml140knAction">
+            <forward name="back_syudo_input" path="/smail/sml140.do" />
+            <forward name="backToList" path="/smail/sml120.do" />
+        </action>
+
+        <!-- ショートメール自動削除(管理者)画面 -->
+        <action
+            name="sml150Form"
+            path="/smail/sml150"
+            input="/WEB-INF/plugin/smail/jsp/sml150.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml150.Sml150Action">
+            <forward name="backToKtool" path="/smail/sml100.do" />
+            <forward name="batch_settei_kakunin" path="/smail/sml150kn.do" />
+        </action>
+
+        <!-- ショートメール自動削除(管理者)確認画面 -->
+        <action
+            name="sml150knForm"
+            path="/smail/sml150kn"
+            input="/WEB-INF/plugin/smail/jsp/sml150kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml150kn.Sml150knAction">
+            <forward name="backToInput" path="/smail/sml150.do" />
+            <forward name="backToKtool" path="/smail/sml100.do" />
+        </action>
+
+        <!-- ショートメール手動削除(管理者)画面 -->
+        <action
+            name="sml160Form"
+            path="/smail/sml160"
+            input="/WEB-INF/plugin/smail/jsp/sml160.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml160.Sml160Action">
+            <forward name="backKtool" path="/smail/sml100.do" />
+            <forward name="syudo_del_kakunin" path="/smail/sml160kn.do" />
+        </action>
+
+        <!-- ショートメール手動削除(管理者確認)画面 -->
+        <action
+            name="sml160knForm"
+            path="/smail/sml160kn"
+            input="/WEB-INF/plugin/smail/jsp/sml160kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml160kn.Sml160knAction">
+            <forward name="back_syudo_input" path="/smail/sml160.do" />
+            <forward name="backToKtool" path="/smail/sml100.do" />
+        </action>
+
+        <!-- メール転送設定画面 -->
+        <action
+            name="sml170Form"
+            path="/smail/sml170"
+            input="/WEB-INF/plugin/smail/jsp/sml170.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml170.Sml170Action">
+            <forward name="backToList" path="/smail/sml120.do" />
+        </action>
+
+        <!-- 管理者設定  アカウント管理  -->
+        <action
+            name="sml240Form"
+            path="/smail/sml240"
+            input="/WEB-INF/plugin/smail/jsp/sml240.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml240.Sml240Action">
+            <forward name="backToMenu" path="/smail/sml100.do" />
+            <forward name="acntImport" path="/smail/sml260.do" />
+            <forward name="editAccount" path="/smail/sml250.do" />
+            <forward name="mine" path="/smail/sml240.do" />
+
+            <forward name="confLabel" path="/smail/sml290.do" />
+            <forward name="confFilter" path="/smail/sml330.do" />
+
+        </action>
+
+        <!--  アカウント編集 -->
+        <action
+            name="sml250Form"
+            path="/smail/sml250"
+            input="/WEB-INF/plugin/smail/jsp/sml250.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml250.Sml250Action">
+            <forward name="accountList" path="/smail/sml240.do" />
+            <forward name="userAccountList" path="/smail/sml270.do" />
+            <forward name="mine" path="/smail/sml250.do" />
+            <forward name="delete" path="/smail/sml240.do" />
+            <forward name="confirm" path="/smail/sml250kn.do" />
+        </action>
+
+       <!-- アカウント登録確認 -->
+       <action
+            name="sml250knForm"
+            path="/smail/sml250kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml250kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml250kn.Sml250knAction">
+            <forward name="mailList" path="/smail/sml010.do?CMD=mailList" />
+       </action>
+
+       <!-- アカウントインポート -->
+       <action
+            name="sml260Form"
+            path="/smail/sml260"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml260.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml260.Sml260Action">
+
+            <forward name="importAccountConfirm" path="/smail/sml260kn.do" />
+            <forward name="beforePage" path="/smail/sml240.do" />
+       </action>
+
+       <!-- アカウントインポート確認 -->
+       <action
+            name="sml260knForm"
+            path="/smail/sml260kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml260kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml260kn.Sml260knAction">
+
+            <forward name="backInput" path="/smail/sml260.do" />
+       </action>
+
+        <!-- 個人設定  アカウント管理 -->
+        <action
+            name="sml270Form"
+            path="/smail/sml270"
+            input="/WEB-INF/plugin/smail/jsp/sml270.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.sml.sml270.Sml270Action">
+            <forward name="backInput" path="/smail/sml120.do" />
+            <forward name="confAccount" path="/smail/sml250.do" />
+            <forward name="mailList" path="/smail/sml010.do?CMD=mailList" />
+
+            <forward name="confLabel" path="/smail/sml310.do" />
+            <forward name="confFilter" path="/smail/sml350.do" />
+        </action>
+
+       <!-- アカウント設定 -->
+       <action
+            name="sml280Form"
+            path="/smail/sml280"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml280.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml280.Sml280Action">
+
+            <forward name="smlConfirm" path="/smail/sml280kn.do" />
+            <forward name="smlAdmConf" path="/smail/sml100.do" />
+       </action>
+
+       <!-- アカウント設定確認 -->
+       <action
+            name="sml280knForm"
+            path="/smail/sml280kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml280kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml280kn.Sml280knAction">
+
+            <forward name="backInput" path="/smail/sml280.do" />
+            <forward name="smlAdmConf" path="/smail/sml100.do" />
+       </action>
+
+       <!-- 管理者設定 ラベル管理 -->
+       <action
+            name="sml290Form"
+            path="/smail/sml290"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml290.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml290.Sml290Action">
+
+            <forward name="mine" path="/smail/sml290.do" />
+            <forward name="confLabel" path="/smail/sml300.do" />
+       </action>
+
+       <!-- 管理者設定 ラベル登録 -->
+       <action
+            name="sml300Form"
+            path="/smail/sml300"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml300.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml300.Sml300Action">
+            <forward name="labelConf" path="/smail/sml290.do" />
+            <forward name="confirm" path="/smail/sml300kn.do" />
+       </action>
+
+       <!-- 管理者設定 ラベル登録確認 -->
+       <action
+            name="sml300knForm"
+            path="/smail/sml300kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml300kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml300kn.Sml300knAction">
+            <forward name="labelConf" path="/smail/sml290.do" />
+            <forward name="backInput" path="/smail/sml300.do" />
+       </action>
+
+       <!-- 個人設定 ラベル管理 -->
+       <action
+            name="sml310Form"
+            path="/smail/sml310"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml310.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml310.Sml310Action">
+
+            <forward name="mine" path="/smail/sml310.do" />
+            <forward name="confLabel" path="/smail/sml320.do" />
+       </action>
+
+       <!-- 個人設定 ラベル登録 -->
+       <action
+            name="sml320Form"
+            path="/smail/sml320"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml320.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml320.Sml320Action">
+            <forward name="labelList" path="/smail/sml310.do" />
+            <forward name="confirm" path="/smail/sml320kn.do" />
+       </action>
+
+       <!-- 個人設定ラベル登録確認 -->
+       <action
+            name="sml320knForm"
+            path="/smail/sml320kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml320kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml320kn.Sml320knAction">
+            <forward name="labelList" path="/smail/sml310.do" />
+            <forward name="backInput" path="/smail/sml320.do" />
+       </action>
+
+       <!-- 管理者設定 フィルター管理 -->
+       <action
+            name="sml330Form"
+            path="/smail/sml330"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml330.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml330.Sml330Action">
+
+            <forward name="mine" path="/smail/sml330.do" />
+            <forward name="confFilter" path="/smail/sml340.do" />
+       </action>
+
+       <!-- 管理者設定 フィルター登録 -->
+       <action
+            name="sml340Form"
+            path="/smail/sml340"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml340.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml340.Sml340Action">
+            <forward name="filterConf" path="/smail/sml330.do" />
+            <forward name="confirm" path="/smail/sml340kn.do" />
+       </action>
+
+       <!-- 管理者設定 フィルター登録確認 -->
+       <action
+            name="sml340knForm"
+            path="/smail/sml340kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml340kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml340kn.Sml340knAction">
+            <forward name="filterConf" path="/smail/sml330.do" />
+            <forward name="backInput" path="/smail/sml340.do" />
+       </action>
+
+        <!-- 個人設定 フィルター管理 -->
+       <action
+            name="sml350Form"
+            path="/smail/sml350"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml350.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml350.Sml350Action">
+
+            <forward name="mine" path="/smail/sml350.do" />
+            <forward name="confFilter" path="/smail/sml360.do" />
+       </action>
+
+       <!-- 個人設定 フィルター登録 -->
+       <action
+            name="sml360Form"
+            path="/smail/sml360"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml360.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml360.Sml360Action">
+            <forward name="filterConf" path="/smail/sml350.do" />
+            <forward name="confirm" path="/smail/sml360kn.do" />
+       </action>
+
+       <!-- 個人設定 フィルター登録確認 -->
+       <action
+            name="sml360knForm"
+            path="/smail/sml360kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml360kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml360kn.Sml360knAction">
+            <forward name="filterConf" path="/smail/sml350.do" />
+            <forward name="backInput" path="/smail/sml360.do" />
+       </action>
+
+       <!-- 管理者設定 統計情報 -->
+       <action
+            name="sml370Form"
+            path="/smail/sml370"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml370.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml370.Sml370Action">
+            <forward name="backToMenu" path="/smail/sml100.do" />
+
+            <forward name="adminCircular" path="/circular/cir100.do" />
+            <forward name="adminFile" path="/file/fil200.do" />
+            <forward name="adminBulletin" path="/bulletin/bbs110.do" />
+            <forward name="adminWebmail" path="/webmail/wml020.do" />
+            <forward name="adminChat" path="/chat/cht020.do" />
+            <forward name="adminMain" path="/main/man002.do" />
+
+            <forward name="statsCircular" path="/circular/cir210.do" />
+            <forward name="statsFile" path="/file/fil270.do" />
+            <forward name="statsBulletin" path="/bulletin/bbs180.do" />
+            <forward name="statsWebmail" path="/webmail/wml300.do" />
+            <forward name="statsChat" path="/chat/cht070.do" />
+            <forward name="statsMain" path="/main/man390.do" />
+       </action>
+
+       <!-- 管理者設定 送信先制限設定 一覧 -->
+       <action
+            name="sml380Form"
+            path="/smail/sml380"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml380.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml380.Sml380Action">
+            <forward name="mine" path="/smail/sml380.do" />
+            <forward name="backToMenu" path="/smail/sml100.do" />
+            <forward name="confBan" path="/smail/sml390.do" />
+
+
+
+       </action>
+       <!-- 管理者設定 送信先制限設定 編集登録 -->
+       <action
+            name="sml390Form"
+            path="/smail/sml390"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml390.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml390.Sml390Action">
+            <forward name="mine" path="/smail/sml390.do" />
+            <forward name="banConf" path="/smail/sml380.do" />
+            <forward name="confirm" path="/smail/sml390kn.do" />
+       </action>
+
+       <!-- 管理者設定 送信先制限設定 編集登録確認 -->
+       <action
+            name="sml390knForm"
+            path="/smail/sml390kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml390kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml390kn.Sml390knAction">
+            <forward name="banConf" path="/smail/sml380.do" />
+            <forward name="backInput" path="/smail/sml390.do" />
+       </action>
+
+       <!-- 管理者設定 表示設定 -->
+       <action
+            name="sml400Form"
+            path="/smail/sml400"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml400.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml400.Sml400Action">
+            <forward name="smlAdmConf" path="/smail/sml100.do" />
+            <forward name="smlConfirm" path="/smail/sml400kn.do" />
+       </action>
+
+       <!-- 管理者設定 表示設定確認 -->
+       <action
+            name="sml400knForm"
+            path="/smail/sml400kn"
+            scope="request"
+            input="/WEB-INF/plugin/smail/jsp/sml400kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sml.sml400kn.Sml400knAction">
+            <forward name="smlAdmConf" path="/smail/sml100.do" />
+            <forward name="backInput" path="/smail/sml400.do" />
+       </action>
+    </action-mappings>
+
+</struts-config>

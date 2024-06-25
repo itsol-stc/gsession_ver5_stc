@@ -1,0 +1,17 @@
+ insert 
+ into 
+ RSS_ACONF(
+   RAC_READTIME,
+   RAC_AUID,
+   RAC_ADATE,
+   RAC_EUID,
+   RAC_EDATE
+ )
+ values
+ (
+   30,
+   0,
+   current_timestamp,
+   0,
+   current_timestamp
+ );

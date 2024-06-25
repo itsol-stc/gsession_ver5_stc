@@ -1,0 +1,1 @@
+insert into ANP_MTEMP_SORT (APM_SID, AMS_SORT) values (1, 0);

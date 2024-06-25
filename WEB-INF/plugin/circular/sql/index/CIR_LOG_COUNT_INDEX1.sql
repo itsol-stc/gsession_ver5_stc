@@ -1,0 +1,1 @@
+create index CIR_LOG_COUNT_INDEX1 on CIR_LOG_COUNT(CLC_DATE);

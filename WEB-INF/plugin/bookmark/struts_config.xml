@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="bmk010Form" type="jp.groupsession.v2.bmk.bmk010.Bmk010Form" />
+        <form-bean name="bmk020Form" type="jp.groupsession.v2.bmk.bmk020.Bmk020Form" />
+        <form-bean name="bmk030Form" type="jp.groupsession.v2.bmk.bmk030.Bmk030Form" />
+        <form-bean name="bmk040Form" type="jp.groupsession.v2.bmk.bmk040.Bmk040Form" />
+        <form-bean name="bmk050Form" type="jp.groupsession.v2.bmk.bmk050.Bmk050Form" />
+        <form-bean name="bmk060Form" type="jp.groupsession.v2.bmk.bmk060.Bmk060Form" />
+        <form-bean name="bmk070Form" type="jp.groupsession.v2.bmk.bmk070.Bmk070Form" />
+        <form-bean name="bmk080Form" type="jp.groupsession.v2.bmk.bmk080.Bmk080Form" />
+        <form-bean name="bmk090Form" type="jp.groupsession.v2.bmk.bmk090.Bmk090Form" />
+        <form-bean name="bmk100Form" type="jp.groupsession.v2.bmk.bmk100.Bmk100Form" />
+        <form-bean name="bmk110Form" type="jp.groupsession.v2.bmk.bmk110.Bmk110Form" />
+        <form-bean name="bmk110knForm" type="jp.groupsession.v2.bmk.bmk110kn.Bmk110knForm" />
+        <form-bean name="bmk120Form" type="jp.groupsession.v2.bmk.bmk120.Bmk120Form" />
+        <form-bean name="bmk130Form" type="jp.groupsession.v2.bmk.bmk130.Bmk130Form" />
+        <form-bean name="bmk150Form" type="jp.groupsession.v2.bmk.bmk150.Bmk150Form" />
+        <form-bean name="bmk160Form" type="jp.groupsession.v2.bmk.bmk160.Bmk160Form" />
+        <form-bean name="bmk160knForm" type="jp.groupsession.v2.bmk.bmk160kn.Bmk160knForm" />
+        <form-bean name="bmkmain010Form" type="jp.groupsession.v2.bmk.main010.BmkMain010Form" />
+        <form-bean name="bmkmain020Form" type="jp.groupsession.v2.bmk.main020.BmkMain020Form" />
+        <form-bean name="bmkptl010Form" type="jp.groupsession.v2.bmk.ptl010.BmkPtl010Form" />
+        <form-bean name="bmkptl020Form" type="jp.groupsession.v2.bmk.ptl020.BmkPtl020Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="bmkMain" path="/bookmark/bmk010.do" redirect="false"/>
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+        <!-- ブックマーク -->
+        <action
+            name="bmk010Form"
+            path="/bookmark/bmk010"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk010.Bmk010Action">
+
+            <forward name="registUrl" path="/bookmark/bmk020.do" />
+            <forward name="registBookmark" path="/bookmark/bmk030.do" />
+            <forward name="labelList" path="/bookmark/bmk050.do" />
+            <forward name="commentList" path="/bookmark/bmk070.do" />
+            <forward name="rankingList" path="/bookmark/bmk080.do" />
+            <forward name="groupMenu" path="/bookmark/bmk090.do" />
+            <forward name="adminMenu" path="/bookmark/bmk100.do" />
+            <forward name="kojinMenu" path="/bookmark/bmk120.do" />
+            <forward name="newBookmark" path="/bookmark/bmk150.do" />
+            <forward name="deleteComp" path="/bookmark/bmk010.do?CMD=deleteComp" />
+        </action>
+        <!-- ブックマーク登録_URL入力 -->
+        <action
+            name="bmk020Form"
+            path="/bookmark/bmk020"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk020.Bmk020Action">
+
+            <forward name="main" path="/main/man001.do" />
+            <forward name="bmk010" path="/bookmark/bmk010.do" />
+            <forward name="bmk030" path="/bookmark/bmk030.do" />
+            <forward name="bmk070" path="/bookmark/bmk070.do" />
+            <forward name="bmk080" path="/bookmark/bmk080.do" />
+            <forward name="bmk150" path="/bookmark/bmk150.do" />
+        </action>
+        <!-- ブックマーク登録 -->
+        <action
+            name="bmk030Form"
+            path="/bookmark/bmk030"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk030.Bmk030Action">
+
+            <forward name="main" path="/main/man001.do" />
+            <forward name="bmk010" path="/bookmark/bmk010.do" />
+            <forward name="bmk020" path="/bookmark/bmk020.do" />
+            <forward name="bmk030" path="/bookmark/bmk030.do" />
+            <forward name="bmk070" path="/bookmark/bmk070.do" />
+            <forward name="bmk080" path="/bookmark/bmk080.do" />
+            <forward name="bmk150" path="/bookmark/bmk150.do" />
+        </action>
+        <!-- ラベル選択POPUP -->
+        <action
+            name="bmk040Form"
+            path="/bookmark/bmk040"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk040.Bmk040Action">
+        </action>
+        <!-- ラベル管理 -->
+        <action
+             name="bmk050Form"
+             path="/bookmark/bmk050"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk050.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk050.Bmk050Action">
+
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+             <forward name="bmk060" path="/bookmark/bmk060.do" />
+             <forward name="redraw" path="/bookmark/bmk050.do" />
+        </action>
+        <!-- ラベル登録 -->
+        <action
+             name="bmk060Form"
+             path="/bookmark/bmk060"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk060.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk060.Bmk060Action">
+             <forward name="bmk050" path="/bookmark/bmk050.do" />
+             <forward name="redraw" path="/bookmark/bmk060.do" />
+        </action>
+        <!-- コメント・評価 -->
+        <action
+             name="bmk070Form"
+             path="/bookmark/bmk070"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk070.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk070.Bmk070Action">
+
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+             <forward name="bmk020" path="/bookmark/bmk020.do" />
+                <forward name="bmk030" path="/bookmark/bmk030.do" />
+             <forward name="bmk080" path="/bookmark/bmk080.do" />
+             <forward name="bmk150" path="/bookmark/bmk150.do" />
+             <forward name="main" path="/main/man001.do" />
+        </action>
+        <!-- 登録ランキング -->
+        <action
+             name="bmk080Form"
+             path="/bookmark/bmk080"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk080.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk080.Bmk080Action">
+
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+             <forward name="bmk020" path="/bookmark/bmk020.do" />
+             <forward name="bmk070" path="/bookmark/bmk070.do" />
+        </action>
+        <!-- グループ別権限設定 -->
+        <action
+             name="bmk090Form"
+             path="/bookmark/bmk090"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk090.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk090.Bmk090Action">
+
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+        </action>
+        <!-- 管理者設定メニュー -->
+        <action
+             name="bmk100Form"
+             path="/bookmark/bmk100"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk100.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk100.Bmk100Action">
+
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+             <forward name="bmk110" path="/bookmark/bmk110.do" />
+             <forward name="bmk160" path="/bookmark/bmk160.do" />
+             <forward name="mainAdmSetting" path="/main/man002.do" />
+        </action>
+
+        <!-- 権限設定 -->
+        <action
+             name="bmk110Form"
+             path="/bookmark/bmk110"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk110.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk110.Bmk110Action">
+
+             <forward name="bmk100" path="/bookmark/bmk100.do" />
+             <forward name="bmk110kn" path="/bookmark/bmk110kn.do" />
+        </action>
+        <!-- 権限設定確認 -->
+        <action
+             name="bmk110knForm"
+             path="/bookmark/bmk110kn"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk110kn.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk110kn.Bmk110knAction">
+
+             <forward name="bmk100" path="/bookmark/bmk100.do" />
+             <forward name="bmk110" path="/bookmark/bmk110.do" />
+        </action>
+        <!-- 個人設定メニュー -->
+        <action
+             name="bmk120Form"
+             path="/bookmark/bmk120"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk120.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk120.Bmk120Action">
+
+             <forward name="mainPriSetting" path="/main/man030.do" />
+             <forward name="bmk010" path="/bookmark/bmk010.do" />
+             <forward name="bmk130" path="/bookmark/bmk130.do" />
+             <forward name="bmk140" path="/bookmark/bmk140.do" />
+        </action>
+        <!-- 表示件数設定 -->
+        <action
+            name="bmk130Form"
+            path="/bookmark/bmk130"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk130.Bmk130Action">
+
+            <forward name="bmk120" path="/bookmark/bmk120.do" />
+        </action>
+        <!-- 新着ブックマーク一覧 -->
+        <action
+            name="bmk150Form"
+            path="/bookmark/bmk150"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmk150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.bmk150.Bmk150Action">
+            <forward name="bmk010" path="/bookmark/bmk010.do" />
+            <forward name="bmk020" path="/bookmark/bmk020.do" />
+            <forward name="bmk070" path="/bookmark/bmk070.do" />
+            <forward name="main" path="/main/man001.do" />
+        </action>
+        <!-- セキュリティ設定 -->
+        <action
+             name="bmk160Form"
+             path="/bookmark/bmk160"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk160.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk160.Bmk160Action">
+
+             <forward name="bmk100" path="/bookmark/bmk100.do" />
+             <forward name="bmk160kn" path="/bookmark/bmk160kn.do" />
+        </action>
+        <!-- セキュリティ設定確認 -->
+        <action
+             name="bmk160knForm"
+             path="/bookmark/bmk160kn"
+             scope="request"
+             input="/WEB-INF/plugin/bookmark/jsp/bmk160kn.jsp"
+             validate="false"
+             type="jp.groupsession.v2.bmk.bmk160kn.Bmk160knAction">
+
+             <forward name="bmk100" path="/bookmark/bmk100.do" />
+             <forward name="bmk160" path="/bookmark/bmk160.do" />
+        </action>
+       <!-- メイン 個人ブックマーク -->
+       <action
+            name="bmkmain010Form"
+            path="/bookmark/bmkmain010"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmkmain010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.main010.BmkMain010Action">
+
+           <forward name="redraw" path="/main/man001.do" />
+           <forward name="bmk070" path="/bookmark/bmk070.do" />
+           <forward name="bmk130" path="/bookmark/bmk130.do" />
+       </action>
+       <!-- メイン 新着ブックマーク -->
+       <action
+            name="bmkmain020Form"
+            path="/bookmark/bmkmain020"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmkmain020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.main020.BmkMain020Action">
+
+            <forward name="bmk020" path="/bookmark/bmk020.do" />
+            <forward name="bmk070" path="/bookmark/bmk070.do" />
+            <forward name="bmk130" path="/bookmark/bmk130.do" />
+            <forward name="bmk150" path="/bookmark/bmk150.do" />
+       </action>
+
+       <!-- ポータル グループブックマーク 表示画面 -->
+       <action
+            name="bmkptl010Form"
+            path="/bookmark/bmkptl010"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmkptl010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.ptl010.BmkPtl010Action">
+
+       </action>
+
+       <!-- ポータル グループブックマーク 選択画面 -->
+       <action
+            name="bmkptl020Form"
+            path="/bookmark/bmkptl020"
+            scope="request"
+            input="/WEB-INF/plugin/bookmark/jsp/bmkptl020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.bmk.ptl020.BmkPtl020Action">
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+    </action-mappings>
+
+</struts-config>

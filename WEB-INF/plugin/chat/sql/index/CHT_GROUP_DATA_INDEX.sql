@@ -1,0 +1,1 @@
+create index CHT_GROUP_DATA_INDEX on CHT_GROUP_DATA(CGI_SID);

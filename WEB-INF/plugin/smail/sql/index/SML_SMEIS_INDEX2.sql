@@ -1,0 +1,1 @@
+create index SML_SMEIS_INDEX2 on SML_SMEIS(SMS_ADATE);

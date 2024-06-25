@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>ipkanri</id>
+  <short-id>ipk</short-id>
+
+  <!-- 名称  -->
+  <name>IP管理</name>
+  <name-eng>IP Management</name-eng>
+
+  <!-- 説明  -->
+  <description>
+ネットワークを登録し、それに属するIPアドレスの情報を登録することができます。
+検索機能により、すぐにIPアドレスの情報を確認することができます。
+管理者はマシンのスペックを登録し、管理することができます。
+  </description>
+
+  <!-- トップメニュー トップメニューの情報を記述する 記述しない場合はメニューに表示しない  -->
+  <topmenu-info>
+    <!-- メニューへの表示/非表示 -->
+    <view>true</view>
+    <!-- メニューアイコンクリック時に遷移するURL -->
+    <url>../ipkanri/ipk010.do</url>
+    <!-- メニューアイコンの表示順 未設定の場合は表示順が設定されているプラグインの次に表示する -->
+    <order>18</order>
+  </topmenu-info>
+
+  <!-- メイン画面のインフォーメーションメッセージを表示する際に呼び出されるリスナー  -->
+  <!-- リスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>userlistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.ip.IpkIUserGroupListenerImpl</listener-class>
+  </listener>
+
+  <!-- バッチ処理の実行を行うリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>batchjob</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.ip.IpkBatchListenerImpl</listener-class>
+  </listener>
+
+  <!-- データ使用量の操作時に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>useddatalistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.ip.IpkUsedDetailListenerImpl</listener-class>
+  </listener>
+
+  <!-- 拡張ポイント 他のプラグインからも利用可能な情報を記述する -->
+  <extention-info>
+    <!-- 拡張ポイント名 -->
+    <name>user_info_view</name>
+    <!-- 拡張ポイントURL -->
+    <url>/user/usr000.do</url>
+    <!-- 拡張ポイントの説明 -->
+    <description>
+    パラメータ「usid」にユーザSID値をセットし、上記URLにアクセスすると、
+    該当するユーザSIDのユーザ情報を表示します。
+    画面サイズが400*200になっているので、JavaScriptのOpenWindowでサイズを
+    指定し、使用してください。
+    </description>
+  </extention-info>
+
+  <!-- メイン画面表示 メイン画面に表示する情報を記述する -->
+  <mainscreen-info>
+    <!-- メイン画面への表示/非表示 未設定の場合は表示しない -->
+    <view></view>
+    <!-- メイン画面へ表示する画面のID javascriptを使用したい場合はこの名前で作成する 未設定の場合は表示しない -->
+    <id></id>
+    <!-- 表示位置の設定 左=1 右=2  未設定の場合は左へ表示する -->
+    <position></position>
+    <!-- 表示順の設定 未設定の場合は表示順が設定されているプラグインの下に表示する -->
+    <order></order>
+  </mainscreen-info>
+
+  <!-- ヘルプ情報を設定する。 -->
+  <help-info>
+  <!-- メニューの表示/非表示 -->
+    <view>true</view>
+  </help-info>
+
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン管理者設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 管理者設定メニューURL -->
+    <url>../ipkanri/ipk080.do</url>
+    <!-- アイコン -->
+    <icon>../ipkanri/images/original/menu_icon_single.png</icon>
+    <iconClassic>../ipkanri/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+    <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+</plugin>

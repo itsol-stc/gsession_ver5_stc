@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="shift_jis" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="ntp010Form" type="jp.groupsession.v2.ntp.ntp010.Ntp010Form" />
+      <form-bean name="ntp020Form" type="jp.groupsession.v2.ntp.ntp020.Ntp020Form" />
+      <form-bean name="ntp030Form" type="jp.groupsession.v2.ntp.ntp030.Ntp030Form" />
+      <form-bean name="ntp040Form" type="jp.groupsession.v2.ntp.ntp040.Ntp040Form" />
+      <form-bean name="ntp060Form" type="jp.groupsession.v2.ntp.ntp060.Ntp060Form" />
+      <form-bean name="ntp061Form" type="jp.groupsession.v2.ntp.ntp061.Ntp061Form" />
+      <form-bean name="ntp061knForm" type="jp.groupsession.v2.ntp.ntp061kn.Ntp061knForm" />
+      <form-bean name="ntp062Form" type="jp.groupsession.v2.ntp.ntp062.Ntp062Form" />
+      <form-bean name="ntp062knForm" type="jp.groupsession.v2.ntp.ntp062kn.Ntp062knForm" />
+      <form-bean name="ntp080Form" type="jp.groupsession.v2.ntp.ntp080.Ntp080Form" />
+      <form-bean name="ntp081Form" type="jp.groupsession.v2.ntp.ntp081.Ntp081Form" />
+      <form-bean name="ntp082Form" type="jp.groupsession.v2.ntp.ntp082.Ntp082Form" />
+      <form-bean name="ntp083Form" type="jp.groupsession.v2.ntp.ntp083.Ntp083Form" />
+      <form-bean name="ntp084Form" type="jp.groupsession.v2.ntp.ntp084.Ntp084Form" />
+      <form-bean name="ntp084knForm" type="jp.groupsession.v2.ntp.ntp084kn.Ntp084knForm" />
+      <form-bean name="ntp085Form" type="jp.groupsession.v2.ntp.ntp085.Ntp085Form" />
+      <form-bean name="ntp086Form" type="jp.groupsession.v2.ntp.ntp086.Ntp086Form" />
+      <form-bean name="ntp087Form" type="jp.groupsession.v2.ntp.ntp087.Ntp087Form" />
+      <form-bean name="ntp088Form" type="jp.groupsession.v2.ntp.ntp088.Ntp088Form" />
+      <form-bean name="ntp089Form" type="jp.groupsession.v2.ntp.ntp089.Ntp089Form" />
+      <form-bean name="ntp089knForm" type="jp.groupsession.v2.ntp.ntp089kn.Ntp089knForm" />
+      <form-bean name="ntp090Form" type="jp.groupsession.v2.ntp.ntp090.Ntp090Form" />
+      <form-bean name="ntp091Form" type="jp.groupsession.v2.ntp.ntp091.Ntp091Form" />
+      <form-bean name="ntp092Form" type="jp.groupsession.v2.ntp.ntp092.Ntp092Form" />
+      <form-bean name="ntp094Form" type="jp.groupsession.v2.ntp.ntp094.Ntp094Form" />
+      <form-bean name="ntp095Form" type="jp.groupsession.v2.ntp.ntp095.Ntp095Form" />
+      <form-bean name="ntp100Form" type="jp.groupsession.v2.ntp.ntp100.Ntp100Form" />
+      <form-bean name="ntp110Form" type="jp.groupsession.v2.ntp.ntp110.Ntp110Form" />
+      <form-bean name="ntp110knForm" type="jp.groupsession.v2.ntp.ntp110kn.Ntp110knForm" />
+      <form-bean name="ntp120Form" type="jp.groupsession.v2.ntp.ntp120.Ntp120Form" />
+      <form-bean name="ntp130Form" type="jp.groupsession.v2.ntp.ntp130.Ntp130Form" />
+      <form-bean name="ntp131Form" type="jp.groupsession.v2.ntp.ntp131.Ntp131Form" />
+      <form-bean name="ntp132Form" type="jp.groupsession.v2.ntp.ntp132.Ntp132Form" />
+      <form-bean name="ntp132knForm" type="jp.groupsession.v2.ntp.ntp132kn.Ntp132knForm" />
+      <form-bean name="ntp133Form" type="jp.groupsession.v2.ntp.ntp133.Ntp133Form" />
+      <form-bean name="ntp140Form" type="jp.groupsession.v2.ntp.ntp140.Ntp140Form" />
+      <form-bean name="ntp141Form" type="jp.groupsession.v2.ntp.ntp141.Ntp141Form" />
+      <form-bean name="ntp150Form" type="jp.groupsession.v2.ntp.ntp150.Ntp150Form" />
+      <form-bean name="ntp151Form" type="jp.groupsession.v2.ntp.ntp151.Ntp151Form" />
+      <form-bean name="ntp170Form" type="jp.groupsession.v2.ntp.ntp170.Ntp170Form" />
+      <form-bean name="ntp171Form" type="jp.groupsession.v2.ntp.ntp171.Ntp171Form" />
+      <form-bean name="ntp180Form" type="jp.groupsession.v2.ntp.ntp180.Ntp180Form" />
+      <form-bean name="ntp181Form" type="jp.groupsession.v2.ntp.ntp181.Ntp181Form" />
+      <form-bean name="ntp190Form" type="jp.groupsession.v2.ntp.ntp190.Ntp190Form" />
+      <form-bean name="ntp191Form" type="jp.groupsession.v2.ntp.ntp191.Ntp191Form" />
+      <form-bean name="ntp200Form" type="jp.groupsession.v2.ntp.ntp200.Ntp200Form" />
+      <form-bean name="ntp210Form" type="jp.groupsession.v2.ntp.ntp210.Ntp210Form" />
+      <form-bean name="ntp220Form" type="jp.groupsession.v2.ntp.ntp220.Ntp220Form" />
+      <form-bean name="ntp230Form" type="jp.groupsession.v2.ntp.ntp230.Ntp230Form" />
+      <form-bean name="ntp231Form" type="jp.groupsession.v2.ntp.ntp231.Ntp231Form" />
+      <form-bean name="ntp240Form" type="jp.groupsession.v2.ntp.ntp240.Ntp240Form" />
+      <form-bean name="ntp250Form" type="jp.groupsession.v2.ntp.ntp250.Ntp250Form" />
+      <form-bean name="ntp260Form" type="jp.groupsession.v2.ntp.ntp260.Ntp260Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- 日報一覧(週間) -->
+       <action
+            name="ntp010Form"
+            path="/nippou/ntp010"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp010.Ntp010Action">
+            <forward name="month" path="/nippou/ntp020.do" />
+            <forward name="day" path="/nippou/ntp030.do" />
+            <forward name="add" path="/nippou/ntp040.do" />
+            <forward name="edit" path="/nippou/ntp040.do" />
+            <forward name="dsp" path="/nippou/ntp040kn.do" />
+            <forward name="msg" path="/smail/sml010.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+            <forward name="list" path="/nippou/ntp100.do" />
+            <forward name="imp" path="/nippou/ntp110.do" />
+            <forward name="redraw" path="/nippou/ntp010.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+       </action>
+
+       <!-- 日報一覧(月間) -->
+       <action
+            name="ntp020Form"
+            path="/nippou/ntp020"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp020.Ntp020Action">
+            <forward name="020_week" path="/nippou/ntp010.do" />
+            <forward name="020_day" path="/nippou/ntp030.do" />
+            <forward name="020_add" path="/nippou/ntp040.do" />
+            <forward name="020_edit" path="/nippou/ntp040.do" />
+            <forward name="020_dsp" path="/nippou/ntp040kn.do" />
+            <forward name="020_dsp" path="/nippou/ntp040kn.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+            <forward name="list" path="/nippou/ntp100.do" />
+            <forward name="020_imp" path="/nippou/ntp110.do" />
+            <forward name="redraw" path="/nippou/ntp020.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+       </action>
+
+       <!-- 日報一覧(日間) -->
+       <action
+            name="ntp030Form"
+            path="/nippou/ntp030"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp030.Ntp030Action">
+            <forward name="030_month" path="/nippou/ntp020.do" />
+            <forward name="030_week" path="/nippou/ntp010.do" />
+            <forward name="030_add" path="/nippou/ntp040.do" />
+            <forward name="030_edit" path="/nippou/ntp040.do" />
+            <forward name="030_dsp" path="/nippou/ntp040kn.do" />
+            <forward name="030_msg" path="/smail/sml010.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+            <forward name="list" path="/nippou/ntp100.do" />
+            <forward name="030_imp" path="/nippou/ntp110.do" />
+            <forward name="030_list" path="/nippou/ntp100.do" />
+            <forward name="redraw" path="/nippou/ntp030.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+       </action>
+
+       <!-- 日報一覧(登録編集) -->
+       <action
+            name="ntp040Form"
+            path="/nippou/ntp040"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp040.Ntp040Action">
+            <forward name="040_week" path="/nippou/ntp010.do" />
+            <forward name="040_month" path="/nippou/ntp020.do" />
+            <forward name="040_day" path="/nippou/ntp030.do" />
+            <forward name="040_kojin" path="/nippou/ntp200.do" />
+            <forward name="040_dsp" path="/nippou/ntp040kn.do" />
+            <forward name="040_del_ok" path="/nippou/ntp040.do?CMD=040_del_ok" />
+            <forward name="040_del_cancel" path="/nippou/ntp040.do" />
+            <forward name="040_warning_ok" path="/nippou/ntp040.do?CMD=040_ok_dup_nocheck" />
+            <forward name="040_warning_cancel" path="/nippou/ntp040.do" />
+            <forward name="040_main" path="/main/man001.do" />
+            <forward name="040_list" path="/nippou/ntp100.do?CMD=research" />
+            <forward name="040_extend" path="/nippou/ntp041.do" />
+       </action>
+
+       <!-- 案件検索 -->
+       <action
+            name="ntp060Form"
+            path="/nippou/ntp060"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp060.Ntp060Action">
+            <forward name="ntp010" path="/nippou/ntp010.do" />
+            <forward name="ntp030" path="/nippou/ntp030.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="ntp061" path="/nippou/ntp061.do" />
+            <forward name="ntp061kn" path="/nippou/ntp061kn.do" />
+            <forward name="ntp062" path="/nippou/ntp062.do" />
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="adr150" path="/address/adr150.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="ntpsearch" path="/nippou/ntp100.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+
+       </action>
+       <!-- 案件登録 -->
+       <action
+            name="ntp061Form"
+            path="/nippou/ntp061"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp061.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp061.Ntp061Action">
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="ntp061kn" path="/nippou/ntp061kn.do" />
+            <forward name="redraw" path="/nippou/ntp061.do" />
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="adr150" path="/address/adr150.do" />
+            <forward name="ntp200" path="/nippou/ntp200.do" />
+       </action>
+
+       <!-- 案件登録確認 -->
+       <action
+            name="ntp061knForm"
+            path="/nippou/ntp061kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp061kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp061kn.Ntp061knAction">
+            <forward name="ntp061" path="/nippou/ntp061.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="ntp061kn" path="/nippou/ntp061kn.do" />
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="adr150" path="/address/adr150.do" />
+            <forward name="ntp200" path="/nippou/ntp200.do" />
+       </action>
+
+       <!-- 案件インポート -->
+       <action
+            name="ntp062Form"
+            path="/nippou/ntp062"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp062.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp062.Ntp062Action">
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="062_impOk" path="/nippou/ntp062kn.do" />
+            <forward name="doImport" path="/nippou/ntp062kn.do" />
+       </action>
+
+       <!-- 案件インポート確認 -->
+       <action
+            name="ntp062knForm"
+            path="/nippou/ntp062kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp062kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp062kn.Ntp062knAction">
+            <forward name="importComp" path="/nippou/ntp062kn.do?CMD=comp" />
+            <forward name="back_to_import_input" path="/nippou/ntp062.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+       </action>
+
+       <!-- 管理者設定メニュー -->
+       <action
+            name="ntp080Form"
+            path="/nippou/ntp080"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp080.Ntp080Action">
+            <forward name="crange" path="/nippou/ntp081.do" />
+            <forward name="adel" path="/nippou/ntp082.do" />
+            <forward name="sdel" path="/nippou/ntp083.do" />
+            <forward name="simp" path="/nippou/ntp084.do" />
+            <forward name="smlsetting" path="/nippou/ntp085.do" />
+            <forward name="itmsetting" path="/nippou/ntp086.do" />
+            <forward name="spAccess" path="/nippou/ntp088.do" />
+            <forward name="040_week" path="/nippou/ntp010.do" />
+            <forward name="040_month" path="/nippou/ntp020.do" />
+            <forward name="040_day" path="/nippou/ntp030.do" />
+            <forward name="040_list" path="/nippou/ntp100.do?CMD=research" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+       </action>
+       <!-- 日報基本設定 -->
+       <action
+            name="ntp081Form"
+            path="/nippou/ntp081"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp081.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp081.Ntp081Action">
+            <forward name="ntp080" path="/nippou/ntp080.do" />
+            <forward name="changeOk" path="/nippou/ntp081.do?CMD=ntp081commit" />
+            <forward name="changeCancel" path="/nippou/ntp081.do?CMD=ntp081reload" />
+       </action>
+       <!-- 自動データ削除設定 -->
+       <action
+            name="ntp082Form"
+            path="/nippou/ntp082"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp082.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp082.Ntp082Action">
+            <forward name="ntp082back" path="/nippou/ntp080.do" />
+            <forward name="changeOk" path="/nippou/ntp082.do?CMD=ntp082commit" />
+            <forward name="changeCancel" path="/nippou/ntp082.do?CMD=ntp082cancel" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+       </action>
+       <!-- 手動データ削除設定 -->
+       <action
+            name="ntp083Form"
+            path="/nippou/ntp083"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp083.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp083.Ntp083Action">
+            <forward name="ntp083back" path="/nippou/ntp080.do" />
+            <forward name="changeOk" path="/nippou/ntp083.do?CMD=ntp083delete" />
+            <forward name="changeCancel" path="/nippou/ntp083.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+       </action>
+       <!-- インポート(管理者) -->
+       <action
+            name="ntp084Form"
+            path="/nippou/ntp084"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp084.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp084.Ntp084Action">
+            <forward name="doImport" path="/nippou/ntp084kn.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+       </action>
+       <!-- インポート確認(管理者) -->
+       <action
+            name="ntp084knForm"
+            path="/nippou/ntp084kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp084kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp084kn.Ntp084knAction">
+            <forward name="importComp" path="/nippou/ntp080.do" />
+            <forward name="back_to_import_input" path="/nippou/ntp084.do" />
+       </action>
+
+       <!-- ショートメール通知設定(管理者) -->
+       <action
+            name="ntp085Form"
+            path="/nippou/ntp085"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp085.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp085.Ntp085Action">
+            <forward name="ktool" path="/nippou/ntp080.do" />
+       </action>
+
+       <!-- テンプレート一覧 -->
+       <action
+            name="ntp086Form"
+            path="/nippou/ntp086"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp086.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp086.Ntp086Action">
+            <forward name="ntp086add" path="/nippou/ntp087.do" />
+            <forward name="ntp086edit" path="/nippou/ntp087.do?CMD=edit" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+       </action>
+
+       <!-- テンプレート登録 -->
+       <action
+            name="ntp087Form"
+            path="/nippou/ntp087"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp087.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp087.Ntp087Action">
+            <forward name="ntp086" path="/nippou/ntp086.do" />
+            <forward name="redraw" path="/nippou/ntp087.do" />
+       </action>
+
+       <!-- 特例アクセス設定 -->
+       <action
+            name="ntp088Form"
+            path="/nippou/ntp088"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp088.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp088.Ntp088Action">
+            <forward name="mine" path="/nippou/ntp088.do" />
+            <forward name="ntp088back" path="/nippou/ntp080.do" />
+            <forward name="addSpAccess" path="/nippou/ntp089.do" />
+            <forward name="spAccessEdit" path="/nippou/ntp089.do" />
+            <forward name="spAccessDelete" path="/nippou/ntp080.do" />
+       </action>
+
+       <!-- 特例アクセス設定登録画面 -->
+       <action
+            name="ntp089Form"
+            path="/nippou/ntp089"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp089.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp089.Ntp089Action">
+            <forward name="mine" path="/nippou/ntp089.do" />
+            <forward name="ntp089back" path="/nippou/ntp088.do" />
+            <forward name="confirm" path="/nippou/ntp089kn.do"/>
+       </action>
+
+       <!-- 特例アクセス設定登録確認画面 -->
+       <action
+            name="ntp089knForm"
+            path="/nippou/ntp089kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp089kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp089kn.Ntp089knAction">
+            <forward name="ntp089knback" path="/nippou/ntp089.do"/>
+            <forward name="backList" path="/nippou/ntp088.do"/>
+       </action>
+
+       <!-- 個人設定メニュー -->
+       <action
+            name="ntp090Form"
+            path="/nippou/ntp090"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp090.Ntp090Action">
+            <forward name="iniset" path="/nippou/ntp091.do" />
+            <forward name="listdspset" path="/nippou/ntp094.do" />
+            <forward name="smailset" path="/nippou/ntp095.do" />
+            <forward name="040_week" path="/nippou/ntp010.do" />
+            <forward name="040_month" path="/nippou/ntp020.do" />
+            <forward name="040_day" path="/nippou/ntp030.do" />
+            <forward name="040_list" path="/nippou/ntp100.do?CMD=research" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+       </action>
+       <!-- 初期値設定 -->
+       <action
+            name="ntp091Form"
+            path="/nippou/ntp091"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp091.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp091.Ntp091Action">
+            <forward name="ntp091back" path="/nippou/ntp090.do" />
+            <forward name="changeOk" path="/nippou/ntp091.do?CMD=ntp091commit" />
+            <forward name="changeCancel" path="/nippou/ntp091.do?CMD=ntp091reload" />
+       </action>
+       <!-- 日間表示時間帯設定 -->
+       <action
+            name="ntp092Form"
+            path="/nippou/ntp092"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp092.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp092.Ntp092Action">
+            <forward name="ntp092back" path="/nippou/ntp090.do" />
+            <forward name="changeOk" path="/nippou/ntp092.do?CMD=ntp092commit" />
+            <forward name="changeCancel" path="/nippou/ntp092.do" />
+       </action>
+       <!-- スケジュール一覧設定 -->
+       <action
+            name="ntp094Form"
+            path="/nippou/ntp094"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp094.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp094.Ntp094Action">
+            <forward name="ntp094back" path="/nippou/ntp090.do" />
+            <forward name="changeOk" path="/nippou/ntp094.do?CMD=ntp094commit" />
+            <forward name="changeCancel" path="/nippou/ntp094.do" />
+       </action>
+       <!-- 日報ショートメール通知設定 -->
+       <action
+            name="ntp095Form"
+            path="/nippou/ntp095"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp095.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp095.Ntp095Action">
+            <forward name="ntp095back" path="/nippou/ntp090.do" />
+            <forward name="changeOk" path="/nippou/ntp095.do?CMD=ntp095commit" />
+            <forward name="changeCancel" path="/nippou/ntp095.do" />
+       </action>
+
+       <!-- 一覧 -->
+       <action
+            name="ntp100Form"
+            path="/nippou/ntp100"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp100.Ntp100Action">
+            <forward name="100_week" path="/nippou/ntp010.do" />
+            <forward name="100_month" path="/nippou/ntp020.do" />
+            <forward name="100_day" path="/nippou/ntp030.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp210.do" />
+            <forward name="100_edit" path="/nippou/ntp040.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+       </action>
+
+       <!-- インポート(一般) -->
+       <action
+            name="ntp110Form"
+            path="/nippou/ntp110"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp110.Ntp110Action">
+            <forward name="110_impOk" path="/nippou/ntp110kn.do" />
+            <forward name="110_week" path="/nippou/ntp010.do" />
+            <forward name="110_month" path="/nippou/ntp020.do" />
+            <forward name="110_day" path="/nippou/ntp030.do" />
+            <forward name="110_list" path="/nippou/ntp100.do" />
+            <forward name="doImport" path="/nippou/ntp110kn.do" />
+       </action>
+       <!-- インポート確認(一般) -->
+       <action
+            name="ntp110knForm"
+            path="/nippou/ntp110kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp110kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp110kn.Ntp110knAction">
+            <forward name="importComp" path="/nippou/ntp110kn.do?CMD=comp" />
+            <forward name="back_to_import_input" path="/nippou/ntp110.do" />
+            <forward name="110kn_week" path="/nippou/ntp010.do" />
+            <forward name="110kn_month" path="/nippou/ntp020.do" />
+            <forward name="110kn_day" path="/nippou/ntp030.do" />
+            <forward name="110kn_list" path="/nippou/ntp100.do" />
+       </action>
+       <!-- 日報マスタメニュー -->
+       <action
+            name="ntp120Form"
+            path="/nippou/ntp120"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp120.Ntp120Action">
+            <forward name="ntp080" path="/nippou/ntp080.do" />
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="ntp140" path="/nippou/ntp140.do" />
+            <forward name="ntp150" path="/nippou/ntp150.do" />
+            <forward name="ntp170" path="/nippou/ntp170.do" />
+            <forward name="ntp180" path="/nippou/ntp180.do" />
+            <forward name="ntp190" path="/nippou/ntp190.do" />
+            <forward name="ntp230" path="/nippou/ntp230.do" />
+            <forward name="ntp010" path="/nippou/ntp010.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+       </action>
+       <!-- 商品一覧 -->
+       <action
+            name="ntp130Form"
+            path="/nippou/ntp130"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp130.Ntp130Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp131" path="/nippou/ntp131.do" />
+            <forward name="ntp132" path="/nippou/ntp132.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="ntp061" path="/nippou/ntp061.do" />
+            <forward name="ntp061" path="/nippou/ntp061.do" />
+            <forward name="ntp133" path="/nippou/ntp133.do" />
+       </action>
+       <!-- 商品登録 -->
+       <action
+            name="ntp131Form"
+            path="/nippou/ntp131"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp131.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp131.Ntp131Action">
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="redraw" path="/nippou/ntp131.do" />
+       </action>
+       <!-- 商品一覧 インポート画面-->
+       <action
+            name="ntp132Form"
+            path="/nippou/ntp132"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp132.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp132.Ntp132Action">
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="ntp132kn" path="/nippou/ntp132kn.do" />
+       </action>
+       <!-- 商品一覧 インポート画面確認-->
+       <action
+            name="ntp132knForm"
+            path="/nippou/ntp132kn"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp132kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp132kn.Ntp132knAction">
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="ntp132" path="/nippou/ntp132.do?CMD=reDisp" />
+       </action>
+       <!-- カテゴリ登録・編集 画面 -->
+       <action
+            name="ntp133Form"
+            path="/nippou/ntp133"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp133.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp133.Ntp133Action">
+            <forward name="listback" path="/nippou/ntp130.do" />
+            <forward name="ntp133back" path="/nippou/ntp133.do" />
+            <forward name="deleteok" path="/nippou/ntp133.do" />
+       </action>
+       <!-- 業種一覧 -->
+       <action
+            name="ntp140Form"
+            path="/nippou/ntp140"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp140.Ntp140Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp141" path="/nippou/ntp141.do" />
+       </action>
+       <!-- 業種登録 -->
+       <action
+            name="ntp141Form"
+            path="/nippou/ntp141"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp141.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp141.Ntp141Action">
+            <forward name="ntp140" path="/nippou/ntp140.do" />
+            <forward name="redraw" path="/nippou/ntp141.do" />
+       </action>
+       <!-- プロセス一覧 -->
+       <action
+            name="ntp150Form"
+            path="/nippou/ntp150"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp150.Ntp150Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp151" path="/nippou/ntp151.do" />
+       </action>
+       <!-- プロセス登録 -->
+       <action
+            name="ntp151Form"
+            path="/nippou/ntp151"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp151.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp151.Ntp151Action">
+            <forward name="ntp150" path="/nippou/ntp150.do?CMD=backSelectNtp151"/>
+            <forward name="redraw" path="/nippou/ntp151.do" />
+       </action>
+       <!-- 活動分類一覧 -->
+       <action
+            name="ntp170Form"
+            path="/nippou/ntp170"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp170.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp170.Ntp170Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp171" path="/nippou/ntp171.do" />
+       </action>
+       <!-- 活動分類登録 -->
+       <action
+            name="ntp171Form"
+            path="/nippou/ntp171"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp171.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp171.Ntp171Action">
+            <forward name="ntp170" path="/nippou/ntp170.do" />
+            <forward name="redraw" path="/nippou/ntp171.do" />
+       </action>
+       <!-- 活動方法一覧 -->
+       <action
+            name="ntp180Form"
+            path="/nippou/ntp180"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp180.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp180.Ntp180Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp181" path="/nippou/ntp181.do" />
+       </action>
+       <!-- 活動方法登録 -->
+       <action
+            name="ntp181Form"
+            path="/nippou/ntp181"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp181.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp181.Ntp181Action">
+            <forward name="ntp180" path="/nippou/ntp180.do" />
+            <forward name="redraw" path="/nippou/ntp181.do" />
+       </action>
+       <!-- コンタクト一覧 -->
+       <action
+            name="ntp190Form"
+            path="/nippou/ntp190"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp190.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp190.Ntp190Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp191" path="/nippou/ntp191.do" />
+       </action>
+       <!-- コンタクト登録 -->
+       <action
+            name="ntp191Form"
+            path="/nippou/ntp191"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp191.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp191.Ntp191Action">
+            <forward name="ntp190" path="/nippou/ntp190.do" />
+            <forward name="redraw" path="/nippou/ntp191.do" />
+       </action>
+
+
+        <!-- 案件検索 -->
+        <action
+            name="ntp200Form"
+            path="/nippou/ntp200"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp200.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp200.Ntp200Action">
+            <forward name="ntp061" path="/nippou/ntp061.do?CMD=popup" />
+        </action>
+
+       <!-- 日報マスタメニュー -->
+       <action
+            name="ntp210Form"
+            path="/nippou/ntp210"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp210.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp210.Ntp210Action">
+            <forward name="ntp080" path="/nippou/ntp080.do" />
+            <forward name="ntp130" path="/nippou/ntp130.do" />
+            <forward name="ntp140" path="/nippou/ntp140.do" />
+            <forward name="ntp150" path="/nippou/ntp150.do" />
+            <forward name="ntp170" path="/nippou/ntp170.do" />
+            <forward name="ntp180" path="/nippou/ntp180.do" />
+            <forward name="ntp190" path="/nippou/ntp190.do" />
+            <forward name="ntp030" path="/nippou/ntp030.do" />
+            <forward name="ntp060" path="/nippou/ntp060.do" />
+            <forward name="week" path="/nippou/ntp010.do" />
+            <forward name="month" path="/nippou/ntp020.do" />
+            <forward name="day" path="/nippou/ntp030.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+       </action>
+
+        <!-- 日報分析 -->
+       <action
+            name="ntp220Form"
+            path="/nippou/ntp220"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp220.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp220.Ntp220Action">
+            <forward name="ntp010" path="/nippou/ntp010.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+       </action>
+
+       <!-- 目標一覧 -->
+       <action
+            name="ntp230Form"
+            path="/nippou/ntp230"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp230.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp230.Ntp230Action">
+            <forward name="ntp120" path="/nippou/ntp120.do" />
+            <forward name="ntp231" path="/nippou/ntp231.do" />
+       </action>
+
+       <!-- 目標登録 -->
+       <action
+            name="ntp231Form"
+            path="/nippou/ntp231"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp231.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp231.Ntp231Action">
+            <forward name="ntp230" path="/nippou/ntp230.do" />
+            <forward name="redraw" path="/nippou/ntp231.do" />
+       </action>
+
+       <!-- 目標値設定 -->
+       <action
+            name="ntp240Form"
+            path="/nippou/ntp240"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp240.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp240.Ntp240Action">
+            <forward name="nippou" path="/nippou/ntp010.do" />
+            <forward name="anken" path="/nippou/ntp060.do" />
+            <forward name="masta" path="/nippou/ntp120.do" />
+            <forward name="bunseki" path="/nippou/ntp220.do" />
+            <forward name="target" path="/nippou/ntp240.do" />
+            <forward name="ktool" path="/nippou/ntp080.do" />
+            <forward name="pset" path="/nippou/ntp090.do" />
+       </action>
+
+       <!-- 目標ポップアップ -->
+       <action
+            name="ntp250Form"
+            path="/nippou/ntp250"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp250.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp250.Ntp250Action">
+       </action>
+
+       <!-- テンプレートポップアップ -->
+       <action
+            name="ntp260Form"
+            path="/nippou/ntp260"
+            scope="request"
+            input="/WEB-INF/plugin/nippou/jsp/ntp260.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ntp.ntp260.Ntp260Action">
+       </action>
+
+    </action-mappings>
+
+</struts-config>

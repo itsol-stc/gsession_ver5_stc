@@ -1,0 +1,14 @@
+◎Group Session 施設予約 申請通知
+
+$ADATEに下記の施設予約が申請されました。
+
+┏━
+┃利用目的:$RESERVE
+┃ $FRDATE　～　$TODATE
+┃
+┃内容:${NAIYOU}
+┗━
+URL:$URL
+
+登録者:$ANAME
+

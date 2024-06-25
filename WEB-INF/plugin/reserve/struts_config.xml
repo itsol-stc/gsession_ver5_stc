@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="rsvmainForm" type="jp.groupsession.v2.rsv.main.RsvMainForm" />
+      <form-bean name="rsv010Form" type="jp.groupsession.v2.rsv.rsv010.Rsv010Form" />
+      <form-bean name="rsv020Form" type="jp.groupsession.v2.rsv.rsv020.Rsv020Form" />
+      <form-bean name="rsv030Form" type="jp.groupsession.v2.rsv.rsv030.Rsv030Form" />
+      <form-bean name="rsv040Form" type="jp.groupsession.v2.rsv.rsv040.Rsv040Form" />
+      <form-bean name="rsv050Form" type="jp.groupsession.v2.rsv.rsv050.Rsv050Form" />
+      <form-bean name="rsv060Form" type="jp.groupsession.v2.rsv.rsv060.Rsv060Form" />
+      <form-bean name="rsv070Form" type="jp.groupsession.v2.rsv.rsv070.Rsv070Form" />
+      <form-bean name="rsv080Form" type="jp.groupsession.v2.rsv.rsv080.Rsv080Form" />
+      <form-bean name="rsv090Form" type="jp.groupsession.v2.rsv.rsv090.Rsv090Form" />
+      <form-bean name="rsv100Form" type="jp.groupsession.v2.rsv.rsv100.Rsv100Form" />
+      <form-bean name="rsv110Form" type="jp.groupsession.v2.rsv.rsv110.Rsv110Form" />
+      <form-bean name="rsv111Form" type="jp.groupsession.v2.rsv.rsv111.Rsv111Form" />
+      <form-bean name="rsv111knForm" type="jp.groupsession.v2.rsv.rsv111kn.Rsv111knForm" />
+      <form-bean name="rsv120Form" type="jp.groupsession.v2.rsv.rsv120.Rsv120Form" />
+      <form-bean name="rsv120knForm" type="jp.groupsession.v2.rsv.rsv120kn.Rsv120knForm" />
+      <form-bean name="rsv130Form" type="jp.groupsession.v2.rsv.rsv130.Rsv130Form" />
+      <form-bean name="rsv130knForm" type="jp.groupsession.v2.rsv.rsv130kn.Rsv130knForm" />
+      <form-bean name="rsv140Form" type="jp.groupsession.v2.rsv.rsv140.Rsv140Form" />
+      <form-bean name="rsv150Form" type="jp.groupsession.v2.rsv.rsv150.Rsv150Form" />
+      <form-bean name="rsv150knForm" type="jp.groupsession.v2.rsv.rsv150kn.Rsv150knForm" />
+      <form-bean name="rsv180Form" type="jp.groupsession.v2.rsv.rsv180.Rsv180Form" />
+      <form-bean name="rsv180knForm" type="jp.groupsession.v2.rsv.rsv180kn.Rsv180knForm" />
+      <form-bean name="rsv190Form" type="jp.groupsession.v2.rsv.rsv190.Rsv190Form" />
+      <form-bean name="rsv200Form" type="jp.groupsession.v2.rsv.rsv200.Rsv200Form" />
+      <form-bean name="rsv200knForm" type="jp.groupsession.v2.rsv.rsv200kn.Rsv200knForm" />
+      <form-bean name="rsv210Form" type="jp.groupsession.v2.rsv.rsv210.Rsv210Form" />
+      <form-bean name="rsv220Form" type="jp.groupsession.v2.rsv.rsv220.Rsv220Form" />
+      <form-bean name="rsv220knForm" type="jp.groupsession.v2.rsv.rsv220kn.Rsv220knForm" />
+      <form-bean name="rsv230Form" type="jp.groupsession.v2.rsv.rsv230.Rsv230Form" />
+      <form-bean name="rsv230knForm" type="jp.groupsession.v2.rsv.rsv230kn.Rsv230knForm" />
+      <form-bean name="rsv240Form" type="jp.groupsession.v2.rsv.rsv240.Rsv240Form" />
+      <form-bean name="rsv240knForm" type="jp.groupsession.v2.rsv.rsv240kn.Rsv240knForm" />
+      <form-bean name="rsv250Form" type="jp.groupsession.v2.rsv.rsv250.Rsv250Form" />
+      <form-bean name="rsv250knForm" type="jp.groupsession.v2.rsv.rsv250kn.Rsv250knForm" />
+      <form-bean name="rsv260Form" type="jp.groupsession.v2.rsv.rsv260.Rsv260Form" />
+      <form-bean name="rsv260knForm" type="jp.groupsession.v2.rsv.rsv260kn.Rsv260knForm" />
+      <form-bean name="rsv270Form" type="jp.groupsession.v2.rsv.rsv270.Rsv270Form" />
+      <form-bean name="rsv280Form" type="jp.groupsession.v2.rsv.rsv280.Rsv280Form" />
+      <form-bean name="rsv280knForm" type="jp.groupsession.v2.rsv.rsv280kn.Rsv280knForm" />
+      <form-bean name="rsv290Form" type="jp.groupsession.v2.rsv.rsv290.Rsv290Form" />
+      <form-bean name="rsv300Form" type="jp.groupsession.v2.rsv.rsv300.Rsv300Form" />
+      <form-bean name="rsv310Form" type="jp.groupsession.v2.rsv.rsv310.Rsv310Form" />
+      <form-bean name="rsv320Form" type="jp.groupsession.v2.rsv.rsv320.Rsv320Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+       <!-- メイン -->
+       <action
+            name="rsvmainForm"
+            path="/reserve/rsvmain"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsvmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.main.RsvMainAction">
+            <forward name="yoyaku" path="/reserve/rsv110.do" />
+       </action>
+
+       <!-- 施設予約[週間] -->
+       <action
+            name="rsv010Form"
+            path="/reserve/rsv010"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv010.Rsv010Action">
+            <forward name="sisetu_settei" path="/reserve/rsv050.do" />
+            <forward name="riyo_zyokyo_syokai" path="/reserve/rsv100.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+            <forward name="kozin_settei" path="/reserve/rsv140.do" />
+            <forward name="sisetu_yoyaku" path="/reserve/rsv110.do" />
+            <forward name="sisetu_yoyaku_hensyu" path="/reserve/rsv110.do" />
+            <forward name="nikkan" path="/reserve/rsv020.do" />
+            <forward name="gekkan" path="/reserve/rsv030.do" />
+            <forward name="yoyaku" path="/reserve/rsv110.do" />
+            <forward name="ikkatu_yoyaku" path="/reserve/rsv210.do" />
+       </action>
+
+       <!-- 施設予約[日間] -->
+       <action
+            name="rsv020Form"
+            path="/reserve/rsv020"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv020.Rsv020Action">
+            <forward name="sisetu_settei" path="/reserve/rsv050.do" />
+            <forward name="riyo_zyokyo_syokai" path="/reserve/rsv100.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+            <forward name="kozin_settei" path="/reserve/rsv140.do" />
+            <forward name="syukan" path="/reserve/rsv010.do" />
+            <forward name="gekkan" path="/reserve/rsv030.do" />
+            <forward name="yoyaku" path="/reserve/rsv110.do" />
+            <forward name="ikkatu_yoyaku" path="/reserve/rsv210.do" />
+       </action>
+
+       <!-- 施設予約[月間] -->
+       <action
+            name="rsv030Form"
+            path="/reserve/rsv030"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv030.Rsv030Action">
+            <forward name="sisetu_settei" path="/reserve/rsv050.do" />
+            <forward name="riyo_zyokyo_syokai" path="/reserve/rsv100.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+            <forward name="kozin_settei" path="/reserve/rsv140.do" />
+            <forward name="nikkan" path="/reserve/rsv020.do" />
+            <forward name="syukan" path="/reserve/rsv010.do" />
+            <forward name="move_nikkan" path="/reserve/rsv020.do" />
+            <forward name="yoyaku" path="/reserve/rsv110.do" />
+            <forward name="ikkatu_yoyaku" path="/reserve/rsv210.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約] -->
+       <action
+            name="rsv040Form"
+            path="/reserve/rsv040"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv040.Rsv040Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_menu" path="/reserve/rsv010.do" />
+            <forward name="back_to_itiran" path="/reserve/rsv100.do" />
+            <forward name="kihon_settei" path="/reserve/rsv220.do" />
+            <forward name="sisetu_settei" path="/reserve/rsv050.do" />
+            <forward name="batch_settei" path="/reserve/rsv120.do" />
+            <forward name="data_sakuzyo" path="/reserve/rsv130.do" />
+            <forward name="yoyaku_import" path="/reserve/rsv250.do" />
+            <forward name="init_settei" path="/reserve/rsv280.do" />
+            <forward name="zikantai_settei" path="/reserve/rsv290.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+            <forward name="smail_settei" path="/reserve/rsv320.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 施設グループ情報設定] -->
+       <action
+            name="rsv050Form"
+            path="/reserve/rsv050"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv050.Rsv050Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_itiran" path="/reserve/rsv100.do" />
+            <forward name="sisetu_group" path="/reserve/rsv060.do" />
+            <forward name="sisetu_zyoho_settei" path="/reserve/rsv080.do" />
+            <forward name="sisetu_group_all_tuika" path="/reserve/rsv260.do" />
+            <forward name="sisetu_group_all_export" path="/reserve/rsv270.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 施設グループ登録] -->
+       <action
+            name="rsv060Form"
+            path="/reserve/rsv060"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv060.Rsv060Action">
+            <forward name="back_to_sisetu_group_settei" path="/reserve/rsv050.do" />
+            <forward name="redraw" path="/reserve/rsv060.do" />
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+       </action>
+
+       <!-- 施設予約[施設情報] -->
+       <action
+            name="rsv070Form"
+            path="/reserve/rsv070"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv070.Rsv070Action">
+       </action>
+
+       <!-- 管理者設定[施設予約 施設情報設定] -->
+       <action
+            name="rsv080Form"
+            path="/reserve/rsv080"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv080.Rsv080Action">
+            <forward name="back_to_sisetu_group_settei" path="/reserve/rsv050.do" />
+            <forward name="redraw" path="/reserve/rsv080.do" />
+            <forward name="sisetu_edit" path="/reserve/rsv090.do" />
+            <forward name="move_import" path="/reserve/rsv180.do" />
+            <forward name="move_ikkatu" path="/reserve/rsv200.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 施設情報登録] -->
+       <action
+            name="rsv090Form"
+            path="/reserve/rsv090"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv090.Rsv090Action">
+            <forward name="back_to_sisetu_zyoho_settei" path="/reserve/rsv080.do" />
+            <forward name="redraw" path="/reserve/rsv090.do" />
+       </action>
+
+       <!-- 施設予約[施設利用状況照会] -->
+       <action
+            name="rsv100Form"
+            path="/reserve/rsv100"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv100.Rsv100Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_menu" path="/reserve/rsv010.do" />
+            <forward name="sisetu_settei" path="/reserve/rsv050.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+            <forward name="kozin_settei" path="/reserve/rsv140.do" />
+            <forward name="nikkan" path="/reserve/rsv020.do" />
+            <forward name="syukan" path="/reserve/rsv010.do" />
+            <forward name="ikkatu_yoyaku" path="/reserve/rsv210.do" />
+       </action>
+
+       <!-- 施設予約[施設予約登録] -->
+       <action
+            name="rsv110Form"
+            path="/reserve/rsv110"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv110.Rsv110Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="redraw" path="/reserve/rsv110.do" />
+            <forward name="kurikaeshi" path="/reserve/rsv111.do" />
+            <forward name="back_to_main" path="/main/man001.do" />
+       </action>
+
+       <!-- 施設予約[施設予約繰り返し登録] -->
+       <action
+            name="rsv111Form"
+            path="/reserve/rsv111"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv111.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv111.Rsv111Action">
+            <forward name="ippan" path="/reserve/rsv110.do" />
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="kurikaesi_toroku_kakunin" path="/reserve/rsv111kn.do" />
+            <forward name="kurikaesi_delete_kakunin" path="/reserve/rsv111kn.do" />
+            <forward name="redraw" path="/reserve/rsv111.do" />
+            <forward name="back_to_main" path="/main/man001.do" />
+       </action>
+
+       <!-- 施設予約[施設予約繰り返し登録確認] -->
+       <action
+            name="rsv111knForm"
+            path="/reserve/rsv111kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv111kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv111kn.Rsv111knAction">
+            <forward name="back_to_kurikaeshi_inp" path="/reserve/rsv111.do" />
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_main" path="/main/man001.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 自動データ削除設定] -->
+       <action
+            name="rsv120Form"
+            path="/reserve/rsv120"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv120.Rsv120Action">
+            <forward name="back_to_kanri_menu" path="/reserve/rsv040.do" />
+            <forward name="batch_settei_kakunin" path="/reserve/rsv120kn.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 自動データ削除設定（確認）] -->
+       <action
+            name="rsv120knForm"
+            path="/reserve/rsv120kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv120kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv120kn.Rsv120knAction">
+            <forward name="back_to_batch_settei_input" path="/reserve/rsv120.do" />
+            <forward name="back_to_kanri_menu" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 手動データ削除] -->
+       <action
+            name="rsv130Form"
+            path="/reserve/rsv130"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv130.Rsv130Action">
+            <forward name="back_to_kanri_menu" path="/reserve/rsv040.do" />
+            <forward name="data_sakuzyo_kakunin" path="/reserve/rsv130kn.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約 手動データ削除確認] -->
+       <action
+            name="rsv130knForm"
+            path="/reserve/rsv130kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv130kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv130kn.Rsv130knAction">
+            <forward name="back_to_data_sakuzyo_input" path="/reserve/rsv130.do" />
+            <forward name="back_to_kanri_menu" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 個人[施設予約] -->
+       <action
+            name="rsv140Form"
+            path="/reserve/rsv140"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv140.Rsv140Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_itiran" path="/reserve/rsv100.do" />
+            <forward name="hyozi_settei" path="/reserve/rsv150.do" />
+            <forward name="syokiti_settei" path="/reserve/rsv230.do" />
+            <forward name="main_settei" path="/reserve/rsv240.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+            <forward name="smail_settei" path="/reserve/rsv300.do" />
+       </action>
+
+       <!-- 個人[表示設定] -->
+       <action
+            name="rsv150Form"
+            path="/reserve/rsv150"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv150.Rsv150Action">
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+            <forward name="hyozi_settei_kakunin" path="/reserve/rsv150kn.do" />
+       </action>
+
+       <!-- 個人[表示設定確認] -->
+       <action
+            name="rsv150knForm"
+            path="/reserve/rsv150kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv150kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv150kn.Rsv150knAction">
+            <forward name="back_to_hyozi_settei_input" path="/reserve/rsv150.do" />
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+       </action>
+
+       <!-- 施設予約[施設インポート] -->
+       <action
+            name="rsv180Form"
+            path="/reserve/rsv180"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv180.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv180.Rsv180Action">
+            <forward name="back_to_sisetu_zyoho" path="/reserve/rsv080.do" />
+            <forward name="doImport" path="/reserve/rsv180kn.do" />
+       </action>
+
+       <!-- 施設予約[施設インポート確認] -->
+       <action
+            name="rsv180knForm"
+            path="/reserve/rsv180kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv180kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv180kn.Rsv180knAction">
+            <forward name="back_to_import_input" path="/reserve/rsv180.do" />
+            <forward name="importComp" path="/reserve/rsv080.do" />
+       </action>
+
+       <!-- 施設予約[週間] -->
+       <action
+            name="rsv190Form"
+            path="/reserve/rsv190"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv190.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv190.Rsv190Action">
+       </action>
+
+       <!-- 施設予約[施設一括設定] -->
+       <action
+            name="rsv200Form"
+            path="/reserve/rsv200"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv200.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv200.Rsv200Action">
+            <forward name="back_to_sisetu_settei" path="/reserve/rsv080.do" />
+            <forward name="ikkatu_settei_kakunin" path="/reserve/rsv200kn.do" />
+       </action>
+
+       <!-- 施設予約[施設一括設定確認] -->
+       <action
+            name="rsv200knForm"
+            path="/reserve/rsv200kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv200kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv200kn.Rsv200knAction">
+            <forward name="back_to_ikkatu_settei" path="/reserve/rsv200.do" />
+            <forward name="updateComp" path="/reserve/rsv080.do" />
+       </action>
+
+       <!-- 施設予約[施設予約一括登録] -->
+       <action
+            name="rsv210Form"
+            path="/reserve/rsv210"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv210.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv210.Rsv210Action">
+            <forward name="back_to_syukan" path="/reserve/rsv010.do" />
+            <forward name="back_to_nikkan" path="/reserve/rsv020.do" />
+            <forward name="back_to_gekkan" path="/reserve/rsv030.do" />
+            <forward name="back_to_itiran" path="/reserve/rsv100.do" />
+            <forward name="back_to_syukan_finish" path="/reserve/rsv010.do?CMD=rsv210finish" />
+            <forward name="back_to_nikkan_finish" path="/reserve/rsv020.do?CMD=rsv210finish" />
+            <forward name="back_to_gekkan_finish" path="/reserve/rsv030.do?CMD=rsv210finish" />
+       </action>
+
+       <!-- 管理者設定[施設予約 基本設定] -->
+       <action
+            name="rsv220Form"
+            path="/reserve/rsv220"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv220.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv220.Rsv220Action">
+            <forward name="kanrisya_basic_kakunin" path="/reserve/rsv220kn.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+            </action>
+
+       <!-- 管理者設定[施設予約 基本設定確認] -->
+       <action
+            name="rsv220knForm"
+            path="/reserve/rsv220kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv220kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv220kn.Rsv220knAction">
+            <forward name="back_to_kanrisya_kihon_settei" path="/reserve/rsv220.do" />
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 個人設定[初期値設定] -->
+       <action
+            name="rsv230Form"
+            path="/reserve/rsv230"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv230.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv230.Rsv230Action">
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+            <forward name="syokiti_settei_kakunin" path="/reserve/rsv230kn.do" />
+            </action>
+
+       <!-- 個人設定[初期値設定確認] -->
+       <action
+            name="rsv230knForm"
+            path="/reserve/rsv230kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv230kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv230kn.Rsv230knAction">
+            <forward name="back_to_syokiti_settei" path="/reserve/rsv230.do" />
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+       </action>
+
+       <!-- 個人設定[メイン画面表示設定] -->
+       <action
+            name="rsv240Form"
+            path="/reserve/rsv240"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv240.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv240.Rsv240Action">
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+            <forward name="jokyo_main_dsp_kakunin" path="/reserve/rsv240kn.do" />
+            </action>
+
+       <!-- 個人設定[初期値設定確認] -->
+       <action
+            name="rsv240knForm"
+            path="/reserve/rsv240kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv240kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv240kn.Rsv240knAction">
+            <forward name="back_to_syokiti_settei" path="/reserve/rsv240.do" />
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+       </action>
+
+       <!-- インポート(管理者) -->
+       <action
+            name="rsv250Form"
+            path="/reserve/rsv250"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv250.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv250.Rsv250Action">
+            <forward name="doImport" path="/reserve/rsv250kn.do" />
+            <forward name="ktool" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- インポート確認(管理者) -->
+       <action
+            name="rsv250knForm"
+            path="/reserve/rsv250kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv250kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv250kn.Rsv250knAction">
+            <forward name="importComp" path="/reserve/rsv040.do" />
+            <forward name="back_to_import_input" path="/reserve/rsv250.do" />
+       </action>
+
+       <!-- グループ・施設一括インポート -->
+       <action
+            name="rsv260Form"
+            path="/reserve/rsv260"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv260.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv260.Rsv260Action">
+            <forward name="back_to_sisetu_group_settei" path="/reserve/rsv050.do" />
+            <forward name="redraw" path="/reserve/rsv260.do" />
+            <forward name="doImport" path="/reserve/rsv260kn.do" />
+       </action>
+
+       <!-- グループ・施設一括インポート確認 -->
+       <action
+            name="rsv260knForm"
+            path="/reserve/rsv260kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv260kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv260kn.Rsv260knAction">
+            <forward name="back_to_sisetu_group_input" path="/reserve/rsv260.do" />
+            <forward name="importComp" path="/reserve/rsv050.do" />
+       </action>
+
+       <!-- 施設グループ・施設情報一括エクスポート -->
+       <action
+            name="rsv270Form"
+            path="/reserve/rsv270"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv270.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv270.Rsv270Action">
+            <forward name="back_to_sisetu_group_settei" path="/reserve/rsv050.do" />
+       </action>
+
+       <!-- 管理者設定[施設予約初期値設定] -->
+       <action
+            name="rsv280Form"
+            path="/reserve/rsv280"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv280.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv280.Rsv280Action">
+            <forward name="backAdminMenu" path="/reserve/rsv040.do" />
+            <forward name="moveKakunin" path="/reserve/rsv280kn.do" />
+            </action>
+
+       <!-- 管理者設定[施設予約初期値設定確認] -->
+       <action
+            name="rsv280knForm"
+            path="/reserve/rsv280kn"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv280kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv280kn.Rsv280knAction">
+            <forward name="backInput" path="/reserve/rsv280.do" />
+            <forward name="backAdminMenu" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 日間表示時間帯デフォルト設定 -->
+       <action
+            name="rsv290Form"
+            path="/reserve/rsv290"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv290.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv290.Rsv290Action">
+            <forward name="adminMenu" path="/reserve/rsv040.do" />
+            <forward name="mine" path="/reserve/rsv290.do" />
+       </action>
+
+       <!-- 個人[ショートメール通知設定] -->
+       <action
+            name="rsv300Form"
+            path="/reserve/rsv300"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv300.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv300.Rsv300Action">
+            <forward name="back_to_kojn_menu" path="/reserve/rsv140.do" />
+       </action>
+
+       <!-- 施設予約 空き状況ポップアップ画面 -->
+       <action
+            name="rsv310Form"
+            path="/reserve/rsv310"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv310.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv310.Rsv310Action">
+       </action>
+
+       <!-- 管理者設定[ショートメール通知設定] -->
+       <action
+            name="rsv320Form"
+            path="/reserve/rsv320"
+            scope="request"
+            input="/WEB-INF/plugin/reserve/jsp/rsv320.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv320.Rsv320Action">
+            <forward name="kanrisya_settei" path="/reserve/rsv040.do" />
+       </action>
+
+       <!-- 施設予約設定ファイル再読み込み -->
+       <action
+            name="emptyForm"
+            path="/reserve/rsv900"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.rsv.rsv900.Rsv900Action">
+       </action>
+
+    </action-mappings>
+
+</struts-config>

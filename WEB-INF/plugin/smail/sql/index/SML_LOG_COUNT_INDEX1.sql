@@ -1,0 +1,1 @@
+create index SML_LOG_COUNT_INDEX1 on SML_LOG_COUNT(SLC_DATE);

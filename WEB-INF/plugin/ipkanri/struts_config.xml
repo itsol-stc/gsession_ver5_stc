@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="ipk010Form" type="jp.groupsession.v2.ip.ipk010.Ipk010Form" />
+      <form-bean name="ipk020Form" type="jp.groupsession.v2.ip.ipk020.Ipk020Form" />
+      <form-bean name="ipk030Form" type="jp.groupsession.v2.ip.ipk030.Ipk030Form" />
+      <form-bean name="ipk040Form" type="jp.groupsession.v2.ip.ipk040.Ipk040Form" />
+      <form-bean name="ipk050Form" type="jp.groupsession.v2.ip.ipk050.Ipk050Form" />
+      <form-bean name="ipk060Form" type="jp.groupsession.v2.ip.ipk060.Ipk060Form" />
+      <form-bean name="ipk070Form" type="jp.groupsession.v2.ip.ipk070.Ipk070Form" />
+      <form-bean name="ipk080Form" type="jp.groupsession.v2.ip.ipk080.Ipk080Form" />
+      <form-bean name="ipk090Form" type="jp.groupsession.v2.ip.ipk090.Ipk090Form" />
+      <form-bean name="ipk100Form" type="jp.groupsession.v2.ip.ipk100.Ipk100Form" />
+      <form-bean name="ipk100knForm" type="jp.groupsession.v2.ip.ipk100kn.Ipk100knForm" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+              <!-- ネットワーク 一覧 -->
+       <action
+            name="ipk010Form"
+            path="/ipkanri/ipk010"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk010.Ipk010Action">
+            <forward name="networkDeleteKn" path="/ipkanri/ipk010.do?CMD=networkDeleteKn" />
+            <forward name="networkDeleteBack" path="/ipkanri/ipk010.do" />
+            <forward name="networkAdd" path="/ipkanri/ipk020.do" />
+            <forward name="networkEdit" path="/ipkanri/ipk020.do" />
+            <forward name="admin" path="/ipkanri/ipk080.do" />
+            <forward name="ipList" path="/ipkanri/ipk040.do" />
+            <forward name="search" path="/ipkanri/ipk070.do" />
+       </action>
+
+              <!-- ネットワーク 追加変更 -->
+       <action
+            name="ipk020Form"
+            path="/ipkanri/ipk020"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk020.Ipk020Action">
+            <forward name="return" path="/ipkanri/ipk010.do" />
+            <forward name="networkDeleteKn" path="/ipkanri/ipk020.do?CMD=networkDeleteKn" />
+            <forward name="networkDeleteBack" path="/ipkanri/ipk020.do?CMD=networkDeleteBack" />
+            <forward name="networkDeleteComp" path="/ipkanri/ipk010.do" />
+            
+       </action>
+       
+              <!-- 管理者設定 -->
+       <action
+            name="ipk030Form"
+            path="/ipkanri/ipk030"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk030.Ipk030Action">
+            <forward name="ipk030Return" path="/ipkanri/ipk080.do" />
+       </action> 
+       
+              <!-- IPアドレス一覧 -->
+       <action
+            name="ipk040Form"
+            path="/ipkanri/ipk040"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk040.Ipk040Action">
+            <forward name="return" path="/ipkanri/ipk010.do" />
+            <forward name="iadDeleteKn" path="/ipkanri/ipk040.do?CMD=iadDeleteKn" />
+            <forward name="iadDeleteBack" path="/ipkanri/ipk040.do" />
+            <forward name="ipAdd" path="/ipkanri/ipk050.do" />
+            <forward name="ipEdit" path="/ipkanri/ipk050.do" />
+            <forward name="import" path="/ipkanri/ipk060.do" />
+            <forward name="search" path="/ipkanri/ipk070.do" />
+       </action>
+
+              <!-- IPアドレス 追加変更 -->
+       <action
+            name="ipk050Form"
+            path="/ipkanri/ipk050"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk050.Ipk050Action">
+            <forward name="ipk050ReturnSearch" path="/ipkanri/ipk070.do" />
+            <forward name="ipk050Return" path="/ipkanri/ipk040.do" />
+            <forward name="return" path="/ipkanri/ipk010.do" />
+            <forward name="iadDeleteKn" path="/ipkanri/ipk050.do?CMD=iadDeleteKn" />
+            <forward name="iadDeleteBack" path="/ipkanri/ipk050.do?CMD=iadDeleteBack" />
+            <forward name="iadDeleteComp" path="/ipkanri/ipk040.do" />
+       </action>
+
+              <!-- IPアドレスインポート -->
+       <action
+            name="ipk060Form"
+            path="/ipkanri/ipk060"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk060.Ipk060Action">
+            <forward name="ipk060Return" path="/ipkanri/ipk040.do" />
+            <forward name="iadImp" path="/ipkanri/ipk060.do?CMD=importOk" />
+            <forward name="impCancel" path="/ipkanri/ipk060.do?CMD=importCancel" />
+            <forward name="impNG" path="/ipkanri/ipk060.do?CMD=impNG" />
+       </action>
+
+            <!-- IP管理詳細検索 -->
+       <action
+            name="ipk070Form"
+            path="/ipkanri/ipk070"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk070.Ipk070Action">
+            <forward name="ipk010Return" path="/ipkanri/ipk010.do" />
+            <forward name="ipk040Return" path="/ipkanri/ipk040.do" />
+            <forward name="ipk070detail" path="/ipkanri/ipk050.do" />
+       </action>
+
+              <!-- 管理者メニュー -->
+       <action
+            name="ipk080Form"
+            path="/ipkanri/ipk080"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk080.Ipk080Action">
+            <forward name="ipk080Return" path="/ipkanri/ipk010.do" />
+            <forward name="adminSetting" path="/ipkanri/ipk030.do" />
+            <forward name="specMstSetting" path="/ipkanri/ipk090.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+       </action>
+
+              <!-- スペックマスタメンテナンス一覧 -->
+       <action
+            name="ipk090Form"
+            path="/ipkanri/ipk090"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk090.Ipk090Action">
+            <forward name="ipk090Return" path="/ipkanri/ipk080.do" />
+            <forward name="specMstEdit" path="/ipkanri/ipk100.do" />
+       </action>
+
+              <!-- スペックマスタメンテナンス登録 -->
+       <action
+            name="ipk100Form"
+            path="/ipkanri/ipk100"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk100.Ipk100Action">
+            <forward name="ipk100Touroku" path="/ipkanri/ipk100kn.do" />
+            <forward name="ipk100Return" path="/ipkanri/ipk090.do" />
+            <forward name="ipk100DeleteOk" path="/ipkanri/ipk100.do?CMD=ipk100DeleteOk" />
+            <forward name="ipk100DeleteCancel" path="/ipkanri/ipk100.do?CMD=deleteCancel" />
+            <forward name="ipk100DeleteComp" path="/ipkanri/ipk090.do" />
+       </action>
+
+              <!-- スペックマスタメンテナンス登録確認 -->
+       <action
+            name="ipk100knForm"
+            path="/ipkanri/ipk100kn"
+            scope="request"
+            input="/WEB-INF/plugin/ipkanri/jsp/ipk100kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ip.ipk100kn.Ipk100knAction">
+            <forward name="ipk100knReturn" path="/ipkanri/ipk100.do" />
+            <forward name="kanryo" path="/ipkanri/ipk090.do" />
+       </action>
+
+    </action-mappings>
+</struts-config>

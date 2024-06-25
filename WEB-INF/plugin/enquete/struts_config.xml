@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="enq010Form" type="jp.groupsession.v2.enq.enq010.Enq010Form" />
+        <form-bean name="enq110Form" type="jp.groupsession.v2.enq.enq110.Enq110Form" />
+        <form-bean name="enq110knForm" type="jp.groupsession.v2.enq.enq110kn.Enq110knForm" />
+        <form-bean name="enq210Form" type="jp.groupsession.v2.enq.enq210.Enq210Form" />
+        <form-bean name="enq210knForm" type="jp.groupsession.v2.enq.enq210kn.Enq210knForm" />
+        <form-bean name="enq220Form" type="jp.groupsession.v2.enq.enq220.Enq220Form" />
+        <form-bean name="enq230Form" type="jp.groupsession.v2.enq.enq230.Enq230Form" />
+        <form-bean name="enq310Form" type="jp.groupsession.v2.enq.enq310.Enq310Form" />
+        <form-bean name="enq320Form" type="jp.groupsession.v2.enq.enq320.Enq320Form" />
+        <form-bean name="enq330Form" type="jp.groupsession.v2.enq.enq330.Enq330Form" />
+        <form-bean name="enq800Form" type="jp.groupsession.v2.enq.enq800.Enq800Form" />
+        <form-bean name="enq810Form" type="jp.groupsession.v2.enq.enq810.Enq810Form" />
+        <form-bean name="enq900Form" type="jp.groupsession.v2.enq.enq900.Enq900Form" />
+        <form-bean name="enq910Form" type="jp.groupsession.v2.enq.enq910.Enq910Form" />
+        <form-bean name="enq910knForm" type="jp.groupsession.v2.enq.enq910kn.Enq910knForm" />
+        <form-bean name="enq920Form" type="jp.groupsession.v2.enq.enq920.Enq920Form" />
+        <form-bean name="enq920knForm" type="jp.groupsession.v2.enq.enq920kn.Enq920knForm" />
+        <form-bean name="enq930Form" type="jp.groupsession.v2.enq.enq930.Enq930Form" />
+        <form-bean name="enq950Form" type="jp.groupsession.v2.enq.enq950.Enq950Form" />
+        <form-bean name="enq950knForm" type="jp.groupsession.v2.enq.enq950kn.Enq950knForm" />
+        <form-bean name="enq960Form" type="jp.groupsession.v2.enq.enq960.Enq960Form" />
+        <form-bean name="enq960knForm" type="jp.groupsession.v2.enq.enq960kn.Enq960knForm" />
+        <form-bean name="enq970Form" type="jp.groupsession.v2.enq.enq970.Enq970Form" />
+        <form-bean name="enqmainForm" type="jp.groupsession.v2.enq.enqmain.EnqMainForm" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="enqList" path="/enquete/enq010.do" />
+        <forward name="enqAnswer" path="/enquete/enq110.do" />
+        <forward name="enqAnswerKn" path="/enquete/enq110kn.do" />
+        <forward name="enqEntry" path="/enquete/enq210.do" />
+        <forward name="enqTemplate" path="/enquete/enq230.do" />
+        <forward name="enqAdmConf" path="/enquete/enq900.do" />
+        <forward name="enqPriConf" path="/enquete/enq800.do" />
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+        <!-- 受信フォルダ -->
+        <action
+            name="enq010Form"
+            path="/enquete/enq010"
+            input="/WEB-INF/plugin/enquete/jsp/enq010.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq010.Enq010Action">
+            <forward name="enq010Answer" path="/enquete/enq110.do" />
+            <forward name="enq010Answered" path="/enquete/enq110kn.do" />
+            <forward name="enq010Result" path="/enquete/enq310.do" />
+            <forward name="editEnquete" path="/enquete/enq210.do" />
+            <forward name="selectTemplate" path="/enquete/enq210.do" />
+            <forward name="editTemplate" path="/enquete/enq230.do" />
+        </action>
+
+        <!-- 回答、プレビュー -->
+        <action
+            name="enq110Form"
+            path="/enquete/enq110"
+            input="/WEB-INF/plugin/enquete/jsp/enq110.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq110.Enq110Action">
+            <forward name="enq110answer" path="/enquete/enq110kn.do" />
+            <forward name="enq110mainBack" path="/enquete/enq010.do" />
+            <forward name="enq110preBack" path="/enquete/enq210.do" />
+            <forward name="enq110ansExpired" path="/enquete/enq010.do" />
+            <forward name="enq110commit" path="/enquete/enq010.do" />
+            <forward name="backToMain" path="/main/man001.do" />
+        </action>
+
+        <!-- 回答確認 -->
+        <action
+            name="enq110knForm"
+            path="/enquete/enq110kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq110kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq110kn.Enq110knAction">
+            <forward name="enq110knback" path="/enquete/enq110.do" />
+            <forward name="enq110knbackMain" path="/enquete/enq010.do" />
+            <forward name="enq110knbackResult" path="/enquete/enq320.do" />
+            <forward name="enq110kncommit" path="/enquete/enq010.do" />
+            <forward name="enq110knfailure" path="/enquete/enq010.do" />
+            <forward name="backToMain" path="/main/man001.do" />
+        </action>
+
+        <!-- アンケート新規作成・編集 -->
+        <action
+            name="enq210Form"
+            path="/enquete/enq210"
+            input="/WEB-INF/plugin/enquete/jsp/enq210.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq210.Enq210Action">
+            <forward name="enq210preview" path="/enquete/enq110.do" />
+            <forward name="enq210Question" path="/enquete/enq220.do" />
+            <forward name="init" path="/enquete/enq210.do" />
+            <forward name="confirm" path="/enquete/enq210kn.do" />
+        </action>
+
+        <!-- アンケート新規作成・編集確認 -->
+        <action
+            name="enq210knForm"
+            path="/enquete/enq210kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq210kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq210kn.Enq210knAction">
+            <forward name="enq210knback" path="/enquete/enq210.do" />
+            <forward name="sendManager" path="/enquete/enq970.do" />
+        </action>
+
+        <!-- 設問作成・編集 -->
+        <action
+            name="enq220Form"
+            path="/enquete/enq220"
+            input="/WEB-INF/plugin/enquete/jsp/enq220.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq220.Enq220Action">
+            <forward name="enq220back" path="/enquete/enq210.do" />
+            <forward name="enq220ok" path="/enquete/enq210.do" />
+        </action>
+
+        <!-- テンプレート一覧 -->
+        <action
+            name="enq230Form"
+            path="/enquete/enq230"
+            input="/WEB-INF/plugin/enquete/jsp/enq230.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq230.Enq230Action">
+            <forward name="enq230back" path="/enquete/enq010.do" />
+            <forward name="enq230add" path="/enquete/enq210.do" />
+            <forward name="enq230edit" path="/enquete/enq210.do" />
+        </action>
+
+        <!-- 結果確認 -->
+        <action
+            name="enq310Form"
+            path="/enquete/enq310"
+            input="/WEB-INF/plugin/enquete/jsp/enq310.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq310.Enq310Action">
+            <forward name="enq310backTo010" path="/enquete/enq010.do" />
+            <forward name="enq310backTo020" path="/enquete/enq020.do" />
+            <forward name="enq310list" path="/enquete/enq320.do" />
+            <forward name="enq310detail" path="/enquete/enq330.do" />
+            <forward name="sendManager" path="/enquete/enq970.do" />
+        </action>
+
+        <!-- 結果確認（一覧） -->
+        <action
+            name="enq320Form"
+            path="/enquete/enq320"
+            input="/WEB-INF/plugin/enquete/jsp/enq320.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq320.Enq320Action">
+            <forward name="enq320back" path="/enquete/enq310.do" />
+        </action>
+
+        <!-- 結果確認（詳細） -->
+        <action
+            name="enq330Form"
+            path="/enquete/enq330"
+            input="/WEB-INF/plugin/enquete/jsp/enq330.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq330.Enq330Action">
+            <forward name="enq330back" path="/enquete/enq310.do" />
+        </action>
+
+        <!-- 個人設定 -->
+        <action
+            name="enq800Form"
+            path="/enquete/enq800"
+            input="/WEB-INF/plugin/enquete/jsp/enq800.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq800.Enq800Action">
+            <forward name="enq800dsp" path="/enquete/enq810.do" />
+            <forward name="enq800backTo010" path="/enquete/enq010.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+        </action>
+
+        <!-- 個人設定 表示設定 -->
+        <action
+            name="enq810Form"
+            path="/enquete/enq810"
+            input="/WEB-INF/plugin/enquete/jsp/enq810.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq810.Enq810Action">
+            <forward name="enq810back" path="/enquete/enq800.do" />
+            <forward name="enq810commit" path="/enquete/enq800.do" />
+        </action>
+
+
+        <!-- 管理者設定 -->
+        <action
+            name="enq900Form"
+            path="/enquete/enq900"
+            input="/WEB-INF/plugin/enquete/jsp/enq900.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq900.Enq900Action">
+            <forward name="enq900makeUser" path="/enquete/enq910.do" />
+            <forward name="enq900syurui" path="/enquete/enq920.do" />
+            <forward name="enq900dsp" path="/enquete/enq930.do" />
+            <forward name="enq900del" path="/enquete/enq950.do" />
+            <forward name="enq900autoDel" path="/enquete/enq960.do" />
+            <forward name="enq900mngEnq" path="/enquete/enq970.do" />
+            <forward name="enq900backTo010" path="/enquete/enq010.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+        </action>
+
+        <!-- 管理者設定 アンケート作成対象者設定 -->
+        <action
+            name="enq910Form"
+            path="/enquete/enq910"
+            input="/WEB-INF/plugin/enquete/jsp/enq910.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq910.Enq910Action">
+            <forward name="enq910ok" path="/enquete/enq910kn.do" />
+            <forward name="enq910back" path="/enquete/enq900.do" />
+        </action>
+
+        <!-- 管理者設定 アンケート作成対象者設定確認 -->
+        <action
+            name="enq910knForm"
+            path="/enquete/enq910kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq910kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq910kn.Enq910knAction">
+            <forward name="enq910kncommit" path="/enquete/enq900.do" />
+            <forward name="enq910knback" path="/enquete/enq910.do" />
+        </action>
+
+        <!-- 管理者設定 アンケート種類 -->
+        <action
+            name="enq920Form"
+            path="/enquete/enq920"
+            input="/WEB-INF/plugin/enquete/jsp/enq920.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq920.Enq920Action">
+            <forward name="enq920ok" path="/enquete/enq920kn.do" />
+            <forward name="enq920back" path="/enquete/enq900.do" />
+        </action>
+
+        <!-- 管理者設定 アンケート種類確認 -->
+        <action
+            name="enq920knForm"
+            path="/enquete/enq920kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq920kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq920kn.Enq920knAction">
+            <forward name="enq920kncommit" path="/enquete/enq900.do" />
+            <forward name="enq920knback" path="/enquete/enq920.do" />
+            <forward name="enq920knfailure" path="/enquete/enq920.do" />
+        </action>
+
+        <!-- 管理者設定 表示設定 -->
+        <action
+            name="enq930Form"
+            path="/enquete/enq930"
+            input="/WEB-INF/plugin/enquete/jsp/enq930.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq930.Enq930Action">
+            <forward name="enq930commit" path="/enquete/enq900.do" />
+            <forward name="enq930back" path="/enquete/enq900.do" />
+        </action>
+
+        <!-- 管理者設定 手動削除 -->
+        <action
+            name="enq950Form"
+            path="/enquete/enq950"
+            input="/WEB-INF/plugin/enquete/jsp/enq950.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq950.Enq950Action">
+            <forward name="enq950ok" path="/enquete/enq950kn.do" />
+            <forward name="enq950back" path="/enquete/enq900.do" />
+        </action>
+
+        <!-- 管理者設定 手動削除確認 -->
+        <action
+            name="enq950knForm"
+            path="/enquete/enq950kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq950kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq950kn.Enq950knAction">
+            <forward name="enq950kncommit" path="/enquete/enq900.do" />
+            <forward name="enq950knback" path="/enquete/enq950.do" />
+        </action>
+
+        <!-- 管理者設定 自動削除 -->
+        <action
+            name="enq960Form"
+            path="/enquete/enq960"
+            input="/WEB-INF/plugin/enquete/jsp/enq960.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq960.Enq960Action">
+            <forward name="enq960ok" path="/enquete/enq960kn.do" />
+            <forward name="enq960back" path="/enquete/enq900.do" />
+        </action>
+
+        <!-- 管理者設定 自動削除確認 -->
+        <action
+            name="enq960knForm"
+            path="/enquete/enq960kn"
+            input="/WEB-INF/plugin/enquete/jsp/enq960kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq960kn.Enq960knAction">
+            <forward name="enq960kncommit" path="/enquete/enq900.do" />
+            <forward name="enq960knback" path="/enquete/enq960.do" />
+        </action>
+
+        <!-- 管理者設定 発信アンケート管理 -->
+        <action
+            name="enq970Form"
+            path="/enquete/enq970"
+            input="/WEB-INF/plugin/enquete/jsp/enq970.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enq970.Enq970Action">
+            <forward name="mine" path="/enquete/enq970.do" />
+            <forward name="enq970detail" path="/enquete/enq210kn.do" />
+            <forward name="enq970result" path="/enquete/enq310.do" />
+        </action>
+
+        <!-- メイン画面 アンケート受信一覧 -->
+        <action
+            name="enqmainForm"
+            path="/enquete/enqmain"
+            input="/WEB-INF/plugin/enquete/jsp/enqmain.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.enq.enqmain.EnqMainAction">
+            <forward name="enqmainAnswer" path="/enquete/enq110.do" />
+        </action>
+
+    </action-mappings>
+
+</struts-config>

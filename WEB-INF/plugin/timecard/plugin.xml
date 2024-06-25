@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>timecard</id>
+  <short-id>tcd</short-id>
+
+  <!-- 名称  -->
+  <name>タイムカード</name>
+  <name-eng>Time Card</name-eng>
+
+  <!-- 説明  -->
+  <description>
+出社、退社時間の管理だけでなく、有給休暇、遅刻、欠勤の管理も行えます。
+管理者による各ユーザデータの閲覧、編集にも対応しています。
+データのエクスポートも可能なため、勤務表の作成等に再利用可能です。
+  </description>
+
+  <!-- メイン画面表示 メイン画面に表示する情報を記述する -->
+  <mainscreen-info>
+    <!-- メイン画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- メイン画面へ表示する画面のID javascriptを使用したい場合はこの名前で作成する 未設定の場合は表示しない -->
+    <id>tcdmain</id>
+    <!-- 表示位置の設定 左=1 右=2  未設定の場合は左へ表示する -->
+    <position>2</position>
+    <!-- 表示順の設定 未設定の場合は表示順が設定されているプラグインの下に表示する -->
+    <order>4</order>
+    <!-- ポートレット画面への表示/非表示 pluginPortletタグ未記入の場合は非表示 -->
+    <pluginPortlet>true</pluginPortlet>
+  </mainscreen-info>
+
+  <!-- メイン画面のインフォーメーションメッセージを表示する際に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>mainInfo</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.tcd.TcdMainInfoMessage</listener-class>
+  </listener>
+  
+    <!-- データ使用量の操作時に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>useddatalistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.tcd.TcdUsedDetailListenerImpl</listener-class>
+  </listener>
+  
+  <!-- バッチ処理の実行を行うリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>batchjob</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.tcd.TcdBatchListenerImpl</listener-class>
+  </listener>
+
+  <!-- トップメニュー トップメニューの情報を記述する 記述しない場合はメニューに表示しない  -->
+  <topmenu-info>
+    <!-- メニューへの表示/非表示 -->
+    <view>true</view>
+    <!-- メニューアイコンクリック時に遷移するURL -->
+    <url>../timecard/tcd010.do</url>
+    <!-- メニューアイコンの表示順 未設定の場合は表示順が設定されているプラグインの次に表示する -->
+    <order>13</order>
+  </topmenu-info>
+
+  <!-- ヘルプ情報を設定する。 -->
+  <help-info>
+    <!-- メニューの表示/非表示 -->
+    <view>true</view>
+  </help-info>
+
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン管理者設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 管理者設定メニューURL -->
+    <url>../timecard/tcd030.do</url>
+    <!-- アイコン -->
+    <icon>../timecard/images/original/menu_icon_single.png</icon>
+    <iconClassic>../timecard/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+
+  <!-- メイン個人設定画面に表示する情報を記述する  -->
+  <privatesetting-info>
+    <!-- メイン個人設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 個人設定メニューURL -->
+    <url>../timecard/tcd100.do</url>
+    <!-- アイコン -->
+    <icon>../timecard/images/original/menu_icon_single.png</icon>
+    <iconClassic>../timecard/images/classic/menu_icon_single.gif</iconClassic>
+  </privatesetting-info>
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+</plugin>

@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="cirmainForm" type="jp.groupsession.v2.cir.main.CirMainForm" />
+        <form-bean name="cir010Form" type="jp.groupsession.v2.cir.cir010.Cir010Form" />
+        <form-bean name="cir020Form" type="jp.groupsession.v2.cir.cir020.Cir020Form" />
+        <form-bean name="cir030Form" type="jp.groupsession.v2.cir.cir030.Cir030Form" />
+        <form-bean name="cir040Form" type="jp.groupsession.v2.cir.cir040.Cir040Form" />
+        <form-bean name="cir050Form" type="jp.groupsession.v2.cir.cir050.Cir050Form" />
+        <form-bean name="cir060Form" type="jp.groupsession.v2.cir.cir060.Cir060Form" />
+        <form-bean name="cir070Form" type="jp.groupsession.v2.cir.cir070.Cir070Form" />
+        <form-bean name="cir080Form" type="jp.groupsession.v2.cir.cir080.Cir080Form" />
+        <form-bean name="cir080knForm" type="jp.groupsession.v2.cir.cir080kn.Cir080knForm" />
+        <form-bean name="cir090Form" type="jp.groupsession.v2.cir.cir090.Cir090Form" />
+        <form-bean name="cir090knForm" type="jp.groupsession.v2.cir.cir090kn.Cir090knForm" />
+        <form-bean name="cir100Form" type="jp.groupsession.v2.cir.cir100.Cir100Form" />
+        <form-bean name="cir110Form" type="jp.groupsession.v2.cir.cir110.Cir110Form" />
+        <form-bean name="cir110knForm" type="jp.groupsession.v2.cir.cir110kn.Cir110knForm" />
+        <form-bean name="cir120Form" type="jp.groupsession.v2.cir.cir120.Cir120Form" />
+        <form-bean name="cir120knForm" type="jp.groupsession.v2.cir.cir120kn.Cir120knForm" />
+        <form-bean name="cir130Form" type="jp.groupsession.v2.cir.cir130.Cir130Form" />
+        <form-bean name="cir130knForm" type="jp.groupsession.v2.cir.cir130kn.Cir130knForm" />
+        <form-bean name="cir140Form" type="jp.groupsession.v2.cir.cir140.Cir140Form" />
+        <form-bean name="cir140knForm" type="jp.groupsession.v2.cir.cir140kn.Cir140knForm" />
+        <form-bean name="cir150Form" type="jp.groupsession.v2.cir.cir150.Cir150Form" />
+        <form-bean name="cir160Form" type="jp.groupsession.v2.cir.cir160.Cir160Form" />
+        <form-bean name="cir160knForm" type="jp.groupsession.v2.cir.cir160kn.Cir160knForm" />
+        <form-bean name="cir170Form" type="jp.groupsession.v2.cir.cir170.Cir170Form" />
+        <form-bean name="cir170knForm" type="jp.groupsession.v2.cir.cir170kn.Cir170knForm" />
+        <form-bean name="cir180Form" type="jp.groupsession.v2.cir.cir180.Cir180Form" />
+        <form-bean name="cir190Form" type="jp.groupsession.v2.cir.cir190.Cir190Form" />
+        <form-bean name="cir190knForm" type="jp.groupsession.v2.cir.cir190kn.Cir190knForm" />
+        <form-bean name="cir200Form" type="jp.groupsession.v2.cir.cir200.Cir200Form" />
+        <form-bean name="cir200knForm" type="jp.groupsession.v2.cir.cir200kn.Cir200knForm" />
+        <form-bean name="cir210Form" type="jp.groupsession.v2.cir.cir210.Cir210Form" />
+        <form-bean name="cir220Form" type="jp.groupsession.v2.cir.cir220.Cir220Form" />
+        <form-bean name="cir220knForm" type="jp.groupsession.v2.cir.cir220kn.Cir220knForm" />
+        <form-bean name="cir230Form" type="jp.groupsession.v2.cir.cir230.Cir230Form" />
+        <form-bean name="cir240Form" type="jp.groupsession.v2.cir.cir240.Cir240Form" />
+        <form-bean name="cir240knForm" type="jp.groupsession.v2.cir.cir240kn.Cir240knForm" />
+        <form-bean name="cir250Form" type="jp.groupsession.v2.cir.cir250.Cir250Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="gf_cirList" path="/circular/cir010.do" redirect="false"/>
+        <forward name="gf_cirSendKakunin" path="/circular/cir030.do" redirect="false"/>
+        <forward name="gf_cirNew" path="/circular/cir040.do" redirect="false"/>
+        <forward name="cirAccountManager" path="/circular/cir150.do" />
+        <forward name="cirUserAccountList" path="/circular/cir180.do" />
+        <forward name="cirConfAccount" path="/circular/cir160.do" />
+        <forward name="confLabel" path="/circular/cir230.do" />
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- メイン -->
+       <action
+            name="cirmainForm"
+            path="/circular/cirmain"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cirmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.main.CirMainAction">
+
+             <forward name="detail" path="/circular/cir020.do" />
+       </action>
+
+       <!-- 回覧板一覧 -->
+       <action
+            name="cir010Form"
+            path="/circular/cir010"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir010.Cir010Action">
+            <forward name="init" path="/circular/cir010.do" />
+            <forward name="pset" path="/circular/cir070.do" />
+            <forward name="add" path="/circular/cir040.do" />
+            <forward name="jusin" path="/circular/cir020.do" />
+            <forward name="sousin" path="/circular/cir030.do" />
+            <forward name="search" path="/circular/cir060.do" />
+            <forward name="aset" path="/circular/cir100.do" />
+            <forward name="accountConf" path="/circular/cir180.do" />
+       </action>
+
+       <!-- 受信回覧板確認 -->
+       <action
+            name="cir020Form"
+            path="/circular/cir020"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir020.Cir020Action">
+            <forward name="back" path="/circular/cir010.do" />
+            <forward name="sousin" path="/circular/cir030.do" />
+            <forward name="init" path="/circular/cir020.do" />
+            <forward name="search" path="/circular/cir060.do?CMD=searchAgain" />
+       </action>
+
+       <!-- 送信回覧板状況確認 -->
+       <action
+            name="cir030Form"
+            path="/circular/cir030"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir030.Cir030Action">
+            <forward name="back" path="/circular/cir010.do" />
+            <forward name="jusin" path="/circular/cir020.do" />
+            <forward name="init" path="/circular/cir030.do" />
+            <forward name="search" path="/circular/cir060.do?CMD=searchAgain" />
+       </action>
+
+       <!-- 回覧板新規作成 -->
+       <action
+            name="cir040Form"
+            path="/circular/cir040"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir040.Cir040Action">
+            <forward name="init" path="/circular/cir040.do" />
+            <forward name="back" path="/circular/cir010.do" />
+            <forward name="cir030back" path="/circular/cir030.do" />
+       </action>
+
+       <!-- 回覧板個人設定 -->
+       <action
+            name="cir050Form"
+            path="/circular/cir050"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir050.Cir050Action">
+            <forward name="return" path="/circular/cir070.do" />
+       </action>
+
+       <!-- 回覧板詳細検索 -->
+       <action
+            name="cir060Form"
+            path="/circular/cir060"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir060.Cir060Action">
+            <forward name="init" path="/circular/cir060.do" />
+            <forward name="backList" path="/circular/cir010.do" />
+            <forward name="jusin" path="/circular/cir020.do" />
+            <forward name="sousin" path="/circular/cir030.do" />
+       </action>
+
+       <!-- 個人設定メニュー -->
+       <action
+            name="cir070Form"
+            path="/circular/cir070"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir070.Cir070Action">
+            <forward name="basic" path="/circular/cir050.do" />
+            <forward name="cirAutoDelete" path="/circular/cir080.do" />
+            <forward name="cirManualDelete" path="/circular/cir090.do" />
+            <forward name="cirIniset" path="/circular/cir130.do"/>
+            <forward name="backToCirList" path="/circular/cir010.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+            <forward name="circularAccount" path="/circular/cir180.do" />
+       </action>
+
+       <!-- 個人設定 回覧板自動削除設定 -->
+       <action
+            name="cir080Form"
+            path="/circular/cir080"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir080.Cir080Action">
+            <forward name="backToList" path="/circular/cir070.do" />
+            <forward name="batch_settei_kakunin" path="/circular/cir080kn.do" />
+       </action>
+
+       <!-- 個人設定 回覧板自動削除設定確認 -->
+       <action
+            name="cir080knForm"
+            path="/circular/cir080kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir080kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir080kn.Cir080knAction">
+            <forward name="backToList" path="/circular/cir070.do" />
+            <forward name="backToInput" path="/circular/cir080.do" />
+       </action>
+
+       <!-- 個人設定 回覧板手動削除 -->
+       <action
+            name="cir090Form"
+            path="/circular/cir090"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir090.Cir090Action">
+            <forward name="kjntool" path="/circular/cir070.do" />
+            <forward name="syudo_del_kakunin" path="/circular/cir090kn.do" />
+       </action>
+
+       <!-- 個人設定 回覧板手動削除確認 -->
+       <action
+            name="cir090knForm"
+            path="/circular/cir090kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir090kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir090kn.Cir090knAction">
+            <forward name="back_syudo_input" path="/circular/cir090.do" />
+            <forward name="backToList" path="/circular/cir070.do" />
+       </action>
+
+       <!-- 管理者設定メニュー -->
+       <action
+            name="cir100Form"
+            path="/circular/cir100"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir100.Cir100Action">
+            <forward name="back" path="/circular/cir010.do" />
+            <forward name="cirAutoDelete" path="/circular/cir110.do" />
+            <forward name="cirManualDelete" path="/circular/cir120.do" />
+            <forward name="cirIniset" path="/circular/cir140.do"/>
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+            <forward name="accountList" path="/circular/cir150.do" />
+            <forward name="cirConfAccount" path="/circular/cir190.do" />
+            <forward name="cirAdminConf" path="/circular/cir200.do" />
+            <forward name="cirLogCount" path="/circular/cir210.do" />
+            <forward name="cirSender" path="/circular/cir220.do" />
+       </action>
+
+       <!-- 管理者設定 回覧板自動削除設定 -->
+       <action
+            name="cir110Form"
+            path="/circular/cir110"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir110.Cir110Action">
+            <forward name="backToKtool" path="/circular/cir100.do" />
+            <forward name="batch_settei_kakunin" path="/circular/cir110kn.do" />
+       </action>
+
+       <!-- 管理者設定 回覧板自動削除設定確認 -->
+       <action
+            name="cir110knForm"
+            path="/circular/cir110kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir110kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir110kn.Cir110knAction">
+            <forward name="backToInput" path="/circular/cir110.do" />
+            <forward name="backToKtool" path="/circular/cir100.do" />
+       </action>
+
+       <!-- 管理者設定 回覧板手動削除 -->
+       <action
+            name="cir120Form"
+            path="/circular/cir120"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir120.Cir120Action">
+            <forward name="backKtool" path="/circular/cir100.do" />
+            <forward name="syudo_del_kakunin" path="/circular/cir120kn.do" />
+       </action>
+
+       <!-- 管理者設定 回覧板手動削除確認 -->
+       <action
+            name="cir120knForm"
+            path="/circular/cir120kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir120kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir120kn.Cir120knAction">
+            <forward name="back_syudo_input" path="/circular/cir120.do" />
+            <forward name="backToKtool" path="/circular/cir100.do" />
+       </action>
+
+       <!-- 個人設定 初期値設定 -->
+       <action
+            name="cir130Form"
+            path="/circular/cir130"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir130.Cir130Action">
+            <forward name="init_change_kakunin" path="/circular/cir130kn.do" />
+            <forward name="backKtool" path="/circular/cir070.do" />
+       </action>
+
+       <!-- 個人設定 初期値設定確認 -->
+       <action
+            name="cir130knForm"
+            path="/circular/cir130kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir130kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir130kn.Cir130knAction">
+            <forward name="back_init_change" path="/circular/cir130.do?CMD=cir130reload" />
+            <forward name="backToKtool" path="/circular/cir070.do" />
+       </action>
+
+       <!-- 管理者設定 初期値設定 -->
+       <action
+            name="cir140Form"
+            path="/circular/cir140"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir140.Cir140Action">
+            <forward name="init_change_kakunin" path="/circular/cir140kn.do" />
+            <forward name="backKtool" path="/circular/cir100.do" />
+       </action>
+
+       <!-- 管理者設定 初期値設定確認 -->
+       <action
+            name="cir140knForm"
+            path="/circular/cir140kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir140kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir140kn.Cir140knAction">
+            <forward name="back_init_change" path="/circular/cir140.do?CMD=cir140reload" />
+            <forward name="backToKtool" path="/circular/cir100.do" />
+       </action>
+
+        <!-- 管理者設定  アカウント管理  -->
+        <action
+            name="cir150Form"
+            path="/circular/cir150"
+            input="/WEB-INF/plugin/circular/jsp/cir150.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.cir.cir150.Cir150Action">
+            <forward name="backToMenu" path="/circular/cir100.do" />
+            <forward name="acntImport" path="/circular/cir170.do" />
+            <forward name="editAccount" path="/circular/cir160.do" />
+            <forward name="mine" path="/circular/cir150.do" />
+        </action>
+
+        <!--  アカウント編集 -->
+        <action
+            name="cir160Form"
+            path="/circular/cir160"
+            input="/WEB-INF/plugin/circular/jsp/cir160.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.cir.cir160.Cir160Action">
+            <forward name="accountList" path="/circular/cir150.do" />
+            <forward name="userAccountList" path="/circular/cir180.do" />
+            <forward name="mine" path="/circular/cir160.do" />
+            <forward name="delete" path="/circular/cir150.do" />
+            <forward name="confirm" path="/circular/cir160kn.do" />
+        </action>
+
+       <!-- アカウント登録確認 -->
+       <action
+            name="cir160knForm"
+            path="/circular/cir160kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir160kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir160kn.Cir160knAction">
+            <forward name="mailList" path="/circular/cir010.do?CMD=mailList" />
+       </action>
+
+       <!-- アカウントインポート -->
+       <action
+            name="cir170Form"
+            path="/circular/cir170"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir170.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir170.Cir170Action">
+
+            <forward name="importAccountConfirm" path="/circular/cir170kn.do" />
+            <forward name="beforePage" path="/circular/cir150.do" />
+       </action>
+
+       <!-- アカウントインポート確認 -->
+       <action
+            name="cir170knForm"
+            path="/circular/cir170kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir170kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir170kn.Cir170knAction">
+
+            <forward name="backInput" path="/circular/cir170.do" />
+       </action>
+
+        <!-- 個人設定  アカウント管理 -->
+        <action
+            name="cir180Form"
+            path="/circular/cir180"
+            input="/WEB-INF/plugin/circular/jsp/cir180.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.cir.cir180.Cir180Action">
+            <forward name="backInput" path="/circular/cir070.do" />
+            <forward name="confAccount" path="/circular/cir160.do" />
+            <forward name="mailList" path="/circular/cir010.do?CMD=mailList" />
+
+        </action>
+
+       <!-- アカウント設定 -->
+       <action
+            name="cir190Form"
+            path="/circular/cir190"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir190.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir190.Cir190Action">
+
+            <forward name="cirConfirm" path="/circular/cir190kn.do" />
+            <forward name="cirAdmConf" path="/circular/cir100.do" />
+       </action>
+
+       <!-- アカウント設定確認 -->
+       <action
+            name="cir190knForm"
+            path="/circular/cir190kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir190kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir190kn.Cir190knAction">
+
+            <forward name="backInput" path="/circular/cir190.do" />
+            <forward name="cirAdmConf" path="/circular/cir100.do" />
+       </action>
+
+       <!-- アカウント設定 -->
+       <action
+            name="cir200Form"
+            path="/circular/cir200"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir200.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir200.Cir200Action">
+
+            <forward name="cirAdmConf" path="/circular/cir100.do" />
+            <forward name="cirConfirm" path="/circular/cir200kn.do" />
+       </action>
+
+       <!-- アカウント設定確認 -->
+       <action
+            name="cir200knForm"
+            path="/circular/cir200kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir200kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir200kn.Cir200knAction">
+
+            <forward name="cirAdmConf" path="/circular/cir100.do" />
+            <forward name="backInput" path="/circular/cir200.do" />
+       </action>
+
+       <!-- 管理者設定 統計情報 -->
+       <action
+            name="cir210Form"
+            path="/circular/cir210"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir210.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir210.Cir210Action">
+            <forward name="backToMenu" path="/circular/cir100.do" />
+
+            <forward name="adminSmail" path="/smail/sml100.do" />
+            <forward name="adminFile" path="/file/fil200.do" />
+            <forward name="adminBulletin" path="/bulletin/bbs110.do" />
+            <forward name="adminWebmail" path="/webmail/wml020.do" />
+            <forward name="adminChat" path="/chat/cht020.do" />
+            <forward name="adminMain" path="/main/man002.do" />
+
+            <forward name="statsSmail" path="/smail/sml370.do" />
+            <forward name="statsFile" path="/file/fil270.do" />
+            <forward name="statsBulletin" path="/bulletin/bbs180.do" />
+            <forward name="statsWebmail" path="/webmail/wml300.do" />
+            <forward name="statsChat" path="/chat/cht070.do" />
+            <forward name="statsMain" path="/main/man390.do" />
+
+       </action>
+
+       <!-- 管理者設定 回覧板登録制限設定 -->
+       <action
+            name="cir220Form"
+            path="/circular/cir220"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir220.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir220.Cir220Action">
+            <forward name="init_change_kakunin" path="/circular/cir220kn.do" />
+            <forward name="backKtool" path="/circular/cir100.do" />
+       </action>
+
+       <!-- 管理者設定 回覧板登録制限設定確認 -->
+       <action
+            name="cir220knForm"
+            path="/circular/cir220kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir220kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir220kn.Cir220knAction">
+            <forward name="back_init_change" path="/circular/cir220.do?CMD=cir220reload" />
+            <forward name="backToKtool" path="/circular/cir100.do" />
+       </action>
+
+       <!-- ラベル管理 -->
+       <action
+            name="cir230Form"
+            path="/circular/cir230"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir230.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir230.Cir230Action">
+            <forward name="init" path="/circular/cir230.do" />
+            <forward name="backAcManager" path="/circular/cir150.do" />
+            <forward name="backAcConf" path="/circular/cir180.do" />
+            <forward name="addEditLabel" path="/circular/cir240.do" />
+       </action>
+
+       <!-- ラベル登録編集 -->
+       <action
+            name="cir240Form"
+            path="/circular/cir240"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir240.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir240.Cir240Action">
+            <forward name="backConfLabel" path="/circular/cir230.do" />
+            <forward name="confirm" path="/circular/cir240kn.do" />
+
+       </action>
+       <!-- ラベル登録編集確認 -->
+       <action
+            name="cir240knForm"
+            path="/circular/cir240kn"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir240kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir240kn.Cir240knAction">
+            <forward name="backInput" path="/circular/cir240.do" />
+       </action>
+
+       <!-- ショートメール通知設定 -->
+       <action
+            name="cir250Form"
+            path="/circular/cir250"
+            scope="request"
+            input="/WEB-INF/plugin/circular/jsp/cir250.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cir.cir250.Cir250Action">
+
+       </action>
+
+
+    </action-mappings>
+
+</struts-config>

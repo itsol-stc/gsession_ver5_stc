@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="zskmainForm" type="jp.groupsession.v2.zsk.main.ZskMainForm" />
+      <form-bean name="zskmaingrpForm" type="jp.groupsession.v2.zsk.maingrp.ZskMaingrpForm" />
+      <form-bean name="zsk010Form" type="jp.groupsession.v2.zsk.zsk010.Zsk010Form" />
+      <form-bean name="zsk011Form" type="jp.groupsession.v2.zsk.zsk011.Zsk011Form" />
+      <form-bean name="zsk020Form" type="jp.groupsession.v2.zsk.zsk020.Zsk020Form" />
+      <form-bean name="zsk030Form" type="jp.groupsession.v2.zsk.zsk030.Zsk030Form" />
+      <form-bean name="zsk040Form" type="jp.groupsession.v2.zsk.zsk040.Zsk040Form" />
+      <form-bean name="zsk040knForm" type="jp.groupsession.v2.zsk.zsk040kn.Zsk040knForm" />
+      <form-bean name="zsk050Form" type="jp.groupsession.v2.zsk.zsk050.Zsk050Form" />
+      <form-bean name="zsk050knForm" type="jp.groupsession.v2.zsk.zsk050kn.Zsk050knForm" />
+      <form-bean name="zsk060Form" type="jp.groupsession.v2.zsk.zsk060.Zsk060Form" />
+      <form-bean name="zsk060knForm" type="jp.groupsession.v2.zsk.zsk060kn.Zsk060knForm" />
+      <form-bean name="zsk070Form" type="jp.groupsession.v2.zsk.zsk070.Zsk070Form" />
+      <form-bean name="zsk080Form" type="jp.groupsession.v2.zsk.zsk080.Zsk080Form" />
+      <form-bean name="zsk080knForm" type="jp.groupsession.v2.zsk.zsk080kn.Zsk080knForm" />
+      <form-bean name="zsk090Form" type="jp.groupsession.v2.zsk.zsk090.Zsk090Form" />
+      <form-bean name="zsk090knForm" type="jp.groupsession.v2.zsk.zsk090kn.Zsk090knForm" />
+      <form-bean name="zsk110Form" type="jp.groupsession.v2.zsk.zsk110.Zsk110Form" />
+      <form-bean name="zsk110knForm" type="jp.groupsession.v2.zsk.zsk110kn.Zsk110knForm" />
+      <form-bean name="zsk130Form" type="jp.groupsession.v2.zsk.zsk130.Zsk130Form" />
+      <form-bean name="zsk130knForm" type="jp.groupsession.v2.zsk.zsk130kn.Zsk130knForm" />
+      <form-bean name="zsk140Form" type="jp.groupsession.v2.zsk.zsk140.Zsk140Form" />
+      <form-bean name="zskptl010Form" type="jp.groupsession.v2.zsk.ptl010.ZskPtl010Form" />
+      <form-bean name="zskptl020Form" type="jp.groupsession.v2.zsk.ptl020.ZskPtl020Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+       <!-- メイン -->
+       <action
+            name="zskmainForm"
+            path="/zaiseki/zskmain"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zskmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.main.ZskMainAction">
+           <forward name="redraw" path="/main/man001.do" />
+       </action>
+
+       <!-- メイン 在席管理メンバー一覧 -->
+       <action
+            name="zskmaingrpForm"
+            path="/zaiseki/zskmaingrp"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zskmaingrp.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.maingrp.ZskMaingrpAction">
+           <forward name="msg" path="/smail/sml010.do" />
+           <forward name="sch040" path="/schedule/sch040.do" />
+           <forward name="sch040kn" path="/schedule/sch040kn.do" />
+           <forward name="zsk130" path="/zaiseki/zsk130.do" />
+       </action>
+
+       <!-- 在席TOP -->
+       <action
+            name="zsk010Form"
+            path="/zaiseki/zsk010"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk010.Zsk010Action">
+            <forward name="msg" path="/smail/sml010.do" />
+            <forward name="zsk020" path="/zaiseki/zsk020.do" />
+            <forward name="zsk070" path="/zaiseki/zsk070.do" />
+            <forward name="month" path="/schedule/sch020.do" />
+       </action>
+
+       <!-- 在席状況登録POPUP -->
+       <action
+            name="zsk011Form"
+            path="/zaiseki/zsk011"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk011.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk011.Zsk011Action">
+       </action>
+
+       <!-- 在席管理者設定 -->
+       <action
+            name="zsk020Form"
+            path="/zaiseki/zsk020"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk020.Zsk020Action">
+            <forward name="zsk010" path="/zaiseki/zsk010.do" />
+            <forward name="zsk030" path="/zaiseki/zsk030.do" />
+            <forward name="zsk060" path="/zaiseki/zsk060.do" />
+            <forward name="zsk110" path="/zaiseki/zsk110.do" />
+            <forward name="zsk140" path="/zaiseki/zsk140.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+       </action>
+
+       <!-- 座席表設定 -->
+       <action
+            name="zsk030Form"
+            path="/zaiseki/zsk030"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk030.Zsk030Action">
+            <forward name="zsk020" path="/zaiseki/zsk020.do" />
+            <forward name="zsk040" path="/zaiseki/zsk040.do" />
+            <forward name="zsk050" path="/zaiseki/zsk050.do" />
+       </action>
+
+       <!-- 座席表追加 -->
+       <action
+            name="zsk040Form"
+            path="/zaiseki/zsk040"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk040.Zsk040Action">
+            <forward name="zsk030" path="/zaiseki/zsk030.do" />
+            <forward name="zsk040kn" path="/zaiseki/zsk040kn.do" />
+       </action>
+
+       <!-- 座席表追加確認 -->
+       <action
+            name="zsk040knForm"
+            path="/zaiseki/zsk040kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk040kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk040kn.Zsk040knAction">
+            <forward name="zsk040" path="/zaiseki/zsk040.do" />
+            <forward name="cmn999" path="/zaiseki/zsk040kn.do" />
+            <forward name="zasekiList" path="/zaiseki/zsk030.do" />
+
+       </action>
+
+       <!-- 編集 -->
+       <action
+            name="zsk050Form"
+            path="/zaiseki/zsk050"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk050.Zsk050Action">
+            <forward name="zsk030" path="/zaiseki/zsk030.do" />
+            <forward name="zsk050kn" path="/zaiseki/zsk050kn.do" />
+            <forward name="zsk050deleteCommit" path="/zaiseki/zsk050.do?CMD=zsk050deleteCommit" />
+            <forward name="zsk050deleteCancel" path="/zaiseki/zsk050.do" />
+
+       </action>
+
+       <!-- 編集確認 -->
+       <action
+            name="zsk050knForm"
+            path="/zaiseki/zsk050kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk050kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk050kn.Zsk050knAction">
+            <forward name="zsk050" path="/zaiseki/zsk050.do" />
+            <forward name="zsk050knCommit" path="/zaiseki/zsk050kn.do" />
+            <forward name="zsk030" path="/zaiseki/zsk030.do" />
+       </action>
+
+
+       <!-- 個人設定 -->
+       <action
+            name="zsk070Form"
+            path="/zaiseki/zsk070"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk070.Zsk070Action">
+            <forward name="zsk010" path="/zaiseki/zsk010.do" />
+            <forward name="zsk080" path="/zaiseki/zsk080.do" />
+            <forward name="zsk090" path="/zaiseki/zsk090.do" />
+            <forward name="zsk130" path="/zaiseki/zsk130.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+       </action>
+
+       <!-- 初期表示設定 -->
+       <action
+            name="zsk080Form"
+            path="/zaiseki/zsk080"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk080.Zsk080Action">
+            <forward name="zsk070" path="/zaiseki/zsk070.do" />
+            <forward name="zsk080kn" path="/zaiseki/zsk080kn.do" />
+       </action>
+
+       <!-- 初期表示設定確認 -->
+       <action
+            name="zsk080knForm"
+            path="/zaiseki/zsk080kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk080kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk080kn.Zsk080knAction">
+            <forward name="zsk080" path="/zaiseki/zsk080.do" />
+            <forward name="zsk080commit" path="/zaiseki/zsk080kn.do" />
+            <forward name="zsk080upcomp" path="/zaiseki/zsk070.do" />
+       </action>
+
+       <!-- 自動リロード時間設定 -->
+       <action
+            name="zsk090Form"
+            path="/zaiseki/zsk090"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk090.Zsk090Action">
+            <forward name="zsk070" path="/zaiseki/zsk070.do" />
+            <forward name="zsk090kn" path="/zaiseki/zsk090kn.do" />
+       </action>
+
+       <!-- 自動リロード時間設定確認 -->
+       <action
+            name="zsk090knForm"
+            path="/zaiseki/zsk090kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk090kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk090kn.Zsk090knAction">
+            <forward name="zsk090" path="/zaiseki/zsk090.do" />
+            <forward name="zsk090upcomp" path="/zaiseki/zsk070.do" />
+       </action>
+
+
+       <!-- 定時一括更新 -->
+       <action
+            name="zsk110Form"
+            path="/zaiseki/zsk110"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk110.Zsk110Action">
+            <forward name="main" path="/main/man001.do" />
+            <forward name="zsk110kn" path="/zaiseki/zsk110kn.do" />
+            <forward name="zsk020" path="/zaiseki/zsk020.do" />
+       </action>
+
+      <!-- 定時一括更新確認 -->
+       <action
+            name="zsk110knForm"
+            path="/zaiseki/zsk110kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk110kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk110kn.Zsk110knAction">
+            <forward name="main" path="/main/man001.do" />
+            <forward name="zsk110" path="/zaiseki/zsk110.do" />
+            <forward name="zsk020" path="/zaiseki/zsk020.do" />
+       </action>
+
+       <!-- 座席表メンバー表示設定 -->
+       <action
+            name="zsk130Form"
+            path="/zaiseki/zsk130"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk130.Zsk130Action">
+            <forward name="zsk070" path="/zaiseki/zsk070.do" />
+            <forward name="zsk130kn" path="/zaiseki/zsk130kn.do" />
+       </action>
+
+       <!-- 座席表メンバー表示設定確認 -->
+       <action
+            name="zsk130knForm"
+            path="/zaiseki/zsk130kn"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk130kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk130kn.Zsk130knAction">
+            <forward name="backZsk130" path="/zaiseki/zsk130.do" />
+            <forward name="zsk130UpdComp" path="/zaiseki/zsk070.do" />
+       </action>
+
+       <!-- 座席表メンバーデフォルト表示設定 -->
+       <action
+            name="zsk140Form"
+            path="/zaiseki/zsk140"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zsk140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.zsk140.Zsk140Action">
+            <forward name="zsk020" path="/zaiseki/zsk020.do" />
+            <forward name="mine" path="/zaiseki/zsk140.do" />
+       </action>
+
+       <!-- 在席管理ポートレット グループメンバー -->
+       <action
+            name="zskptl010Form"
+            path="/zaiseki/zskptl010"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zskptl010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.ptl010.ZskPtl010Action">
+
+           <forward name="msg" path="/smail/sml010.do" />
+           <forward name="sch040" path="/schedule/sch040.do" />
+           <forward name="sch040kn" path="/schedule/sch040kn.do" />
+           <forward name="zsk130" path="/zaiseki/zsk130.do" />
+       </action>
+
+       <!-- 在席管理ポートレット グループメンバー選択 -->
+       <action
+            name="zskptl020Form"
+            path="/zaiseki/zskptl020"
+            scope="request"
+            input="/WEB-INF/plugin/zaiseki/jsp/zskptl020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.zsk.ptl020.ZskPtl020Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+    </action-mappings>
+
+</struts-config>

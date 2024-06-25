@@ -1,0 +1,1 @@
+create index CIR_INF_INDEX1 on CIR_INF(CIF_AUID);

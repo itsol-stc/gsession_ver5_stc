@@ -1,0 +1,12 @@
+◎Group Session 施設予約 決裁通知
+
+$ADATEに下記の施設予約が$PROCMODEされました。
+$INFO
+
+┏━
+┃利用目的:$RESERVE
+┃ $FRDATE　～　$TODATE
+┃
+┃内容:${NAIYOU}
+┗━
+$URL

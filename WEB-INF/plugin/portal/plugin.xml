@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>portal</id>
+
+  <!-- 名称  -->
+  <name>ポータル</name>
+  <name-eng>Portal</name-eng>
+
+  <!-- 説明  -->
+  <description>
+ポータル機能です。
+ポータルには作成したポートレットや各プラグインのメイン画面を配置できます。
+  </description>
+
+  <!-- トップメニュー トップメニューの情報を記述する 記述しない場合はメニューに表示しない  -->
+  <topmenu-info>
+    <!-- メニューへの表示/非表示 -->
+    <view>false</view>
+    <!-- メニューアイコンクリック時に遷移するURL -->
+    <url></url>
+  </topmenu-info>
+
+  <!-- メイン画面表示 メイン画面に表示する情報を記述する -->
+  <mainscreen-info>
+    <!-- メイン画面への表示/非表示 未設定の場合は表示しない -->
+    <view>false</view>
+    <!-- メイン画面へ表示する画面のID javascriptを使用したい場合はこの名前で作成する 未設定の場合は表示しない -->
+    <id></id>
+    <!-- 表示位置の設定 左=1 右=2  未設定の場合は左へ表示する -->
+    <position></position>
+    <!-- 表示順の設定 未設定の場合は表示順が設定されているプラグインの下に表示する -->
+    <order></order>
+  </mainscreen-info>
+
+  <!-- ヘルプ情報を設定する。 -->
+  <help-info>
+  <!-- メニューの表示/非表示 -->
+    <view>true</view>
+  </help-info>
+
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン管理者設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>false</view>
+    <!-- 管理者設定メニューURL -->
+    <url>../portal/ptl020.do</url>
+    <!-- アイコン -->
+    <icon>../portal/images/original/menu_icon_single.png</icon>
+    <iconClassic>../portal/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+    <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+</plugin>

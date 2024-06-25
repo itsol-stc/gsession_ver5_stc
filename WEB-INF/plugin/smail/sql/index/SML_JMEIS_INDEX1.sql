@@ -1,0 +1,1 @@
+create index SML_JMEIS_INDEX1 on SML_JMEIS(SMJ_SID);

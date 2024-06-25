@@ -1,0 +1,1 @@
+create index SML_JMEIS_INDEX2 on SML_JMEIS(SAC_SID);

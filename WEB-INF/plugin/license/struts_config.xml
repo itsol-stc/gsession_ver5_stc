@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="apiCrossRideForm" type="jp.groupsession.v2.lic.api.crossride.ApiCrossRideForm" />
+        <form-bean name="apiMblCheckLicenseForm" type="jp.groupsession.v2.lic.api.mobile.ApiMblCheckLicenseForm" />
+    </form-beans>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- CROSS RIDEライセンス判定 -->
+       <action
+            name="apiCrossRideForm"
+            path="/lic/api/crossride"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.lic.api.crossride.ApiCrossRideAction">
+       </action>
+       <!--  GSモバイルライセンス判定  -->
+       <action
+            name="apiMblCheckLicenseForm"
+            path="/lic/api/mobile"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.lic.api.mobile.ApiMblCheckLicenseAction">
+       </action>
+
+    </action-mappings>
+
+</struts-config>

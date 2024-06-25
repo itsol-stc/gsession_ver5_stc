@@ -1,0 +1,17 @@
+ insert 
+ into 
+ PRJ_ADM_CONF(
+   PAC_PRJ_EDIT,
+   PAC_AUID,
+   PAC_ADATE,
+   PAC_EUID,
+   PAC_EDATE
+ )
+ values
+ (
+   0,
+   0,
+   current_timestamp,
+   0,
+   current_timestamp
+ );

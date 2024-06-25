@@ -1,0 +1,19 @@
+◎Group Session スケジュール 出欠確認依頼通知 (再通知)
+
+$ADATEに下記のスケジュールが更新されましたので、再通知します。
+変更内容をご確認ください。
+
+┏━
+┃$TITLE
+┃ $FRDATE　～　$TODATE
+┗━
+URL:$URL
+
+被登録者:$NAME
+登録者:$UNAME
+
+◆内容
+${BODY}
+
+◆備考
+${BIKO}

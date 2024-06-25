@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="ptl010Form" type="jp.groupsession.v2.ptl.ptl010.Ptl010Form" />
+      <form-bean name="ptl020Form" type="jp.groupsession.v2.ptl.ptl020.Ptl020Form" />
+      <form-bean name="ptl030Form" type="jp.groupsession.v2.ptl.ptl030.Ptl030Form" />
+      <form-bean name="ptl040Form" type="jp.groupsession.v2.ptl.ptl040.Ptl040Form" />
+      <form-bean name="ptl050Form" type="jp.groupsession.v2.ptl.ptl050.Ptl050Form" />
+      <form-bean name="ptl050knForm" type="jp.groupsession.v2.ptl.ptl050kn.Ptl050knForm" />
+      <form-bean name="ptl060Form" type="jp.groupsession.v2.ptl.ptl060.Ptl060Form" />
+      <form-bean name="ptl060knForm" type="jp.groupsession.v2.ptl.ptl060kn.Ptl060knForm" />
+      <form-bean name="ptl070Form" type="jp.groupsession.v2.ptl.ptl070.Ptl070Form" />
+      <form-bean name="ptl080Form" type="jp.groupsession.v2.ptl.ptl080.Ptl080Form" />
+      <form-bean name="ptl081Form" type="jp.groupsession.v2.ptl.ptl081.Ptl081Form" />
+      <form-bean name="ptl090Form" type="jp.groupsession.v2.ptl.ptl090.Ptl090Form" />
+      <form-bean name="ptl100Form" type="jp.groupsession.v2.ptl.ptl100.Ptl100Form" />
+      <form-bean name="ptl100knForm" type="jp.groupsession.v2.ptl.ptl100kn.Ptl100knForm" />
+      <form-bean name="ptl110Form" type="jp.groupsession.v2.ptl.ptl110.Ptl110Form" />
+      <form-bean name="ptl120Form" type="jp.groupsession.v2.ptl.ptl120.Ptl120Form" />
+      <form-bean name="ptl120knForm" type="jp.groupsession.v2.ptl.ptl120kn.Ptl120knForm" />
+      <form-bean name="ptl130Form" type="jp.groupsession.v2.ptl.ptl130.Ptl130Form" />
+      <form-bean name="ptl130knForm" type="jp.groupsession.v2.ptl.ptl130kn.Ptl130knForm" />
+      <form-bean name="ptl140Form" type="jp.groupsession.v2.ptl.ptl140.Ptl140Form" />
+      <form-bean name="ptl150Form" type="jp.groupsession.v2.ptl.ptl150.Ptl150Form" />
+      <form-bean name="ptl150knForm" type="jp.groupsession.v2.ptl.ptl150kn.Ptl150knForm" />
+      <form-bean name="ptl160Form" type="jp.groupsession.v2.ptl.ptl160.Ptl160Form" />
+      <form-bean name="ptl990Form" type="jp.groupsession.v2.ptl.ptl990.Ptl990Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+	<global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="ptlList" path="/portal/ptl010.do" redirect="false"/>
+        <forward name="ptlMenu" path="/portal/ptl020.do" redirect="false"/>
+	</global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- ポータル -->
+       <action
+            name="ptl010Form"
+            path="/portal/ptl010"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl010.Ptl010Action">
+
+            <forward name="ktools" path="/main/man002.do" />
+            <forward name="pset" path="/main/man030.do" />
+            <forward name="portalSetting" path="/portal/ptl020.do" />
+            <forward name="gsmain" path="/main/man001.do" />
+            <forward name="cir020" path="/circular/cir020.do" />
+            <forward name="smlCheck" path="/smail/sml010.do" />
+            <forward name="month" path="/schedule/sch020.do" />
+            <forward name="infoSetting" path="/main/man320.do" />
+       </action>
+
+       <!-- ポータル 管理者メニュー -->
+       <action
+            name="ptl020Form"
+            path="/portal/ptl020"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl020.Ptl020Action">
+            <!-- ポータル一覧画面完成まで、遷移先を一時的にメインに -->
+            <forward name="gsmain" path="/main/man001.do" />
+            <forward name="ptlManager" path="/portal/ptl030.do" />
+            <forward name="pletManager" path="/portal/ptl090.do" />
+            <forward name="powManager" path="/portal/ptl130.do" />
+            <forward name="pletInitValue" path="/portal/ptl150.do" />
+       </action>
+
+
+       <!-- ポータル 管理者設定 ポータル管理 -->
+       <action
+            name="ptl030Form"
+            path="/portal/ptl030"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl030.Ptl030Action">
+
+            <forward name="confMenu" path="/portal/ptl020.do" />
+            <forward name="addPortal" path="/portal/ptl050.do" />
+            <forward name="editPortal" path="/portal/ptl040.do" />
+            <forward name="portletManager" path="/portal/ptl090.do" />
+
+       </action>
+
+       <!-- ポータル詳細 -->
+       <action
+            name="ptl040Form"
+            path="/portal/ptl040"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl040.Ptl040Action">
+
+            <forward name="editPortal"      path="/portal/ptl050.do" />
+            <forward name="backPortalList"  path="/portal/ptl030.do" />
+            <forward name="editLayout"      path="/portal/ptl060.do" />
+
+       </action>
+
+       <!-- ポータル登録 -->
+       <action
+            name="ptl050Form"
+            path="/portal/ptl050"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl050.Ptl050Action">
+
+            <forward name="backPortalList"   path="/portal/ptl030.do" />
+            <forward name="moveConfirm"      path="/portal/ptl050kn.do" />
+            <forward name="portalDetail"     path="/portal/ptl040.do" />
+            <forward name="deleteOk"         path="/portal/ptl050.do?CMD=ptl050deleteOk" />
+            <forward name="delBack"          path="/portal/ptl050.do" />
+
+       </action>
+
+       <!-- ポータル登録確認 -->
+       <action
+            name="ptl050knForm"
+            path="/portal/ptl050kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl050kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl050kn.Ptl050knAction">
+
+            <forward name="backAddPortal" path="/portal/ptl050.do" />
+            <forward name="backPortalList" path="/portal/ptl030.do" />
+       </action>
+
+       <!-- ポータル レイアウト設定 -->
+       <action
+            name="ptl060Form"
+            path="/portal/ptl060"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl060.Ptl060Action">
+
+            <forward name="backPortalDetail" path="/portal/ptl040.do" />
+            <forward name="moveConfirm" path="/portal/ptl060kn.do" />
+       </action>
+
+       <!-- ポータル レイアウト設定確認 -->
+       <action
+            name="ptl060knForm"
+            path="/portal/ptl060kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl060kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl060kn.Ptl060knAction">
+
+            <forward name="backEditLayout" path="/portal/ptl060.do" />
+            <forward name="backPortalDetail" path="/portal/ptl040.do" />
+       </action>
+
+       <!-- ポータル プレビュー -->
+       <action
+            name="ptl070Form"
+            path="/portal/ptl070"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl070.Ptl070Action">
+       </action>
+
+       <!-- プラグイン選択 -->
+       <action
+            name="ptl080Form"
+            path="/portal/ptl080"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl080.Ptl080Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+       <!-- ポートレット選択 -->
+       <action
+            name="ptl081Form"
+            path="/portal/ptl081"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl081.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl081.Ptl081Action">
+       </action>
+
+       <!-- ポータル 管理者設定 ポートレット管理 -->
+       <action
+            name="ptl090Form"
+            path="/portal/ptl090"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl090.Ptl090Action">
+
+            <forward name="confMenu" path="/portal/ptl020.do" />
+            <forward name="addPortlet" path="/portal/ptl100.do" />
+            <forward name="categoryList" path="/portal/ptl110.do" />
+            <forward name="addCategory" path="/portal/ptl120.do" />
+            <forward name="portalManager" path="/portal/ptl030.do" />
+       </action>
+
+       <!-- ポートレット登録 -->
+       <action
+            name="ptl100Form"
+            path="/portal/ptl100"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl100.Ptl100Action">
+
+            <forward name="backPortletList" path="/portal/ptl090.do" />
+            <forward name="moveConfirm" path="/portal/ptl100kn.do" />
+            <forward name="delback" path="/portal/ptl100.do" />
+            <forward name="delOk" path="/portal/ptl100.do" />
+       </action>
+
+       <!-- ポートレット登録確認 -->
+       <action
+            name="ptl100knForm"
+            path="/portal/ptl100kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl100kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl100kn.Ptl100knAction">
+
+            <forward name="backAddPortlet" path="/portal/ptl100.do" />
+            <forward name="backPortletList" path="/portal/ptl090.do" />
+       </action>
+
+       <!-- ポートレットカテゴリ一覧 -->
+       <action
+            name="ptl110Form"
+            path="/portal/ptl110"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl110.Ptl110Action">
+
+            <forward name="backPortletList" path="/portal/ptl090.do" />
+            <forward name="addCategory" path="/portal/ptl120.do" />
+            <forward name="editCategory" path="/portal/ptl120.do" />
+
+       </action>
+
+       <!-- ポータル カテゴリ登録 -->
+       <action
+            name="ptl120Form"
+            path="/portal/ptl120"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl120.Ptl120Action">
+
+            <forward name="backPortletList" path="/portal/ptl090.do" />
+            <forward name="backCategoryList" path="/portal/ptl110.do" />
+            <forward name="moveConfirm" path="/portal/ptl120kn.do" />
+            <forward name="delback" path="/portal/ptl120.do" />
+            <forward name="delOk" path="/portal/ptl120.do" />
+       </action>
+
+       <!-- ポータル カテゴリ登録確認 -->
+       <action
+            name="ptl120knForm"
+            path="/portal/ptl120kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl120kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl120kn.Ptl120knAction">
+
+            <forward name="backAddCategory" path="/portal/ptl120.do" />
+            <forward name="categoryList" path="/portal/ptl110.do" />
+            <forward name="portletList" path="/portal/ptl090.do" />
+       </action>
+
+       <!-- ポータル 管理者設定 権限設定 -->
+       <action
+            name="ptl130Form"
+            path="/portal/ptl130"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl130.Ptl130Action">
+            <forward name="confMenu" path="/portal/ptl020.do" />
+            <forward name="ptl130kakunin" path="/portal/ptl130kn.do" />
+            <forward name="moveConfirm" path="/portal/ptl130kn.do" />
+
+       </action>
+
+       <!-- ポータル 権限設定確認 -->
+       <action
+            name="ptl130knForm"
+            path="/portal/ptl130kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl130kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl130kn.Ptl130knAction">
+            <forward name="ptl020" path="/portal/ptl020.do" />
+            <forward name="ptl130knback" path="/portal/ptl130.do" />
+
+            <forward name="backAdd" path="/portal/ptl130.do" />
+       </action>
+
+       <!-- 個人設定 ポータル管理 -->
+       <action
+            name="ptl140Form"
+            path="/portal/ptl140"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl140.Ptl140Action">
+            <forward name="menuBack" path="/main/man030.do" />
+       </action>
+
+       <!-- 管理者設定 初期値設定 -->
+       <action
+            name="ptl150Form"
+            path="/portal/ptl150"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl150.Ptl150Action">
+            <forward name="confMenu" path="/portal/ptl020.do" />
+            <forward name="doKakutei" path="/portal/ptl150kn.do" />
+       </action>
+
+       <!-- 管理者設定 初期値設定確認 -->
+       <action
+            name="ptl150knForm"
+            path="/portal/ptl150kn"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl150kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl150kn.Ptl150knAction">
+            <forward name="confMenu" path="/portal/ptl020.do" />
+            <forward name="back150" path="/portal/ptl150.do" />
+       </action>
+
+       <!-- ポートレット画像登録 -->
+       <action
+            name="ptl160Form"
+            path="/portal/ptl160"
+            scope="request"
+            input="/WEB-INF/plugin/portal/jsp/ptl160.jsp"
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl160.Ptl160Action">
+       </action>
+
+       <!-- ポートレット画像表示 -->
+       <action
+            name="ptl990Form"
+            path="/pltimage/ptl990"
+            scope="request"
+            input=""
+            validate="false"
+            type="jp.groupsession.v2.ptl.ptl990.Ptl990Action">
+       </action>
+    </action-mappings>
+
+</struts-config>

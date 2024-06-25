@@ -1,0 +1,1 @@
+create index CIR_VIEW_INDEX1 on CIR_VIEW(CAC_SID);

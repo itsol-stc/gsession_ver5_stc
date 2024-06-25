@@ -1,0 +1,2096 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="api010Form" type="jp.groupsession.v2.api.api010.Api010Form" />
+        <form-bean name="api020Form" type="jp.groupsession.v2.api.api020.Api020Form" />
+        <form-bean name="api020knForm" type="jp.groupsession.v2.api.api020kn.Api020knForm" />
+        <form-bean name="api030Form" type="jp.groupsession.v2.api.api030.Api030Form" />
+
+        <form-bean name="apiLoginForm" type="jp.groupsession.v2.api.cmn.login.ApiCmnLoginForm" />
+        <form-bean name="apiOtploginForm" type="jp.groupsession.v2.api.cmn.otplogin.ApiCmnOtploginForm" />
+        <form-bean name="apiOtpCheckForm" type="jp.groupsession.v2.api.cmn.otpcheck.ApiCmnOtpCheckForm" />
+        <form-bean name="apiLogintypeForm" type="jp.groupsession.v2.api.cmn.logintype.ApiCmnLogintypeForm" />
+
+        <form-bean name="apiWhoamiForm" type="jp.groupsession.v2.api.user.whoami.ApiWhoamiForm" />
+        <form-bean name="apiSchSearchForm" type="jp.groupsession.v2.api.schedule.search.ApiSchSearchForm" />
+        <form-bean name="apiSchOtherPluginSchListForm" type="jp.groupsession.v2.api.schedule.otherplugin.schlist.ApiSchOtherPlginSchListForm" />
+        <form-bean name="apiSchDetailForm" type="jp.groupsession.v2.api.schedule.detail.ApiSchDetailForm" />
+        <form-bean name="apiSchSharedGroupForm" type="jp.groupsession.v2.api.schedule.user.groupl.ApiSchSharedGroupForm" />
+        <form-bean name="apiSchSharedUserForm" type="jp.groupsession.v2.api.schedule.user.list.ApiSchSharedUserForm" />
+        <form-bean name="apiUsrBelongNameForm" type="jp.groupsession.v2.api.user.belongname.ApiBelongUserNameForm" />
+        <form-bean name="apiSchPrefWorkTimeForm" type="jp.groupsession.v2.api.schedule.prefarence.worktime.ApiSchPrefWorkTimeForm" />
+        <form-bean name="apiSchPrefDefInputForm" type="jp.groupsession.v2.api.schedule.prefarence.defaultinput.ApiSchPrefDefInputForm" />
+        <form-bean name="apiSchEditForm" type="jp.groupsession.v2.api.schedule.edit.ApiSchEditForm" />
+        <form-bean name="apiSchDeleteForm" type="jp.groupsession.v2.api.schedule.delete.ApiSchDeleteForm" />
+        <form-bean name="apiSchAnserForm" type="jp.groupsession.v2.api.schedule.attend.ApiSchChangeAttendForm" />
+        <form-bean name="apiSchReminderForm" type="jp.groupsession.v2.api.schedule.reminder.ApiSchChangeReminderForm" />
+
+        <form-bean name="apiReserveGroupForm" type="jp.groupsession.v2.api.reserve.sisetu.group.ApiReserveGroupForm" />
+        <form-bean name="apiReserveListForm" type="jp.groupsession.v2.api.reserve.sisetu.list.ApiReserveListForm" />
+        <form-bean name="apiRsvSisYrkSearchForm" type="jp.groupsession.v2.api.reserve.yoyaku.search.ApiRsvSisYrkSearchForm" />
+
+
+        <form-bean name="apiZskEditForm" type="jp.groupsession.v2.api.zaiseki.edit.ApiZaisekiStatusEditForm" />
+        <form-bean name="apiSmlCountMForm" type="jp.groupsession.v2.api.smail.countm.ApiCountMForm" />
+        <form-bean name="apiSmlSendForm" type="jp.groupsession.v2.api.smail.send.ApiSmlSendForm" />
+        <form-bean name="apiSmlListForm" type="jp.groupsession.v2.api.smail.list.ApiSmlListForm" />
+        <form-bean name="apiCirCountMForm" type="jp.groupsession.v2.api.circular.countm.ApiCountMForm" />
+        <form-bean name="apiBbsCountMForm" type="jp.groupsession.v2.api.bulletin.countm.ApiCountMForm" />
+        <form-bean name="apiRngCountMForm" type="jp.groupsession.v2.api.ringi.countm.ApiCountMForm" />
+        <form-bean name="apiManPluginForm" type="jp.groupsession.v2.api.man.plugin.ApiManPluginForm" />
+        <form-bean name="apiManVersionForm" type="jp.groupsession.v2.api.man.version.ApiManVersionForm" />
+        <form-bean name="apiManPluginUseableForm" type="jp.groupsession.v2.api.man.plugin.useable.ApiManPluginUseableForm" />
+        <form-bean name="apiMblAbleLoginForm" type="jp.groupsession.v2.api.mobile.ablelogin.ApiMblAbleLoginForm" />
+        <form-bean name="apiUsrInfForm" type="jp.groupsession.v2.api.user.inf.ApiInfForm" />
+        <form-bean name="apiUsrGroupLForm" type="jp.groupsession.v2.api.user.groupl.ApiGroupLForm" />
+        <form-bean name="apiUsrBelongForm" type="jp.groupsession.v2.api.user.belong.ApiBelongForm" />
+        <form-bean name="apiUsrSearchForm" type="jp.groupsession.v2.api.user.search.ApiUserSearchForm" />
+        <form-bean name="apiUsrLabelListForm" type="jp.groupsession.v2.api.user.label.ApiUserLabelListForm" />
+        <form-bean name="apiUsrLabelCategoryListForm" type="jp.groupsession.v2.api.user.labelcategory.ApiUserLabelCategoryListForm" />
+        <form-bean name="apiUsrPositionListForm" type="jp.groupsession.v2.api.user.position.ApiUserPositionListForm" />
+        <form-bean name="apiUsrImageDownloadForm" type="jp.groupsession.v2.api.user.image.ApiUserImageDownloadForm" />
+        <form-bean name="apiUsrPrefSortInfoForm" type="jp.groupsession.v2.api.user.prefarence.sort.ApiUserSortInfoForm" />
+
+        <!--  タイムカードAPI -->
+        <form-bean name="apiTcdDakokuForm" type="jp.groupsession.v2.api.timecard.dakoku.ApiDakokuForm" />
+        <form-bean name="apiTcdEditForm" type="jp.groupsession.v2.api.timecard.edit.ApiTcdEditForm" />
+
+        <form-bean name="apiCabinetLForm" type="jp.groupsession.v2.api.file.cabinetl.ApiCabinetLForm" />
+        <form-bean name="apiDirTreeForm" type="jp.groupsession.v2.api.file.dirtree.ApiDirTreeForm" />
+        <form-bean name="apiDirListForm" type="jp.groupsession.v2.api.file.dirlist.ApiDirListForm" />
+        <form-bean name="apiFileDownloadForm" type="jp.groupsession.v2.api.file.download.ApiFileDownloadForm" />
+        <form-bean name="apiFileUpdateForm" type="jp.groupsession.v2.api.file.update.ApiFileUpdateForm" />
+        <form-bean name="apiFileAddForm" type="jp.groupsession.v2.api.file.add.ApiFileAddForm" />
+        <form-bean name="apiFileDeleteForm" type="jp.groupsession.v2.api.file.delete.ApiFileDeleteForm" />
+        <form-bean name="apiFileLockForm" type="jp.groupsession.v2.api.file.lock.ApiFileLockForm" />
+        <form-bean name="apiFileUnlockForm" type="jp.groupsession.v2.api.file.unlock.ApiFileUnlockForm" />
+        <form-bean name="apiFileAddFolderForm" type="jp.groupsession.v2.api.file.addfolder.ApiFileAddFolderForm" />
+        <form-bean name="apiFileEditFolderForm" type="jp.groupsession.v2.api.file.editfolder.ApiFileEditFolderForm" />
+        <form-bean name="apiFileRenameForm" type="jp.groupsession.v2.api.file.rename.ApiFileRenameForm" />
+        <form-bean name="apiFileMoveForm" type="jp.groupsession.v2.api.file.move.ApiFileMoveForm" />
+        <form-bean name="apiFileShortcutForm" type="jp.groupsession.v2.api.file.shortcut.ApiFileShortcutForm" />
+        <form-bean name="apiFileShortcutListForm" type="jp.groupsession.v2.api.file.shortcutlist.ApiFileShortcutListForm" />
+        <form-bean name="apiFileSearchListForm" type="jp.groupsession.v2.api.file.searchlist.ApiFileSearchListForm" />
+        <form-bean name="apiKihonInfForm" type="jp.groupsession.v2.api.file.kihoninf.ApiKihonInfForm" />
+        <form-bean name="apiSmlFileDownloadForm" type="jp.groupsession.v2.api.smail.filedownload.ApiSmlFileDownloadForm" />
+        <form-bean name="apiWebCountMForm" type="jp.groupsession.v2.api.webmail.countm.ApiCountMForm" />
+        <form-bean name="apiAclistForm" type="jp.groupsession.v2.api.webmail.aclist.ApiAclistForm" />
+        <form-bean name="apiImportMailForm" type="jp.groupsession.v2.api.webmail.importmail.ApiImportMailForm" />
+        <form-bean name="apiCmnGetHolidayForm" type="jp.groupsession.v2.api.cmn.getholiday.ApiCmnGetHolidayForm" />
+        <form-bean name="apiCmnGetMstTdfkForm" type="jp.groupsession.v2.api.cmn.masta.tdfk.ApiCmnGetMstTdfkForm" />
+        <form-bean name="apiCmnTmpFileLimitInfoForm" type="jp.groupsession.v2.api.cmn.tmpfile.ApiCmnTmpFileLimitInfoForm" />
+
+        <form-bean name="apiNtpEditInitInfoForm" type="jp.groupsession.v2.api.ntp.nippou.edit.init.ApiNippouEditInitInfoForm" />
+        <form-bean name="apiAdressSearchTypeIndustryForm" type="jp.groupsession.v2.api.adress.typeindustry.ApiSearchTypeIndustryForm" />
+        <form-bean name="apiAdressExistsCompanyIniForm" type="jp.groupsession.v2.api.adress.companybase.existsini.ApiExistsCompanyIniForm" />
+        <form-bean name="apiAdressSearchCompanyBaseWithIniForm" type="jp.groupsession.v2.api.adress.companybase.searchini.ApiSearchCompanyBaseWithIniForm" />
+        <form-bean name="apiAdressCompanyInfForm" type="jp.groupsession.v2.api.adress.company.inf.ApiCompanyInfForm" />
+        <form-bean name="apiAdressSearchForm" type="jp.groupsession.v2.api.adress.search.ApiAdrSearchForm" />
+        <form-bean name="apiAdrBelongCompanyForm" type="jp.groupsession.v2.api.adress.belongcom.ApiAdressBelongCompanyForm" />
+        <form-bean name="apiAdressLabelListForm" type="jp.groupsession.v2.api.adress.label.ApiAdressLabelListForm" />
+        <form-bean name="apiAdressLabelCategoryListForm" type="jp.groupsession.v2.api.adress.labelcategory.ApiAdressLabelCategoryListForm" />
+        <form-bean name="apiAdressPositionListForm" type="jp.groupsession.v2.api.adress.position.ApiAdressPositionListForm" />
+        <form-bean name="apiAdressCompanyBaseBelongAcoSidForm" type="jp.groupsession.v2.api.adress.companybase.belongaco.ApiCompanyBaseBelongAcoSidForm" />
+
+        <form-bean name="apiNtpNippouSearchForm" type="jp.groupsession.v2.api.ntp.nippou.search.ApiNippouSearchForm" />
+        <form-bean name="apiNtpNippouDetailForm" type="jp.groupsession.v2.api.ntp.nippou.detail.ApiNippouDetailForm" />
+        <form-bean name="apiNtpNippouEditForm" type="jp.groupsession.v2.api.ntp.nippou.edit.ApiNippouEditForm" />
+        <form-bean name="apiNtpNippouDeleteForm" type="jp.groupsession.v2.api.ntp.nippou.delete.ApiNippouDeleteForm" />
+        <form-bean name="apiNtpNippouTimeLineForm" type="jp.groupsession.v2.api.ntp.nippou.timeline.ApiNippouTimeLineForm" />
+        <form-bean name="apiNtpNippouWeeklyForm" type="jp.groupsession.v2.api.ntp.nippou.weekly.ApiNippouWeeklyForm" />
+        <form-bean name="apiNtpNippouMonthlyForm" type="jp.groupsession.v2.api.ntp.nippou.monthly.ApiNippouMonthlyForm" />
+        <form-bean name="apiNtpNippouTempFileValidateForm" type="jp.groupsession.v2.api.ntp.nippou.tempFile.check.ApiNippouTempFileValidateForm" />
+        <form-bean name="apiNtpKatudouBunruiForm" type="jp.groupsession.v2.api.ntp.katudoubunrui.ApiKatudouBunruiForm" />
+        <form-bean name="apiNtpKatusouHouhouForm" type="jp.groupsession.v2.api.ntp.katudouhouhou.ApiKatudouHouhouForm" />
+        <form-bean name="apiNtpAnkenSearchForm" type="jp.groupsession.v2.api.ntp.anken.search.ApiAnkenSearchForm" />
+        <form-bean name="apiNtpAnkenDetailForm" type="jp.groupsession.v2.api.ntp.anken.detail.ApiAnkenDetailForm" />
+        <form-bean name="apiNtpContactForm" type="jp.groupsession.v2.api.ntp.contact.ApiNtpContactForm" />
+        <form-bean name="apiNtpGyoumuForm" type="jp.groupsession.v2.api.ntp.gyoumu.ApiNtpGyoumuForm" />
+        <form-bean name="apiNtpProsessForm" type="jp.groupsession.v2.api.ntp.prosess.ApiNtpProsessForm" />
+        <form-bean name="apiNtpShohinSearchForm" type="jp.groupsession.v2.api.ntp.shohin.ApiShohinSearchForm" />
+        <form-bean name="apiNtpAnkenShohin" type="jp.groupsession.v2.api.ntp.shohin.nan.ApiNanShohinForm" />
+        <form-bean name="apiNtpAnkenEdit" type="jp.groupsession.v2.api.ntp.anken.edit.ApiAnkenEditForm" />
+        <form-bean name="apiNtpAnkenDelete" type="jp.groupsession.v2.api.ntp.anken.delete.ApiNtpAnkenDeleteForm" />
+        <form-bean name="apiNtpNippouCommentAdd" type="jp.groupsession.v2.api.ntp.nippou.comment.edit.ApiNippouCommentAddForm" />
+        <form-bean name="apiNtpNippouCommentDelete" type="jp.groupsession.v2.api.ntp.nippou.comment.delete.ApiNippouCommentDeleteForm" />
+        <form-bean name="apiNtpNippouSendGoodJob" type="jp.groupsession.v2.api.ntp.nippou.goodjob.ApiNippouSendGoodJobForm" />
+        <form-bean name="apiNtpNippouGaveGoodUser" type="jp.groupsession.v2.api.ntp.nippou.goodjob.user.ApiNippouGaveGoodUserForm" />
+        <form-bean name="apiNtpNippouRemoveGoodJob" type="jp.groupsession.v2.api.ntp.nippou.goodjob.cancel.ApiNtpRemoveGoodJobForm" />
+        <form-bean name="apiNtpGroupL" type="jp.groupsession.v2.api.ntp.sharedgroup.ApiNtpGroupLForm" />
+        <form-bean name="apiNtpBelong" type="jp.groupsession.v2.api.ntp.shareduser.ApiNtpBelongForm" />
+        <!-- 日報テンプレート取得 -->
+        <form-bean name="apiNtpNippouEditTemplateForm" type="jp.groupsession.v2.api.ntp.nippou.edit.template.ApiNippouEditTemplateForm" />
+        <!-- 目標編集 -->
+        <form-bean name="apiNtpTargetEditForm" type="jp.groupsession.v2.api.ntp.target.edit.ApiNtpTargetEditForm" />
+        <!-- 会社詳細検索 -->
+        <form-bean name="apiAdressCompanyBaseSearch" type="jp.groupsession.v2.api.adress.companybase.search.ApiSearchCompanyBaseForm" />
+        <!-- 会社日報利用履歴 -->
+        <form-bean name="apiNtpCompanyBaseHistory" type="jp.groupsession.v2.api.ntp.aco.history.ApiNtpCompanyBaseHistoryForm" />
+        <!-- 目標管理グループ取得 -->
+        <form-bean name="apiNtpTargetKnrGroup" type="jp.groupsession.v2.api.ntp.target.group.ApiNtpTargetKnrGroupForm" />
+        <!-- 目標一覧取得 -->
+        <form-bean name="apiNtpTargetList" type="jp.groupsession.v2.api.ntp.target.list.ApiNtpTargetListForm" />
+        <!-- 目標年度表示テーブル取得 -->
+        <form-bean name="apiNtpTargetTableYear" type="jp.groupsession.v2.api.ntp.target.table.year.ApiNtpTargetTableYearForm" />
+        <!--  アンケート未回答数取得 -->
+        <form-bean name="apiEnqCountMForm" type="jp.groupsession.v2.api.enquete.countm.ApiCountMForm" />
+        <!-- ショートメール アプリ用API -->
+        <form-bean name="apiSmlAccountDefInputForm" type="jp.groupsession.v2.api.smail.account.defaultinput.ApiSmlAccountDefInputForm" />
+        <form-bean name="apiSmlAccountListForm"   type="jp.groupsession.v2.api.smail.account.list.ApiSmlAccountListForm" />
+        <form-bean name="apiSmlAccountSelectForm" type="jp.groupsession.v2.api.smail.account.select.ApiSmlAccountSelectForm" />
+        <form-bean name="apiSmlHinaListForm"      type="jp.groupsession.v2.api.smail.hinalist.ApiSmlHinaListForm" />
+        <form-bean name="apiSmlLabelListForm"     type="jp.groupsession.v2.api.smail.labellist.ApiSmlLabelListForm" />
+        <form-bean name="apiSmlLabelAddForm"      type="jp.groupsession.v2.api.smail.labeladd.ApiSmlLabelAddForm" />
+        <form-bean name="apiSmlLabelDelForm"      type="jp.groupsession.v2.api.smail.labeldel.ApiSmlLabelDelForm" />
+        <form-bean name="apiSmlMailCountForm"     type="jp.groupsession.v2.api.smail.mail.count.ApiSmlMailCountForm" />
+        <form-bean name="apiSmlMailListForm"      type="jp.groupsession.v2.api.smail.mail.list.ApiSmlMailListForm" />
+        <form-bean name="apiSmlMailSearchForm"    type="jp.groupsession.v2.api.smail.mail.search.ApiSmlMailSearchForm" />
+        <form-bean name="apiSmlMailEditForm"      type="jp.groupsession.v2.api.smail.mail.edit.ApiSmlMailEditForm" />
+        <form-bean name="apiSmlMailSaveForm"      type="jp.groupsession.v2.api.smail.mail.save.ApiSmlMailSaveForm" />
+        <form-bean name="apiSmlMailSendForm"      type="jp.groupsession.v2.api.smail.mail.send.ApiSmlMailSendForm" />
+        <form-bean name="apiSmlMailDeleteForm"    type="jp.groupsession.v2.api.smail.mail.delete.ApiSmlMailDeleteForm" />
+        <!-- Webメール アプリ用API -->
+        <form-bean name="apiWmlAccountDefInputForm" type="jp.groupsession.v2.api.webmail.account.defaultinput.ApiWmlAccountDefInputForm" />
+        <form-bean name="apiWmlAccountListForm"  type="jp.groupsession.v2.api.webmail.account.list.ApiWmlAccountListForm" />
+        <form-bean name="apiWmlBadgeNumForm"     type="jp.groupsession.v2.api.webmail.badgenum.ApiWmlBadgeNumForm" />
+        <form-bean name="apiWmlTempListForm"     type="jp.groupsession.v2.api.webmail.templist.ApiWmlTempListForm" />
+        <form-bean name="apiWmlLabelListForm"    type="jp.groupsession.v2.api.webmail.labellist.ApiWmlLabelListForm" />
+        <form-bean name="apiWmlLabelAddForm"     type="jp.groupsession.v2.api.webmail.labeladd.ApiWmlLabelAddForm" />
+        <form-bean name="apiWmlLabelDelForm"     type="jp.groupsession.v2.api.webmail.labeldel.ApiWmlLabelDelForm" />
+        <form-bean name="apiWmlDestListForm"     type="jp.groupsession.v2.api.webmail.destlist.list.ApiWmlDestListForm" />
+        <form-bean name="apiWmlDestAddressForm"  type="jp.groupsession.v2.api.webmail.destlist.address.ApiWmlDestAddressForm" />
+        <form-bean name="apiWmlMailSearchForm"   type="jp.groupsession.v2.api.webmail.mail.search.ApiWmlMailSearchForm" />
+        <form-bean name="apiWmlMailEditForm"     type="jp.groupsession.v2.api.webmail.mail.edit.ApiWmlMailEditForm" />
+        <form-bean name="apiWmlMailSendForm"     type="jp.groupsession.v2.api.webmail.mail.send.ApiWmlMailSendForm" />
+        <form-bean name="apiWmlMailSaveForm"     type="jp.groupsession.v2.api.webmail.mail.save.ApiWmlMailSaveForm" />
+        <form-bean name="apiWmlMailCheckForm"    type="jp.groupsession.v2.api.webmail.mail.check.ApiWmlMailCheckForm" />
+        <form-bean name="apiWmlFileDownloadForm" type="jp.groupsession.v2.api.webmail.filedownload.ApiWmlFileDownloadForm" />
+        <!-- チャットAPI -->
+        <form-bean name="ApiChatSendForm" type="jp.groupsession.v2.api.chat.send.ApiChatSendForm" />
+        <!-- RESTAPI -->
+        <form-bean name="restApiForm" type="org.apache.struts.action.DynaActionForm"/>
+        <form-bean name="restApiCmnTempForm" type="jp.groupsession.v2.cmn.restapi.transactions.temporaries.CmnTemporaryForm" />
+
+    </form-beans>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- 管理者設定 -->
+       <action
+            name="api010Form"
+            path="/api/api010"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/api/jsp/api010.jsp"
+            type="jp.groupsession.v2.api.api010.Api010Action">
+            <forward name="basic" path="/api/api020.do"></forward>
+            <forward name="token" path="/api/api030.do"></forward>
+            <forward name="back" path="/main/man002.do"></forward>
+            <forward name="mainAdmSetting" path="/main/man002.do"></forward>
+       </action>
+       <!-- 基本設定 -->
+       <action
+            name="api020Form"
+            path="/api/api020"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/api/jsp/api020.jsp"
+            type="jp.groupsession.v2.api.api020.Api020Action">
+            <forward name="back" path="/api/api010.do"></forward>
+            <forward name="ok" path="/api/api020kn.do"></forward>
+       </action>
+       <!-- 基本設定 -->
+       <action
+            name="api020knForm"
+            path="/api/api020kn"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/api/jsp/api020kn.jsp"
+            type="jp.groupsession.v2.api.api020kn.Api020knAction">
+            <forward name="back" path="/api/api020.do"></forward>
+            <forward name="comp" path="/api/api010.do"></forward>
+       </action>
+       <!-- トークン管理 -->
+       <action
+            name="api030Form"
+            path="/api/api030"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/api/jsp/api030.jsp"
+            type="jp.groupsession.v2.api.api030.Api030Action">
+            <forward name="mukoComp" path="/api/api030.do?CMD=api030MukoComp"></forward>
+            <forward name="dsp" path="/api/api030.do?CMD=dsp"></forward>
+            <forward name="back" path="/api/api010.do"></forward>
+            <forward name="comp" path="/api/api010.do"></forward>
+       </action>
+
+       <!-- 一次認証 -->
+       <action
+            name="apiLoginForm"
+            path="/api/cmn/login"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.login.ApiCmnLoginAction">
+       </action>
+       <!-- ワンタイムパスワード認証 -->
+       <action
+            name="apiOtploginForm"
+            path="/api/cmn/otplogin"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.otplogin.ApiCmnOtploginAction">
+       </action>
+       <!-- ワンタイムパスワード使用確認 -->
+       <action
+            name="apiOtpCheckForm"
+            path="/api/cmn/otpcheck"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.otpcheck.ApiCmnOtpCheckAction">
+       </action>
+       <!-- ログインタイプ取得 -->
+       <action
+            name="apiLogintypeForm"
+            path="/api/cmn/logintype"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.logintype.ApiLogintypeAction">
+       </action>
+       <!-- アクセスした本人の情報を取得 -->
+       <action
+            name="apiWhoamiForm"
+            path="/api/user/whoami"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.whoami.ApiWhoamiAction">
+       </action>
+
+       <!-- スケジュール検索 -->
+       <action
+            name="apiSchSearchForm"
+            path="/api/schedule/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.search.ApiSchSearchAction">
+       </action>
+
+       <!-- 他のプラグインのスケジュール一覧 -->
+       <action
+            name="apiSchOtherPluginSchListForm"
+            path="/api/schedule/otherplgin/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.otherplugin.schlist.ApiSchOtherPlginSchListAction">
+       </action>
+
+       <!-- スケジュール詳細 -->
+       <action
+            name="apiSchDetailForm"
+            path="/api/schedule/detail"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.detail.ApiSchDetailAction">
+       </action>
+        <!-- スケジュール共有設定を反映したグループ一覧の取得 -->
+       <action
+            name="apiSchSharedGroupForm"
+            path="/api/schedule/groupl"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.user.groupl.ApiSchSharedGroupAction">
+       </action>
+        <!-- スケジュール特例アクセスを反映したユーザ一覧の取得 -->
+       <action
+            name="apiSchSharedUserForm"
+            path="/api/schedule/userlist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.user.list.ApiSchSharedUserAction">
+       </action>
+        <!-- 施設グループ取得 -->
+       <action
+            name="apiReserveGroupForm"
+            path="/api/reserve/group"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.reserve.sisetu.group.ApiReserveGroupAction">
+       </action>
+        <!-- 施設一覧取得 -->
+       <action
+            name="apiReserveListForm"
+            path="/api/reserve/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.reserve.sisetu.list.ApiReserveListAction">
+       </action>
+        <!-- 施設予約一覧取得 -->
+       <action
+            name="apiRsvSisYrkSearchForm"
+            path="/api/reserve/yoyaku/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.reserve.yoyaku.search.ApiRsvSisYrkSearchAction">
+       </action>
+
+        <!-- スケジュール日間表示時間帯設定取得 -->
+       <action
+            name="apiSchPrefWorkTimeForm"
+            path="/api/schedule/prefarence/worktime"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.prefarence.worktime.ApiSchPrefWorkTimeAction">
+       </action>
+        <!-- スケジュール初期値設定取得 -->
+       <action
+            name="apiSchPrefDefInputForm"
+            path="/api/schedule/prefarence/defaultinput"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.prefarence.defaultinput.ApiSchPrefDefInputAction">
+       </action>
+        <!-- スケジュール編集 -->
+       <action
+            name="apiSchEditForm"
+            path="/api/schedule/edit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.edit.ApiSchEditAction">
+       </action>
+        <!-- スケジュール削除 -->
+       <action
+            name="apiSchDeleteForm"
+            path="/api/schedule/delete"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.delete.ApiSchDeleteAction">
+       </action>
+        <!-- 出席確認応答変更 -->
+       <action
+            name="apiSchAnserForm"
+            path="/api/schedule/changeAttend"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.attend.ApiSchChangeAttendAction">
+       </action>
+        <!-- リマインダー変更 -->
+       <action
+            name="apiSchReminderForm"
+            path="/api/schedule/changeReminder"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.schedule.reminder.ApiSchChangeReminderAction">
+       </action>
+
+       <!-- 在席状況の更新 -->
+       <action
+            name="apiZskEditForm"
+            path="/api/zaiseki/edit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.zaiseki.edit.ApiZaisekiStatusEditAction">
+       </action>
+
+       <!-- ショートメール未読件数 -->
+       <action
+            name="apiSmlCountMForm"
+            path="/api/smail/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.countm.ApiCountMAction">
+       </action>
+
+       <!-- ショートメール送信 -->
+       <action
+            name="apiSmlSendForm"
+            path="/api/smail/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.send.ApiSmlSendAction">
+       </action>
+
+       <!-- ショートメール受信リスト取得 -->
+       <action
+            name="apiSmlListForm"
+            path="/api/smail/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.list.ApiSmlListAction">
+       </action>
+
+       <!-- 回覧板未確認件数 -->
+       <action
+            name="apiCirCountMForm"
+            path="/api/circular/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.circular.countm.ApiCountMAction">
+       </action>
+
+       <!-- 掲示板未確認件数 -->
+       <action
+            name="apiBbsCountMForm"
+            path="/api/bulletin/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.bulletin.countm.ApiCountMAction">
+       </action>
+
+       <!-- 稟議受信件数 -->
+       <action
+            name="apiRngCountMForm"
+            path="/api/ringi/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ringi.countm.ApiCountMAction">
+       </action>
+
+       <!-- プラグイン情報取得 -->
+       <action
+            name="apiManPluginForm"
+            path="/api/main/plugin"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.man.plugin.ApiManPluginAction">
+       </action>
+       <!-- バージョン情報取得 -->
+       <action
+            name="apiManVersionForm"
+            path="/api/main/version"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.man.version.ApiManVersionAction">
+       </action>
+       <!-- 複数指定したプラグインIDの中から利用可能なプラグイン情報を返す WebApi -->
+       <action
+            name="apiManPluginUseableForm"
+            path="/api/main/plugin/useable"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.man.plugin.useable.ApiManPluginUseableAction">
+       </action>
+       <!--  GSモバイルログイン可否情報取得 -->
+       <action
+            name="apiMblAbleLoginForm"
+            path="/api/mobile/ablelogin"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.mobile.ablelogin.ApiMblAbleLoginAction">
+       </action>
+       <!-- ユーザ情報取得 -->
+       <action
+            name="apiUsrInfForm"
+            path="/api/user/inf"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.inf.ApiInfAction">
+       </action>
+
+       <!-- グループ一覧取得 -->
+       <action
+            name="apiUsrGroupLForm"
+            path="/api/user/groupl"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.groupl.ApiGroupLAction">
+       </action>
+
+       <!-- グループに所属するユーザ一覧 -->
+       <action
+            name="apiUsrBelongForm"
+            path="/api/user/belong"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.belong.ApiBelongAction">
+       </action>
+       <!-- グループに所属するユーザ名一覧 -->
+       <action
+            name="apiUsrBelongNameForm"
+            path="/api/user/belongnamelist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.belongname.ApiBelongUserNameAction">
+       </action>
+
+       <!-- ユーザ検索 -->
+       <action
+            name="apiUsrSearchForm"
+            path="/api/user/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.user.search.ApiUserSearchAction">
+       </action>
+       <!-- ユーザ ラベル一覧 -->
+       <action
+               name="apiUsrLabelListForm"
+            path="/api/user/labellist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.user.label.ApiUserLabelListAction" >
+       </action>
+       <!-- ユーザ ラベルカテゴリ一覧 -->
+       <action
+               name="apiUsrLabelCategoryListForm"
+            path="/api/user/labelcategorylist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.user.labelcategory.ApiUserLabelCategoryListAction" >
+       </action>
+       <!-- ユーザ 役職一覧 -->
+       <action
+               name="apiUsrPositionListForm"
+            path="/api/user/positionlist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.user.position.ApiUserPositionListAction" >
+       </action>
+       <!-- ユーザ 画像取得 -->
+       <action
+               name="apiUsrImageDownloadForm"
+            path="/api/user/imageload"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.user.image.ApiUserImageDownloadAction" >
+       </action>
+       <!-- ユーザ ソート設定取得 -->
+       <action
+               name="apiUsrPrefSortInfoForm"
+            path="/api/user/sortpref"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.user.prefarence.sort.ApiUserSortInfoAction" >
+       </action>
+
+       <!-- タイムカード打刻 -->
+       <action
+            name="apiTcdDakokuForm"
+            path="/api/timecard/dakoku"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.timecard.dakoku.ApiDakokuAction">
+       </action>
+       <!-- タイムカード情報登録・変更 -->
+        <action
+            name="apiTcdEditForm"
+            path="/api/timecard/edit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.timecard.edit.ApiTcdEditAction">
+       </action>
+
+       <!-- キャビネット一覧取得 -->
+       <action
+            name="apiCabinetLForm"
+            path="/api/file/cabinetl"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.cabinetl.ApiCabinetLAction">
+       </action>
+
+       <!-- ディレクトリツリー取得 -->
+       <action
+            name="apiDirTreeForm"
+            path="/api/file/dirtree"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.dirtree.ApiDirTreeAction">
+       </action>
+
+       <!-- ディレクトリ一覧取得 -->
+       <action
+            name="apiDirListForm"
+            path="/api/file/dirlist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.dirlist.ApiDirListAction">
+       </action>
+
+       <!-- ファイルダウンロード(ファイル管理) -->
+       <action
+            name="apiFileDownloadForm"
+            path="/api/file/download"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.download.ApiFileDownloadAction">
+       </action>
+
+       <!-- ファイル登録 -->
+       <action
+            name="apiFileAddForm"
+            path="/api/file/add"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.add.ApiFileAddAction">
+       </action>
+
+       <!-- ファイル更新 -->
+       <action
+            name="apiFileUpdateForm"
+            path="/api/file/update"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.update.ApiFileUpdateAction">
+       </action>
+
+       <!-- ファイル削除 -->
+       <action
+            name="apiFileDeleteForm"
+            path="/api/file/delete"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.delete.ApiFileDeleteAction">
+       </action>
+
+       <!-- ファイルロック -->
+       <action
+            name="apiFileLockForm"
+            path="/api/file/lock"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.lock.ApiFileLockAction">
+       </action>
+
+       <!-- ファイル管理 基本設定取得 -->
+       <action
+            name="apiKihonInfForm"
+            path="/api/file/kihoninf"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.kihoninf.ApiKihonInfAction">
+       </action>
+
+       <!-- ファイルロック解除 -->
+       <action
+            name="apiFileUnlockForm"
+            path="/api/file/unlock"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.unlock.ApiFileUnlockAction">
+       </action>
+
+       <!-- フォルダ登録 -->
+       <action
+            name="apiFileAddFolderForm"
+            path="/api/file/addfolder"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.addfolder.ApiFileAddFolderAction">
+       </action>
+
+       <!-- フォルダ編集 -->
+       <action
+            name="apiFileEditFolderForm"
+            path="/api/file/editfolder"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.editfolder.ApiFileEditFolderAction">
+       </action>
+
+       <!-- ファイル名更新 -->
+       <action
+            name="apiFileRenameForm"
+            path="/api/file/rename"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.rename.ApiFileRenameAction">
+       </action>
+
+       <!-- フォルダ・ファイル移動 -->
+       <action
+            name="apiFileMoveForm"
+            path="/api/file/move"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.move.ApiFileMoveAction">
+       </action>
+
+       <!-- ショートカット登録・削除 -->
+       <action
+            name="apiFileShortcutForm"
+            path="/api/file/shortcut"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.shortcut.ApiFileShortcutAction">
+       </action>
+
+       <!-- ショートカット一覧取得 -->
+       <action
+            name="apiFileShortcutListForm"
+            path="/api/file/shortcutlist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.shortcutlist.ApiFileShortcutListAction">
+       </action>
+
+       <!-- 検索ディレクトリ一覧取得 -->
+       <action
+            name="apiFileSearchListForm"
+            path="/api/file/searchlist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.file.searchlist.ApiFileSearchListAction">
+       </action>
+
+       <!-- ショートメール添付ファイルダウンロード -->
+       <action
+            name="apiSmlFileDownloadForm"
+            path="/api/smail/filedownload"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.filedownload.ApiSmlFileDownloadAction">
+       </action>
+
+       <!-- webメール未読件数 -->
+       <action
+            name="apiWebCountMForm"
+            path="/api/webmail/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.countm.ApiCountMAction">
+       </action>
+
+       <!-- webメールアカウント一覧 -->
+       <action
+            name="apiAclistForm"
+            path="/api/webmail/aclist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.aclist.ApiAclistAction">
+       </action>
+
+       <!-- webメールメール情報インポート -->
+       <action
+            name="apiImportMailForm"
+            path="/api/webmail/importmail"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.importmail.ApiImportMailAction">
+       </action>
+       <!-- 日報入力要素取得 -->
+       <action
+            name="apiNtpEditInitInfoForm"
+            path="/api/ntp/nippouEditInfo"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.edit.init.ApiNippouEditInitInfoAction">
+       </action>
+
+       <!-- 休日情報を取得 -->
+       <action
+            name="apiCmnGetHolidayForm"
+            path="/api/cmn/getholiday"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.getholiday.ApiCmnGetHolidayAction">
+       </action>
+       <!-- 都道府県情報を取得 -->
+       <action
+            name="apiCmnGetMstTdfkForm"
+            path="/api/cmn/getMstTdfk"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.masta.tdfk.ApiCmnGetMstTdfkAction">
+       </action>
+       <!-- 添付ファイル制限情報を取得 -->
+       <action
+            name="apiCmnTmpFileLimitInfoForm"
+            path="/api/cmn/tmpfilelimit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.cmn.tmpfile.ApiCmnTmpFileLimitInfoAction">
+       </action>
+
+       <!-- 業種情報を取得 -->
+       <action
+            name="apiAdressSearchTypeIndustryForm"
+            path="/api/address/searchTypeIndustry"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.adress.typeindustry.ApiSearchTypeIndustryAction">
+       </action>
+        <!-- アドレス帳一覧取得 -->
+       <action
+               name="apiAdrBelongCompanyForm"
+            path="/api/address/belongcom"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.belongcom.ApiAdressBelongCompanyAction" >
+       </action>
+       <!-- アドレス帳検索 -->
+
+       <action
+               name="apiAdressSearchForm"
+            path="/api/address/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.adress.search.ApiAdrSearchAction" >
+       </action>
+
+       <!-- 有効会社拠点先頭カナ一覧取得 -->
+       <action
+               name="apiExistsCompanyIniForm"
+            path="/api/address/existsCompanySini"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.companybase.existsini.ApiExistsCompanyIniAction" >
+       </action>
+       <!-- 会社拠点検索（会社名カナ先頭１文字） -->
+       <action
+               name="apiAdressSearchCompanyBaseWithIniForm"
+            path="/api/address/searchCompanyBaseWithAcoSini"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.companybase.searchini.ApiSearchCompanyBaseWithIniAction" >
+       </action>
+       <!-- 会社情報 -->
+       <action
+               name="apiAdressCompanyInfForm"
+            path="/api/address/companyInfo"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.company.inf.ApiCompanyInfAction" >
+       </action>
+       <!-- 会社拠点情報 -->
+       <action
+               name="apiAdressCompanyBaseBelongAcoSidForm"
+            path="/api/address/companyBaseBelongAcoSid"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.companybase.belongaco.ApiCompanyBaseBelongAcoSidAction" >
+       </action>
+       <!-- アドレス帳 ラベル一覧 -->
+       <action
+               name="apiAdressLabelListForm"
+            path="/api/address/labellist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.label.ApiAdressLabelListAction" >
+       </action>
+       <!-- アドレス帳 ラベルカテゴリ一覧 -->
+       <action
+               name="apiAdressLabelCategoryListForm"
+            path="/api/address/labelcategorylist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.labelcategory.ApiAdressLabelCategoryListAction" >
+       </action>
+       <!-- アドレス帳 役職一覧 -->
+       <action
+               name="apiAdressPositionListForm"
+            path="/api/address/positionlist"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.adress.position.ApiAdressPositionListAction" >
+       </action>
+
+       <!-- 日報詳細 -->
+       <action
+               name="apiNtpNippouDetailForm"
+            path="/api/ntp/nippouDetail"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.detail.ApiNippouDetailAction" >
+       </action>
+       <!-- 日報編集 -->
+       <action
+               name="apiNtpNippouEditForm"
+            path="/api/ntp/nippouEdit"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.edit.ApiNippouEditAction" >
+       </action>
+       <!-- 日報削除 -->
+       <action
+               name="apiNtpNippouDeleteForm"
+            path="/api/ntp/nippouDelete"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.delete.ApiNippouDeleteAction" >
+       </action>
+       <!-- 日報検索 -->
+       <action
+               name="apiNtpNippouSearchForm"
+            path="/api/ntp/nippouSearch"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.search.ApiNippouSearchAction" >
+       </action>
+       <!-- 日報タイムライン -->
+       <action
+               name="apiNtpNippouTimeLineForm"
+            path="/api/ntp/nippouTimeLine"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.timeline.ApiNippouTimeLineAction" >
+       </action>
+       <!-- 日報グループ週間 -->
+       <action
+               name="apiNtpNippouWeeklyForm"
+            path="/api/ntp/nippouWeekly"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.weekly.ApiNippouWeeklyAction" >
+       </action>
+       <!-- 日報個人月間 -->
+       <action
+               name="apiNtpNippouMonthlyForm"
+            path="/api/ntp/nippouMonthly"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.monthly.ApiNippouMonthlyAction" >
+       </action>
+
+       <!-- 日報添付ファイルポリシーチェック -->
+       <action
+               name="apiNtpNippouTempFileValidateForm"
+            path="/api/ntp/nippouTempFileCheck"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.nippou.tempFile.check.ApiNippouTempFileValidateAction" >
+       </action>
+       <!-- 活動分類取得 -->
+       <action
+               name="apiNtpKatudouBunruiForm"
+            path="/api/ntp/katudouBunrui"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.katudoubunrui.ApiKatudouBunruiAction" >
+       </action>
+       <!-- 活動方法取得 -->
+       <action
+               name="apiNtpKatudouHouhouForm"
+            path="/api/ntp/katudouHouhou"
+            scope="request"
+            validate="false"
+               type="jp.groupsession.v2.api.ntp.katudouhouhou.ApiKatudouHouhouAction" >
+       </action>
+       <!-- 案件検索 -->
+       <action
+               name="apiNtpAnkenSearchForm"
+               path="/api/ntp/ankenSearch"
+               scope="request"
+               validate="false"
+               type="jp.groupsession.v2.api.ntp.anken.search.ApiAnkenSearchAction" >
+       </action>
+       <!-- 案件詳細取得 -->
+       <action
+               name="apiNtpAnkenDetailForm"
+               path="/api/ntp/ankenDetail"
+               scope="request"
+               validate="false"
+               type="jp.groupsession.v2.api.ntp.anken.detail.ApiAnkenDetailAction" >
+       </action>
+       <!-- コンタクト一覧取得 -->
+       <action
+            name="apiNtpContactForm"
+            path="/api/ntp/contact"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.contact.ApiNtpContactAction" >
+       </action>
+       <!-- 業務一覧取得 -->
+       <action
+            name="apiNtpGyoumuForm"
+            path="/api/ntp/gyoumu"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.gyoumu.ApiNtpGyoumuAction" >
+       </action>
+       <!-- プロセス一覧取得 -->
+       <action
+            name="apiNtpProsessForm"
+            path="/api/ntp/gyoumuprosess"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.prosess.ApiNtpProsessAction" >
+       </action>
+       <!-- 商品一覧検索 -->
+       <action
+            name="apiNtpShohinSearchForm"
+            path="/api/ntp/shohinSearch"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.shohin.ApiShohinSearchAction" >
+       </action>
+       <!-- 案件商品一覧取得 -->
+       <action
+            name="apiNtpAnkenShohin"
+            path="/api/ntp/ankenshohin"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.shohin.nan.ApiNanShohinAction" >
+       </action>
+       <!-- 案件編集 -->
+       <action
+            name="apiNtpAnkenEdit"
+            path="/api/ntp/ankenEdit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.anken.edit.ApiAnkenEditAction" >
+       </action>
+       <!-- 案件削除 -->
+       <action
+            name="apiNtpAnkenDelete"
+            path="/api/ntp/ankenDelete"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.anken.delete.ApiNtpAnkenDeleteAction" >
+       </action>
+       <!-- コメント追加 -->
+       <action
+            name="apiNtpNippouCommentAdd"
+            path="/api/ntp/nippouCommentAdd"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.comment.edit.ApiNippouCommentAddAction" >
+       </action>
+       <!-- コメント削除 -->
+       <action
+            name="apiNtpNippouCommentDelete"
+            path="/api/ntp/nippouCommentDelete"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.comment.delete.ApiNippouCommentDeleteAction" >
+       </action>
+
+       <!-- いいね追加-->
+       <action
+            name="apiNtpNippouSendGoodJob"
+            path="/api/ntp/nippouSendGoodJob"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.goodjob.ApiNippouSendGoodJobAction" >
+       </action>
+       <!-- いいねユーザ一覧-->
+       <action
+            name="apiNtpNippouGaveGoodUser"
+            path="/api/ntp/gaveGoodUser"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.goodjob.user.ApiNippouGaveGoodUserAction" >
+       </action>
+       <!-- いいね削除-->
+       <action
+            name="apiNtpNippouRemoveGoodJob"
+            path="/api/ntp/nippouRemoveGoodJob"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.goodjob.cancel.ApiNippouRemoveGoodJobAction" >
+       </action>
+       <!-- 共有グループ一覧-->
+       <action
+            name="apiNtpGroupL"
+            path="/api/ntp/usr/groupl"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.sharedgroup.ApiNtpGroupLAction" >
+       </action>
+       <!-- 共有ユーザ一覧-->
+       <action
+            name="apiNtpBelong"
+            path="/api/ntp/usr/belong"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.shareduser.ApiNtpBelongAction" >
+       </action>
+        <!-- 日報テンプレート取得 -->
+       <action
+            name="apiNtpNippouEditTemplateForm"
+            path="/api/ntp/nippouEditTemplate"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.nippou.edit.template.ApiNippouEditTemplateAction" >
+       </action>
+        <!-- 目標編集 -->
+       <action
+            name="apiNtpTargetEditForm"
+            path="/api/ntp/editTarget"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.target.edit.ApiNtpTargetEditAction" >
+       </action>
+        <!-- 会社詳細検索 -->
+       <action
+            name="apiAdressCompanyBaseSearch"
+            path="/api/address/searchCompanyBase"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.adress.companybase.search.ApiSearchCompanyBaseAction" >
+       </action>
+        <!-- 会社日報利用履歴 -->
+       <action
+            name="apiNtpCompanyBaseHistory"
+            path="/api/ntp/companyBaseHistory"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.aco.history.ApiNtpCompanyBaseHistoryAction" >
+       </action>
+        <!-- 目標管理グループ取得 -->
+       <action
+            name="apiNtpTargetKnrGroup"
+            path="/api/ntp/targetKnrGroup"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.target.group.ApiNtpTargetKnrGroupAction" >
+       </action>
+        <!-- 目標一覧取得 -->
+       <action
+            name="apiNtpTargetList"
+            path="/api/ntp/targetList"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.target.list.ApiNtpTargetListAction" >
+       </action>
+        <!-- 目標年度表示テーブル取得 -->
+       <action
+            name="apiNtpTargetTableYear"
+            path="/api/ntp/targetTableYear"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.ntp.target.table.year.ApiNtpTargetTableYearAction" >
+       </action>
+       <!-- アンケート未回答件数 -->
+       <action
+            name="apiEnqCountMForm"
+            path="/api/enquete/countm"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.enquete.countm.ApiCountMAction">
+       </action>
+       <!-- ショートメール使用可能アカウント一覧取得 -->
+       <action
+            name="apiSmlAccountDefInputForm"
+            path="/api/smail/account/defaultinput"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.account.defaultinput.ApiSmlAccountDefInputAction">
+       </action>
+       <!-- ショートメール使用可能アカウント一覧取得 -->
+       <action
+            name="apiSmlAccountListForm"
+            path="/api/smail/account/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.account.list.ApiSmlAccountListAction">
+       </action>
+       <!-- ショートメール選択アカウント一覧取得 -->
+       <action
+            name="apiSmlAccountSelectForm"
+            path="/api/smail/account/select"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.account.select.ApiSmlAccountSelectAction">
+       </action>
+       <!-- ショートメールひな形一覧取得 -->
+       <action
+            name="apiSmlHinaListForm"
+            path="/api/smail/hinalist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.hinalist.ApiSmlHinaListAction">
+       </action>
+       <!-- ショートメールラベル一覧取得 -->
+       <action
+            name="apiSmlLabelListForm"
+            path="/api/smail/labellist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.labellist.ApiSmlLabelListAction">
+       </action>
+       <!-- ショートメールラベル追加 -->
+       <action
+            name="apiSmlLabelAddForm"
+            path="/api/smail/labeladd"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.labeladd.ApiSmlLabelAddAction">
+       </action>
+       <!-- ショートメールラベル削除 -->
+       <action
+            name="apiSmlLabelDelForm"
+            path="/api/smail/labeldel"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.labeldel.ApiSmlLabelDelAction">
+       </action>
+       <!-- ショートメール件数取得 -->
+       <action
+            name="apiSmlMailCountForm"
+            path="/api/smail/mail/count"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.count.ApiSmlMailCountAction">
+       </action>
+       <!-- ショートメールリスト取得 -->
+       <action
+            name="apiSmlMailListForm"
+            path="/api/smail/mail/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.list.ApiSmlMailListAction">
+       </action>
+       <!-- ショートメール検索 -->
+       <action
+            name="apiSmlMailSearchForm"
+            path="/api/smail/mail/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.search.ApiSmlMailSearchAction">
+       </action>
+       <!-- ショートメール情報更新 -->
+       <action
+            name="apiSmlMailEditForm"
+            path="/api/smail/mail/edit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.edit.ApiSmlMailEditAction">
+       </action>
+       <!-- ショートメール草稿保存 -->
+       <action
+            name="apiSmlMailSaveForm"
+            path="/api/smail/mail/save"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.save.ApiSmlMailSaveAction">
+       </action>
+       <!-- ショートメール送信 -->
+       <action
+            name="apiSmlMailSendForm"
+            path="/api/smail/mail/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.send.ApiSmlMailSendAction">
+       </action>
+       <!-- ショートメール情報完全削除 -->
+       <action
+            name="apiSmlMailDeleteForm"
+            path="/api/smail/mail/delete"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.smail.mail.delete.ApiSmlMailDeleteAction">
+       </action>
+
+       <!-- Webメール デフォルトアカウント取得 -->
+       <action
+            name="apiWmlAccountDefInputForm"
+            path="/api/webmail/account/defaultinput"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.account.defaultinput.ApiWmlAccountDefInputAction">
+       </action>
+       <!-- Webメール 使用可能アカウント一覧取得 -->
+       <action
+            name="apiWmlAccountListForm"
+            path="/api/webmail/account/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.account.list.ApiWmlAccountListAction">
+       </action>
+       <!-- Webメールバッジ表示数値取得 -->
+       <action
+            name="apiWmlBadgeNumForm"
+            path="/api/webmail/badgenum"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.badgenum.ApiWmlBadgeNumAction">
+       </action>
+       <!-- Webメールテンプレート一覧取得 -->
+       <action
+            name="apiWmlTempListForm"
+            path="/api/webmail/templist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.templist.ApiWmlTempListAction">
+       </action>
+       <!-- Webメールラベル一覧取得 -->
+       <action
+            name="apiWmlLabelListForm"
+            path="/api/webmail/labellist"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.labellist.ApiWmlLabelListAction">
+       </action>
+       <!-- Webメールラベル追加 -->
+       <action
+            name="apiWmlLabelAddForm"
+            path="/api/webmail/labeladd"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.labeladd.ApiWmlLabelAddAction">
+       </action>
+       <!-- Webメールラベル削除 -->
+       <action
+            name="apiWmlLabelDelForm"
+            path="/api/webmail/labeldel"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.labeldel.ApiWmlLabelDelAction">
+       </action>
+       <!-- Webメール送信先リスト一覧取得 -->
+       <action
+            name="apiWmlDestListForm"
+            path="/api/webmail/destlist/list"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.destlist.list.ApiWmlDestListAction">
+       </action>
+       <!-- Webメール送信先リストアドレス一覧取得 -->
+       <action
+            name="apiWmlDestAddressForm"
+            path="/api/webmail/destlist/address"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.destlist.address.ApiWmlDestAddressAction">
+       </action>
+       <!-- Webメール メール一覧取得 -->
+       <action
+            name="apiWmlMailSearchForm"
+            path="/api/webmail/mail/search"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.mail.search.ApiWmlMailSearchAction">
+       </action>
+       <!-- Webメール メール情報更新 -->
+       <action
+            name="apiWmlMailEditForm"
+            path="/api/webmail/mail/edit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.mail.edit.ApiWmlMailEditAction">
+       </action>
+       <!-- Webメール メール送信 -->
+       <action
+            name="apiWmlMailSendForm"
+            path="/api/webmail/mail/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.mail.send.ApiWmlMailSendAction">
+       </action>
+       <!-- Webメール メール保存 -->
+       <action
+            name="apiWmlMailSaveForm"
+            path="/api/webmail/mail/save"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.mail.save.ApiWmlMailSaveAction">
+       </action>
+       <!-- Webメール メールチェック -->
+       <action
+            name="apiWmlMailCheckForm"
+            path="/api/webmail/mail/check"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.mail.check.ApiWmlMailCheckAction">
+       </action>
+       <!-- WEBメール添付ファイルダウンロード -->
+       <action
+            name="apiWmlFileDownloadForm"
+            path="/api/webmail/filedownload"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.webmail.filedownload.ApiWmlFileDownloadAction">
+       </action>
+       <!-- チャットメッセージ送信 -->
+       <action
+            name="ApiChatSendForm"
+            path="/api/chat/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.api.chat.send.ApiChatSendAction">
+       </action>
+
+       <!-- RESTAPI ACTIONS -->
+
+       <!-- ユーザ情報 -->
+       <action
+            name="restApiForm"
+            path="/common/users/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.users.CmnUsersAction">
+        <set-property key="userId" value="{1}" />
+       </action>
+       <!-- ユーザ情報 検索-->
+       <action
+            name="restApiForm"
+            path="/common/users/query"
+            scope="request"
+            validate="false"
+            parameter="query"
+            type="jp.groupsession.v2.cmn.restapi.users.CmnUsersAction">
+       </action>
+       <!-- ユーザ画像-->
+       <action
+            name="restApiForm"
+            path="/common/users/*/image"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.users.image.CmnUsersImageAction">
+        <set-property key="userId" value="{1}" />
+       </action>
+       <!-- 認証方法確認 -->
+       <action
+            name="restApiForm"
+            path="/common/users/*/authentications-type"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.users.authentication_type.AuthenticationTypeAction">
+        <set-property key="userId" value="{1}" />
+       </action>
+       <!-- 認証トークン -->
+       <action
+            name="restApiForm"
+            path="/common/users/*/authentications"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.users.authentications.CmnAuthenticationsAction">
+        <set-property key="userId" value="{1}" />
+       </action>
+       <!-- グループ情報 -->
+       <action
+            name="restApiForm"
+            path="/common/groups"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.groups.CmnGroupsAction">
+       </action>
+       <!-- プラグイン情報 一覧-->
+       <action
+            name="restApiForm"
+            path="/common/plugins"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.plugins.CmnPluginsAction">
+       </action>
+       <!-- 指定プラグイン情報 -->
+       <action
+            name="restApiForm"
+            path="/common/plugins/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.plugins.CmnPluginsAction">
+        <set-property key="pluginId" value="{1}" />
+        
+       </action>
+       <!-- 文字数制限設定情報 -->
+       <action
+            name="restApiForm"
+            path="/common/configs/bodylimit"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.configs.bodylimit.CmnConfigsBodyLimitAction">
+       </action>       
+       <!-- 添付ファイルサイズ -->
+       <action
+            name="restApiForm"
+            path="/common/configs/tempfile/limitsize"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.configs.tempfile.limitsize.CmnTempLimitSizeAction">
+       </action>
+
+       <!-- 休日情報 -->
+       <action
+            name="restApiForm"
+            path="/common/holidays"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.holidays.CmnHolidaysAction">
+       </action>
+       <!-- 都道府県情報 -->
+       <action
+            name="restApiForm"
+            path="/common/todofuken"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.todofuken.CmnTodofukenAction">
+       </action>
+       <!-- バージョン情報 -->
+       <action
+            name="restApiForm"
+            path="/main/application/version"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.man.restapi.application.version.ManApplicationVersionAction">
+       </action>
+       <!-- テンポラリディレクトリ情報 -->
+       <action
+            name="restApiCmnTempForm"
+            path="/common/transactions/temporaries"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.transactions.temporaries.CmnTemporaryAction">
+       </action>
+       <!-- テンポラリディレクトリ情報 -->
+       <action
+            name="restApiCmnTempForm"
+            path="/common/transactions/temporaries/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.cmn.restapi.transactions.temporaries.CmnTemporaryAction">
+        <set-property key="fileIndex" value="{1}" />
+       </action>
+
+       <!-- インフォメーション情報 -->
+       <action
+            name="restApiForm"
+            path="/main/informations"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.man.restapi.informations.ManInformationsAction">
+       </action>
+
+       <!-- 施設予約 施設グループ情報API -->
+       <action
+            name="restApiForm"
+            path="/reserve/facility-groups"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.rsv.restapi.facility_groups.RsvFacilityGroupsAction">
+       </action>
+       <!-- 施設予約 施設一覧情報API -->
+       <action
+            name="restApiForm"
+            path="/reserve/facility-groups/*/facilities"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.rsv.restapi.facility_groups.facility.RsvFacilityGroupsFacilitiesAction">
+        <set-property key="groupId" value="{1}" />
+       </action>
+       <!-- ショートメール 添付ファイル情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/mails/*/files/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.mails.files.SmlMailsFilesAction">
+        <set-property key="mailSid" value="{1}" />
+        <set-property key="binSid" value="{2}" />
+       </action>
+       <!-- ショートメール 設定情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/configs"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.configs.SmlAccountsConfigsAction">
+       </action>
+       <!-- ショートメール アカウントリスト情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/query"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.query.SmlAccountsQueryAction">
+       </action>
+       <!-- ショートメール ラベル情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/labels"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.labels.SmlAccountsLabelsAction">
+        <set-property key="accountSid" value="{1}" />
+       </action>
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/labels/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.labels.SmlAccountsLabelsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="labelSid" value="{2}" />
+       </action>
+       <!-- ショートメール メール件数(一括)情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/count"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.count.SmlAccountsCountAction">
+        <set-property key="accountSid" value="{1}" />
+       </action>
+       <!-- ショートメール メール件数情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mail-boxes/*/count"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mail_boxes.count.SmlAccountsMailboxesCountAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="boxName" value="{2}" />
+       </action>
+       <!-- ショートメール メール情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mail-boxes/*/mails"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mail_boxes.mails.SmlAccountsMailboxesMailsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="boxName" value="{2}" />
+       </action>
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mail-boxes/*/mails/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mail_boxes.mails.SmlAccountsMailboxesMailsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="boxName" value="{2}" />
+        <set-property key="mailSid" value="{3}" />
+       </action>
+       <!-- ショートメール メール情報検索API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mail-boxes/*/mails/query"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mail_boxes.mails.query.SmlAccountsMailboxesMailsQueryAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="boxName" value="{2}" />
+       </action>
+       <!-- ショートメール メール作成API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mails"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mails.SmlAccountsMailsAction">
+        <set-property key="accountSid" value="{1}" />
+       </action>
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mails/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mails.SmlAccountsMailsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+       </action>
+       <!-- ショートメール メール状態変更API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/mails/multi"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.mails.multi.SmlAccountsMailsMultiAction">
+        <set-property key="accountSid" value="{1}" />
+       </action>
+       <!-- ショートメール 個人ひな形情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/accounts/*/templates"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.templates.SmlAccountsTemplatesAction">
+        <set-property key="accountSid" value="{1}" />
+       </action>
+       <!-- ショートメール 共通ひな形情報API -->
+       <action
+            name="restApiForm"
+            path="/smail/templates"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.templates.SmlTemplatesAction">
+       </action>
+       <!-- ラベル情報 -->
+       <action
+            name="restApiForm"
+            path="/user/labels"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.usr.restapi.labels.UsrLabelsAction">
+       </action>
+       <!-- ラベルカテゴリ情報 -->
+       <action
+            name="restApiForm"
+            path="/user/label-categories"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.usr.restapi.label_categories.UsrLabelCategoriesAction">
+       </action>
+       <!-- 役職情報 -->
+       <action
+            name="restApiForm"
+            path="/user/posts"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.usr.restapi.posts.UsrPostsAction">
+       </action>
+
+
+       <action
+            name="restApiForm"
+            path=" smail/accounts/*/mail-boxes/*/mails"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.labels.SmlAccountsLabelsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="mailBox" value="{2}" />
+       </action>
+       <action
+            name="restApiForm"
+            path=" smail/accounts/*/mail-boxes/*/mails/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sml.restapi.accounts.labels.SmlAccountsLabelsAction">
+        <set-property key="accountSid" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+       </action>
+
+       <!-- スケジュール情報 登録 -->
+       <action
+            name="restApiForm"
+            path="/schedule/entities"
+            scope="request"
+            validate="false"
+            parameter="normal"
+            type="jp.groupsession.v2.sch.restapi.entities.SchEntitiesAction">
+       </action>
+       <!-- スケジュール情報 編集・詳細・削除 -->
+       <action
+            name="restApiForm"
+            path="/schedule/entities/*"
+            scope="request"
+            validate="false"
+            parameter="normal"
+            type="jp.groupsession.v2.sch.restapi.entities.SchEntitiesAction">
+        <set-property key="scheduleSid" value="{1}" />
+       </action>
+       <!-- スケジュール情報 検索 -->
+       <action
+            name="restApiForm"
+            path="/schedule/entities/query"
+            scope="request"
+            validate="false"
+            parameter="query"
+            type="jp.groupsession.v2.sch.restapi.entities.SchEntitiesAction">
+       </action>
+       <!-- 外部スケジュール情報 検索 -->
+       <action
+            name="restApiForm"
+            path="/schedule/otherplugin-entities/query"
+            scope="request"
+            validate="false"
+            parameter="query"
+            type="jp.groupsession.v2.sch.restapi.otherplugin_entities.SchOtherEntitiesAction">
+       </action>
+       <!-- グループ情報 （スケジュール） -->
+       <action
+            name="restApiForm"
+            path="/schedule/groups"
+            scope="request"
+            validate="false"
+            parameter="query"
+            type="jp.groupsession.v2.sch.restapi.groups.SchGroupsAction">
+       </action>
+       <!-- グループ所属情報 （スケジュール） -->
+       <action
+            name="restApiForm"
+            path="/schedule/groups/*/*/members"
+            scope="request"
+            validate="false"
+            parameter="query"
+            type="jp.groupsession.v2.sch.restapi.groups.member.SchGroupMemberAction">
+        <set-property key="groupType" value="{1}" />
+        <set-property key="groupId" value="{2}" />
+       </action>
+       <!-- スケジュール設定 -->
+       <action
+            name="restApiForm"
+            path="/schedule/configs"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sch.restapi.configs.SchConfigsAction">
+       </action>
+       <!-- スケジュール　出欠確認応答編集 -->
+       <action
+            name="restApiForm"
+            path="/schedule/attends/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sch.restapi.attends.SchAttendsAction">
+        <set-property key="scheduleSid" value="{1}" />
+       </action>
+       <!-- スケジュール　リマインダー情報編集 -->
+       <action
+            name="restApiForm"
+            path="/schedule/entities/*/reminder"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sch.restapi.entities.reminder.SchReminderAction">
+        <set-property key="scheduleSid" value="{1}" />
+       </action>
+       <!-- スケジュール 添付ファイルダウンロード -->
+       <action
+            name="restApiForm"
+            path="/schedule/entities/*/files/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.sch.restapi.entities.files.SchEntitiesFilesAction">
+        <set-property key="scheduleSid" value="{1}" />
+        <set-property key="binSid" value="{2}" />
+       </action>
+
+       <!-- アドレス帳 役職一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/address/posts"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.posts.AdrPostsAction">
+       </action>
+
+       <!-- アドレス帳 業種一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/address/industries"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.industries.AdrIndustriesAction">
+       </action>
+
+       <!-- アドレス帳 ラベル一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/address/labels"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.labels.AdrLabelsAction">
+       </action>
+
+       <!-- アドレス帳 会社情報取得 -->
+       <action
+            name="restApiForm"
+            path="/address/companies/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.companies.AdrCompaniesAction">
+         <set-property key="companyId" value="{1}" />
+       </action>
+
+       <!-- アドレス帳 会社情報一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/address/companies/query"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.companies.query.AdrCompaniesQueryAction">
+       </action>
+
+       <!-- アドレス帳 アドレス情報一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/address/entities/query"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.entities.query.AdrEntitiesQueryAction">
+       </action>
+
+       <!-- アドレス帳 指定したアドレス情報を取得 -->
+       <action
+            name="restApiForm"
+            path="/address/entities/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.adr.restapi.entities.AdrEntitiesAction">
+          <set-property key="addressSid" value="{1}" />
+       </action>
+
+       <!-- Webメール メールを取得する -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.WmlAccountsMailsAction">
+        <set-property key="accountId" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+       </action>
+
+       <!-- Webメール メール一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/query"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.query.WmlAccountsMailsQueryAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+       <!-- Webメール メール受信 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/receive"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.receive.WmlAccountsMailsReceiveAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール メールを削除する -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.WmlAccountsMailsAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール メールにラベルを設定, 解除 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/label"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.label.WmlAccountsMailsLabelAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール メールを未読、または既読にする -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/open-condition"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.open_condition.WmlAccountsMailsOpenConditionAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール メールを移動する -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/move"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.move.WmlAccountsMailsMoveAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- WEBメール ラベル 一覧取得, 登録-->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/labels"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.labels.WmlAccountsLabelsAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+       
+       <!-- Webメール 送信先リスト取得 -->
+       <action
+            name="restApiForm"
+            path="/webmail/destination-lists"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.destination_lists.WmlDestinationListsAction">
+       </action>
+
+       <!-- Webメール アカウント一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/configs"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.configs.WmlAccountsConfigsAction">
+       </action>
+
+       <!-- Webメール メール件数取得 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/count"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.count.WmlAccountsCountAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール テンプレート一覧取得 -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/templates"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.templates.WmlAccountsTemplatesAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール メール添付ファイルダウンロード -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/*/files/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.files.WmlAccountsMailsFilesAction">
+        <set-property key="accountId" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+        <set-property key="binSid" value="{3}" />
+       </action>
+
+       <!-- Webメール テンプレート添付ファイルダウンロード -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/templates/*/files/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.templates.files.WmlAccountsTemplatesFilesAction">
+        <set-property key="accountId" value="{1}" />
+        <set-property key="templateSid" value="{2}" />
+        <set-property key="binSid" value="{3}" />
+       </action>
+
+       <!-- Webメール メール送信(新規) -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.send.WmlAccountsMailsSendAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+
+       <!-- Webメール 草稿保管(新規) -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/draft"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.draft.WmlAccountsMailsDraftAction">
+        <set-property key="accountId" value="{1}" />
+       </action>
+       
+       <!-- Webメール メール送信(編集) -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/*/send"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.send.WmlAccountsMailsSendAction">
+        <set-property key="accountId" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+       </action>
+
+       <!-- Webメール 草稿保管(編集) -->
+       <action
+            name="restApiForm"
+            path="/webmail/accounts/*/mails/*/draft"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.wml.restapi.accounts.mails.draft.WmlAccountsMailsDraftAction">
+        <set-property key="accountId" value="{1}" />
+        <set-property key="mailSid" value="{2}" />
+       </action>
+
+    </action-mappings>
+
+</struts-config>

@@ -1,0 +1,47 @@
+insert into NTP_TEMPLATE(
+            NTT_SID,
+            NTT_NAME,
+            NTT_ANKEN,
+            NTT_COMP,
+            NTT_KATUDO,
+            NTT_MIKOMI,
+            NTT_TEMP,
+            NTT_ACTION,
+            NTT_DETAIL,
+            NTT_AUID,
+            NTT_ADATE,
+            NTT_EUID,
+            NTT_EDATE)
+        values
+           (1,
+            '日報テンプレート',
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            '',
+            0,
+            current_timestamp,
+            0,
+            current_timestamp);
+
+insert into CMN_SAIBAN(
+            SBN_SID,
+            SBN_SID_SUB,
+            SBN_NUMBER,
+            SBN_STRING,
+            SBN_AID,
+            SBN_ADATE,
+            SBN_EID,
+            SBN_EDATE)
+        values
+            ('nippou',
+            'template',
+            1,
+            'template',
+            0,
+            current_timestamp,
+            0,
+            current_timestamp);

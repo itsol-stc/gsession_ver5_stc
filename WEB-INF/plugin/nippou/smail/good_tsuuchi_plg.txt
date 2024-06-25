@@ -1,0 +1,10 @@
+◎Group Session 日報いいね!通知
+
+$ADATEに下記の日報がいいね!されました。
+
+┏━
+┃$TITLE
+┗━
+URL:$URL
+
+登録者:$UNAME

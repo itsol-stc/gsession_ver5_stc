@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="chtmainForm" type="jp.groupsession.v2.cht.chtmain.ChtMainForm" />
+      <form-bean name="cht010Form" type="jp.groupsession.v2.cht.cht010.Cht010Form" />
+      <form-bean name="cht020Form" type="jp.groupsession.v2.cht.cht020.Cht020Form" />
+      <form-bean name="cht030Form" type="jp.groupsession.v2.cht.cht030.Cht030Form" />
+      <form-bean name="cht040Form" type="jp.groupsession.v2.cht.cht040.Cht040Form" />
+      <form-bean name="cht040knForm" type="jp.groupsession.v2.cht.cht040kn.Cht040knForm" />
+      <form-bean name="cht050Form" type="jp.groupsession.v2.cht.cht050.Cht050Form" />
+      <form-bean name="cht050knForm" type="jp.groupsession.v2.cht.cht050kn.Cht050knForm" />
+      <form-bean name="cht060Form" type="jp.groupsession.v2.cht.cht060.Cht060Form" />
+      <form-bean name="cht060knForm" type="jp.groupsession.v2.cht.cht060kn.Cht060knForm" />
+      <form-bean name="cht070Form" type="jp.groupsession.v2.cht.cht070.Cht070Form" />
+      <form-bean name="cht080Form" type="jp.groupsession.v2.cht.cht080.Cht080Form" />
+      <form-bean name="cht090Form" type="jp.groupsession.v2.cht.cht090.Cht090Form" />
+      <form-bean name="cht090knForm" type="jp.groupsession.v2.cht.cht090kn.Cht090knForm" />
+      <form-bean name="cht100Form" type="jp.groupsession.v2.cht.cht100.Cht100Form" />
+      <form-bean name="cht110Form" type="jp.groupsession.v2.cht.cht110.Cht110Form" />
+      <form-bean name="cht110knForm" type="jp.groupsession.v2.cht.cht110kn.Cht110knForm" />
+      <form-bean name="cht120Form" type="jp.groupsession.v2.cht.cht120.Cht120Form" />
+      <form-bean name="cht130Form" type="jp.groupsession.v2.cht.cht130.Cht130Form" />
+      <form-bean name="cht140Form" type="jp.groupsession.v2.cht.cht140.Cht140Form" />
+      <form-bean name="cht150Form" type="jp.groupsession.v2.cht.cht150.Cht150Form" />
+      <form-bean name="cht150knForm" type="jp.groupsession.v2.cht.cht150kn.Cht150knForm" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+       <!-- メイン -->
+       <action
+            name="chtmainForm"
+            path="/chat/chtmain"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/chtmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.main.ChtMainAction">
+            <forward name="chat" path="/chat/cht010.do" />
+       </action>
+
+       <!-- チャット一覧 -->
+       <action
+            name="cht010Form"
+            path="/chat/cht010"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht010.Cht010Action">
+            <forward name="chat" path="/chat/cht010.do" />
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht030" path="/chat/cht030.do" />
+       </action>
+
+       <!-- チャット一覧 チャットグループ メンバー選択UI -->
+       <action
+            name="cht010Form"
+            path="/chat/cht010_grpmember"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht010_grpmember.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht010.Cht010Action">
+       </action>
+
+       <!-- 管理者設定一覧 -->
+       <action
+            name="cht020Form"
+            path="/chat/cht020"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht020.Cht020Action">
+            <forward name="cht010" path="/chat/cht010.do" />
+            <forward name="cht040" path="/chat/cht040.do" />
+            <forward name="cht050" path="/chat/cht050.do" />
+            <forward name="cht060" path="/chat/cht060.do" />
+            <forward name="cht070" path="/chat/cht070.do" />
+            <forward name="cht080" path="/chat/cht080.do" />
+            <forward name="cht100" path="/chat/cht100.do" />
+            <forward name="cht140" path="/chat/cht140.do" />
+            <forward name="main" path="/main/man002.do" />
+       </action>
+
+       <!-- 個人設定一覧 -->
+       <action
+            name="cht030Form"
+            path="/chat/cht030"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht030.Cht030Action">
+            <forward name="cht010" path="/chat/cht010.do" />
+            <forward name="cht120" path="/chat/cht120.do" />
+            <forward name="cht130" path="/chat/cht130.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+       </action>
+
+       <!-- 管理者基本設定 -->
+       <action
+            name="cht040Form"
+            path="/chat/cht040"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht040.Cht040Action">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht040kn" path="/chat/cht040kn.do" />
+       </action>
+
+       <!-- 管理者基本設定確認 -->
+       <action
+            name="cht040knForm"
+            path="/chat/cht040kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht040kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht040kn.Cht040knAction">
+            <forward name="cht040" path="/chat/cht040.do" />
+            <forward name="cht020" path="/chat/cht020.do" />
+       </action>
+
+       <!-- 管理者自動データ削除設定 -->
+       <action
+            name="cht050Form"
+            path="/chat/cht050"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht050.Cht050Action">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht050kn" path="/chat/cht050kn.do" />
+       </action>
+
+       <!-- 管理者自動データ削除設定確認 -->
+       <action
+            name="cht050knForm"
+            path="/chat/cht050kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht050kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht050kn.Cht050knAction">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht050" path="/chat/cht050.do" />
+       </action>
+
+       <!-- 管理者手動データ削除 -->
+       <action
+            name="cht060Form"
+            path="/chat/cht060"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht060.Cht060Action">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht060kn" path="/chat/cht060kn.do" />
+       </action>
+
+       <!-- 管理者手動データ削除確認 -->
+       <action
+            name="cht060knForm"
+            path="/chat/cht060kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht060kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht060kn.Cht060knAction">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht060" path="/chat/cht060.do" />
+       </action>
+
+       <!-- 管理者設定 統計情報 -->
+       <action
+            name="cht070Form"
+            path="/chat/cht070"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht070.Cht070Action">
+            <forward name="cht020" path="/chat/cht020.do" />
+
+            <forward name="adminCircular" path="/circular/cir100.do" />
+            <forward name="adminSmail" path="/smail/sml100.do" />
+            <forward name="adminFile" path="/file/fil200.do" />
+            <forward name="adminWebmail" path="/webmail/wml020.do" />
+            <forward name="adminBulletin" path="/bulletin/bbs110.do" />
+            <forward name="adminMain" path="/main/man002.do" />
+
+            <forward name="statsCircular" path="/circular/cir210.do" />
+            <forward name="statsSmail" path="/smail/sml370.do" />
+            <forward name="statsFile" path="/file/fil270.do" />
+            <forward name="statsWebmail" path="/webmail/wml300.do" />
+            <forward name="statsBulletin" path="/bulletin/bbs180.do" />
+            <forward name="statsMain" path="/main/man390.do" />
+       </action>
+
+       <!-- 管理者特例アクセス管理 -->
+       <action
+            name="cht080Form"
+            path="/chat/cht080"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht080.Cht080Action">
+            <forward name="mine" path="/chat/cht080.do" />
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht090" path="/chat/cht090.do" />
+       </action>
+
+       <!-- 管理者特例アクセス設定 -->
+       <action
+            name="cht090Form"
+            path="/chat/cht090"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht090.Cht090Action">
+            <forward name="cht080" path="/chat/cht080.do" />
+            <forward name="mine" path="/chat/cht090.do" />
+            <forward name="cht090kn" path="/chat/cht090kn.do" />
+       </action>
+
+       <!-- 管理者特例アクセス設定確認 -->
+       <action
+            name="cht090knForm"
+            path="/chat/cht090kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht090kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht090kn.Cht090knAction">
+            <forward name="cht080" path="/chat/cht080.do" />
+            <forward name="cht090" path="/chat/cht090.do" />
+       </action>
+
+       <!-- 管理者グループ管理 -->
+       <action
+            name="cht100Form"
+            path="/chat/cht100"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht100.Cht100Action">
+            <forward name="cht020" path="/chat/cht020.do" />
+            <forward name="cht110" path="/chat/cht110.do" />
+       </action>
+       <!-- 管理者グループ追加編集 -->
+       <action
+            name="cht110Form"
+            path="/chat/cht110"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht110.Cht110Action">
+            <forward name="cht100" path="/chat/cht100.do" />
+            <forward name="cht110" path="/chat/cht110.do" />
+            <forward name="cht110kn" path="/chat/cht110kn.do" />
+       </action>
+       <!-- 管理者グループ追加編集確認 -->
+       <action
+            name="cht110knForm"
+            path="/chat/cht110kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht110kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht110kn.Cht110knAction">
+            <forward name="cht100" path="/chat/cht100.do" />
+            <forward name="cht110" path="/chat/cht110.do" />
+       </action>
+       <!-- 個人通知設定 -->
+       <action
+            name="cht120Form"
+            path="/chat/cht120"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht120.Cht120Action">
+            <forward name="cht030" path="/chat/cht030.do" />
+       </action>
+       <!-- 個人表示設定 -->
+       <action
+            name="cht130Form"
+            path="/chat/cht130"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht130.Cht130Action">
+            <forward name="cht030" path="/chat/cht030.do" />
+       </action>
+       <!-- 管理者カテゴリ管理 -->
+       <action
+            name="cht140Form"
+            path="/chat/cht140"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht140.Cht140Action">
+            <forward name="cht150" path="/chat/cht150.do" />
+            <forward name="cht020" path="/chat/cht020.do" />
+       </action>
+              <!-- 管理者カテゴリ作成編集 -->
+       <action
+            name="cht150Form"
+            path="/chat/cht150"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht150.Cht150Action">
+            <forward name="cht140" path="/chat/cht140.do" />
+            <forward name="cht150" path="/chat/cht150.do" />
+            <forward name="cht150kn" path="/chat/cht150kn.do" />
+       </action>
+              <!-- 管理者カテゴリ作成編集確認 -->
+       <action
+            name="cht150knForm"
+            path="/chat/cht150kn"
+            scope="request"
+            input="/WEB-INF/plugin/chat/jsp/cht150kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.cht.cht150kn.Cht150knAction">
+            <forward name="cht140" path="/chat/cht140.do" />
+            <forward name="cht150" path="/chat/cht150.do" />
+       </action>
+    </action-mappings>
+</struts-config>

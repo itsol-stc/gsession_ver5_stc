@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>api</id>
+
+  <!-- 名称  -->
+  <name>WEB API</name>
+  <name-eng>WEB API</name-eng>
+
+  <!-- 説明  -->
+  <description>
+WEBブラウザ以外のデバイスや、他のアプリケーションと連携を行うためのWEB API。
+  </description>
+
+  <!-- トップメニュー トップメニューの情報を記述する 記述しない場合はメニューに表示しない  -->
+  <topmenu-info>
+    <!-- メニューへの表示/非表示 -->
+    <view>false</view>
+    <!-- メニューアイコンクリック時に遷移するURL -->
+    <url></url>
+  </topmenu-info>
+
+  <!-- メイン画面表示 メイン画面に表示する情報を記述する -->
+  <mainscreen-info>
+    <!-- メイン画面への表示/非表示 未設定の場合は表示しない -->
+    <view>false</view>
+  </mainscreen-info>
+
+  <!-- ヘルプ情報を設定する。 -->
+  <help-info>
+    <!-- メニューの表示/非表示 -->
+    <view>true</view>
+  </help-info>
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン管理者設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 管理者設定メニューURL -->
+    <url>../api/api010.do</url>
+    <!-- アイコン -->
+    <icon>../api/images/original/menu_icon_single.png</icon>
+    <iconClassic>../api/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+  <!-- バッチ処理の実行を行うリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>batchjob</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.api.ApiBatchListenerImpl</listener-class>
+  </listener>
+
+
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+</plugin>

@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="prjmainForm" type="jp.groupsession.v2.prj.main.PrjMainForm" />
+        <form-bean name="prj010Form" type="jp.groupsession.v2.prj.prj010.Prj010Form" />
+        <form-bean name="prj020Form" type="jp.groupsession.v2.prj.prj020.Prj020Form" />
+        <form-bean name="prj021Form" type="jp.groupsession.v2.prj.prj021.Prj021Form" />
+        <form-bean name="prj022Form" type="jp.groupsession.v2.prj.prj022.Prj022Form" />
+        <form-bean name="prj023Form" type="jp.groupsession.v2.prj.prj023.Prj023Form" />
+        <form-bean name="prj024Form" type="jp.groupsession.v2.prj.prj024.Prj024Form" />
+        <form-bean name="prj025Form" type="jp.groupsession.v2.prj.prj025.Prj025Form" />
+        <form-bean name="prj030Form" type="jp.groupsession.v2.prj.prj030.Prj030Form" />
+        <form-bean name="prj040Form" type="jp.groupsession.v2.prj.prj040.Prj040Form" />
+        <form-bean name="prj050Form" type="jp.groupsession.v2.prj.prj050.Prj050Form" />
+        <form-bean name="prj060Form" type="jp.groupsession.v2.prj.prj060.Prj060Form" />
+        <form-bean name="prj070Form" type="jp.groupsession.v2.prj.prj070.Prj070Form" />
+        <form-bean name="prj080Form" type="jp.groupsession.v2.prj.prj080.Prj080Form" />
+        <form-bean name="prj090Form" type="jp.groupsession.v2.prj.prj090.Prj090Form" />
+        <form-bean name="prj100Form" type="jp.groupsession.v2.prj.prj100.Prj100Form" />
+        <form-bean name="prj110Form" type="jp.groupsession.v2.prj.prj110.Prj110Form" />
+        <form-bean name="prj110knForm" type="jp.groupsession.v2.prj.prj110kn.Prj110knForm" />
+        <form-bean name="prj120Form" type="jp.groupsession.v2.prj.prj120.Prj120Form" />
+        <form-bean name="prj130Form" type="jp.groupsession.v2.prj.prj130.Prj130Form" />
+        <form-bean name="prj140Form" type="jp.groupsession.v2.prj.prj140.Prj140Form" />
+        <form-bean name="prj140knForm" type="jp.groupsession.v2.prj.prj140kn.Prj140knForm" />
+        <form-bean name="prj150Form" type="jp.groupsession.v2.prj.prj150.Prj150Form" />
+        <form-bean name="prj160Form" type="jp.groupsession.v2.prj.prj160.Prj160Form" />
+        <form-bean name="prj160knForm" type="jp.groupsession.v2.prj.prj160kn.Prj160knForm" />
+        <form-bean name="prj190Form" type="jp.groupsession.v2.prj.prj190.Prj190Form" />
+        <form-bean name="prj190knForm" type="jp.groupsession.v2.prj.prj190kn.Prj190knForm" />
+        <form-bean name="prj210Form" type="jp.groupsession.v2.prj.prj210.Prj210Form" />
+        <form-bean name="prj230Form" type="jp.groupsession.v2.prj.prj230.Prj230Form" />
+        <form-bean name="prj240Form" type="jp.groupsession.v2.prj.prj240.Prj240Form" />
+        <form-bean name="prjptl010Form" type="jp.groupsession.v2.prj.ptl010.PrjPtl010Form" />
+        <form-bean name="prjptl011Form" type="jp.groupsession.v2.prj.ptl011.PrjPtl011Form" />
+        <form-bean name="prjptl020Form" type="jp.groupsession.v2.prj.ptl020.PrjPtl020Form" />
+    </form-beans>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="prjIndex" path="/project/prj010.do" redirect="false"/>
+        <forward name="prjSearch" path="/project/prj040.do" redirect="false"/>
+        <forward name="prjMain" path="/project/prj030.do" redirect="false"/>
+        <forward name="todoSearch" path="/project/prj070.do" redirect="false"/>
+        <forward name="todoView" path="/project/prj060.do" redirect="false"/>
+        <forward name="gotoRootDir" path="/project/prj170.do" redirect="false"/>
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- メイン -->
+       <action
+            name="prjmainForm"
+            path="/project/prjmain"
+            scope="request"
+            input="/WEB-INF/plugin/project/jsp/prjmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.prj.main.PrjMainAction">
+       </action>
+
+        <!-- プロジェクトダッシュボード画面 -->
+        <action
+            name="prj010Form"
+            path="/project/prj010"
+            input="/WEB-INF/plugin/project/jsp/prj010.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj010.Prj010Action">
+            <forward name="redraw" path="/project/prj010.do" />
+            <forward name="prjAdd" path="/project/prj020.do" />
+            <forward name="todoEdit" path="/project/prj050.do" />
+            <forward name="prjMain" path="/project/prj030.do" />
+            <forward name="prjSearch" path="/project/prj040.do" />
+            <forward name="todoAdd" path="/project/prj050.do" />
+            <forward name="todoRef" path="/project/prj060.do" />
+            <forward name="todoSearch" path="/project/prj070.do" />
+            <forward name="adminConf" path="/project/prj100.do" />
+            <forward name="personalConf" path="/project/prj080.do" />
+        </action>
+
+        <!-- プロジェクト登録画面 -->
+        <action
+            name="prj020Form"
+            path="/project/prj020"
+            input="/WEB-INF/plugin/project/jsp/prj020.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj020.Prj020Action">
+            <forward name="redraw" path="/project/prj020.do" />
+            <forward name="prjStatusModify" path="/project/prj021.do" />
+            <forward name="categoriModify" path="/project/prj022.do" />
+            <forward name="statusModify" path="/project/prj023.do" />
+            <forward name="selectTemlate" path="/project/prj130.do" />
+            <forward name="memberEdit" path="/project/prj150.do" />
+        </action>
+
+        <!-- プロジェクト状態設定画面 -->
+        <action
+            name="prj021Form"
+            path="/project/prj021"
+            input="/WEB-INF/plugin/project/jsp/prj021.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj021.Prj021Action">
+            <forward name="redraw" path="/project/prj021.do" />
+            <forward name="editClick" path="/project/prj020.do" />
+            <forward name="tmpEditClick" path="/project/prj140.do" />
+        </action>
+
+        <!-- ラベル設定画面 -->
+        <action
+            name="prj022Form"
+            path="/project/prj022"
+            input="/WEB-INF/plugin/project/jsp/prj022.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj022.Prj022Action">
+            <forward name="redraw" path="/project/prj022.do" />
+            <forward name="editClick" path="/project/prj020.do" />
+            <forward name="removeValueClick" path="/project/prj024.do" />
+            <forward name="tmpEditClick" path="/project/prj140.do" />
+        </action>
+
+        <!-- カテゴリ設定削除画面 -->
+        <action
+            name="prj024Form"
+            path="/project/prj024"
+            input="/WEB-INF/plugin/project/jsp/prj024.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj024.Prj024Action">
+            <forward name="editClick022" path="/project/prj022.do" />
+        </action>
+
+        <!-- TODO状態設定画面 -->
+        <action
+            name="prj023Form"
+            path="/project/prj023"
+            input="/WEB-INF/plugin/project/jsp/prj023.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj023.Prj023Action">
+            <forward name="redraw" path="/project/prj023.do" />
+            <forward name="editClick" path="/project/prj020.do" />
+            <forward name="removeValueClick" path="/project/prj025.do" />
+            <forward name="tmpEditClick" path="/project/prj140.do" />
+        </action>
+
+        <!-- TODO状態削除画面 -->
+        <action
+            name="prj025Form"
+            path="/project/prj025"
+            input="/WEB-INF/plugin/project/jsp/prj025.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj025.Prj025Action">
+            <forward name="editClick023" path="/project/prj023.do" />
+        </action>
+
+        <!-- プロジェクトメイン画面 -->
+        <action
+            name="prj030Form"
+            path="/project/prj030"
+            input="/WEB-INF/plugin/project/jsp/prj030.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj030.Prj030Action">
+            <forward name="redraw" path="/project/prj030.do" />
+            <forward name="prjEditClick" path="/project/prj020.do" />
+            <forward name="todoEdit" path="/project/prj050.do" />
+            <forward name="todoRef" path="/project/prj060.do" />
+            <forward name="todoSearch" path="/project/prj070.do" />
+            <forward name="todoAdd" path="/project/prj050.do" />
+            <forward name="memberEdit" path="/project/prj150.do" />
+            <forward name="todoImport" path="/project/prj160.do" />
+            <forward name="detailDir" path="/project/prj170.do" />
+        </action>
+
+        <!-- プロジェクト検索 -->
+        <action
+            name="prj040Form"
+            path="/project/prj040"
+            input="/WEB-INF/plugin/project/jsp/prj040.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj040.Prj040Action">
+            <forward name="redraw" path="/project/prj040.do" />
+            <forward name="backClick040" path="/project/prj010.do" />
+            <forward name="prjMain" path="/project/prj030.do" />
+            <forward name="prjAddClick" path="/project/prj020.do" />
+            <forward name="prjNameClick" path="/project/prj030.do" />
+      <forward name="selectuser" path="/project/prj240.do" />
+        </action>
+
+
+        <!-- TODO登録画面 -->
+        <action
+            name="prj050Form"
+            path="/project/prj050"
+            input="/WEB-INF/plugin/project/jsp/prj050.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj050.Prj050Action">
+            <forward name="redraw" path="/project/prj050.do" />
+         </action>
+
+        <!-- TODO参照画面 -->
+        <action
+            name="prj060Form"
+            path="/project/prj060"
+            input="/WEB-INF/plugin/project/jsp/prj060.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj060.Prj060Action">
+            <forward name="dashboard" path="/project/prj010.do" />
+            <forward name="prjMain" path="/project/prj030.do" />
+            <forward name="redraw" path="/project/prj060.do" />
+            <forward name="editTodoClick" path="/project/prj050.do" />
+            <forward name="sch010" path="/schedule/sch010.do" />
+        </action>
+
+        <!-- TODO検索 -->
+        <action
+            name="prj070Form"
+            path="/project/prj070"
+            input="/WEB-INF/plugin/project/jsp/prj070.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj070.Prj070Action">
+            <forward name="redraw" path="/project/prj070.do" />
+            <forward name="todoAddClick" path="/project/prj050.do" />
+            <forward name="todoNameClick" path="/project/prj060.do" />
+      <forward name="selectuser" path="/project/prj240.do" />
+        </action>
+
+        <!-- プロジェクト管理 個人設定 -->
+        <action
+            name="prj080Form"
+            path="/project/prj080"
+            input="/WEB-INF/plugin/project/jsp/prj080.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj080.Prj080Action">
+            <forward name="back080" path="/project/prj010.do" />
+            <forward name="kensuEdit" path="/project/prj090.do" />
+            <forward name="tempKojin" path="/project/prj130.do" />
+            <forward name="dashBoard" path="/project/prj190.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+        </action>
+
+        <!-- 表示件数設定 -->
+        <action
+            name="prj090Form"
+            path="/project/prj090"
+            input="/WEB-INF/plugin/project/jsp/prj090.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj090.Prj090Action">
+            <forward name="back090" path="/project/prj080.do" />
+        </action>
+
+        <!-- プロジェクト管理 管理者設定 -->
+        <action
+            name="prj100Form"
+            path="/project/prj100"
+            input="/WEB-INF/plugin/project/jsp/prj100.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj100.Prj100Action">
+            <forward name="back100" path="/project/prj010.do" />
+            <forward name="kengenEdit" path="/project/prj110.do" />
+            <forward name="tempKyoyu" path="/project/prj130.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+        </action>
+
+        <!-- 登録権限設定 -->
+        <action
+            name="prj110Form"
+            path="/project/prj110"
+            input="/WEB-INF/plugin/project/jsp/prj110.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj110.Prj110Action">
+            <forward name="back110" path="/project/prj100.do" />
+            <forward name="ok" path="/project/prj110kn.do" />
+        </action>
+
+        <!-- 登録権限設定確認 -->
+        <action
+            name="prj110knForm"
+            path="/project/prj110kn"
+            input="/WEB-INF/plugin/project/jsp/prj110kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj110kn.Prj110knAction">
+            <forward name="back110kn" path="/project/prj110.do" />
+            <forward name="kakutei" path="/project/prj100.do" />
+        </action>
+
+        <!-- プロジェクト一覧popup -->
+        <action
+            name="prj120Form"
+            path="/project/prj120"
+            input="/WEB-INF/plugin/project/jsp/prj120.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj120.Prj120Action">
+        </action>
+
+        <!-- プロジェクトテンプレート一覧 -->
+        <action
+            name="prj130Form"
+            path="/project/prj130"
+            input="/WEB-INF/plugin/project/jsp/prj130.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj130.Prj130Action">
+            <forward name="backKojinSettei" path="/project/prj080.do" />
+            <forward name="backKanriSettei" path="/project/prj100.do" />
+            <forward name="backRedraw" path="/project/prj020.do" />
+            <forward name="tmpAdd" path="/project/prj140.do" />
+            <forward name="tmpSelect" path="/project/prj140.do" />
+            <forward name="tmpCheck" path="/project/prj140kn.do" />
+        </action>
+
+        <!-- プロジェクトテンプレート登録編集 -->
+        <action
+            name="prj140Form"
+            path="/project/prj140"
+            input="/WEB-INF/plugin/project/jsp/prj140.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj140.Prj140Action">
+            <forward name="redraw" path="/project/prj140.do" />
+            <forward name="backTmpList" path="/project/prj130.do" />
+            <forward name="prjStatusModify" path="/project/prj021.do" />
+            <forward name="categoriModify" path="/project/prj022.do" />
+            <forward name="statusModify" path="/project/prj023.do" />
+            <forward name="okClick" path="/project/prj140kn.do" />
+            <forward name="memberEdit" path="/project/prj150.do" />
+        </action>
+
+        <!-- プロジェクトテンプレート登録編集確認 -->
+        <action
+            name="prj140knForm"
+            path="/project/prj140kn"
+            input="/WEB-INF/plugin/project/jsp/prj140kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj140kn.Prj140knAction">
+            <forward name="backRedraw" path="/project/prj140.do" />
+            <forward name="backToTmpList" path="/project/prj130.do" />
+            <forward name="editClick" path="/project/prj020.do" />
+        </action>
+
+        <!-- プロジェクトメンバー設定画面 -->
+        <action
+            name="prj150Form"
+            path="/project/prj150"
+            input="/WEB-INF/plugin/project/jsp/prj150.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj150.Prj150Action">
+            <forward name="backPrj030" path="/project/prj030.do" />
+            <forward name="backPrj020" path="/project/prj020.do" />
+            <forward name="backPrj140" path="/project/prj140.do" />
+            <forward name="redraw" path="/project/prj150.do" />
+            <forward name="addNaibuMember" path="/project/prj240.do" />
+        </action>
+
+        <!-- TODOインポート画面 -->
+        <action
+            name="prj160Form"
+            path="/project/prj160"
+            input="/WEB-INF/plugin/project/jsp/prj160.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj160.Prj160Action">
+            <forward name="backFromCsvImport" path="/project/prj030.do" />
+            <forward name="doImport" path="/project/prj160kn.do" />
+        </action>
+
+        <!-- TODOインポート確認画面 -->
+        <action
+            name="prj160knForm"
+            path="/project/prj160kn"
+            input="/WEB-INF/plugin/project/jsp/prj160kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj160kn.Prj160knAction">
+            <forward name="backFromCsvImportKn" path="/project/prj160.do" />
+            <forward name="impComp" path="/project/prj030.do" />
+        </action>
+
+
+        <!-- 個人設定 ダッシュボード初期値設定 -->
+        <action
+            name="prj190Form"
+            path="/project/prj190"
+            input="/WEB-INF/plugin/project/jsp/prj190.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj190.Prj190Action">
+            <forward name="backKmenu" path="/project/prj080.do" />
+            <forward name="prj190kn" path="/project/prj190kn.do" />
+        </action>
+
+        <!-- 個人設定 ダッシュボード初期値設定確認 -->
+        <action
+            name="prj190knForm"
+            path="/project/prj190kn"
+            input="/WEB-INF/plugin/project/jsp/prj190kn.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj190kn.Prj190knAction">
+            <forward name="backPrj190" path="/project/prj190.do" />
+            <forward name="prj080" path="/project/prj080.do" />
+        </action>
+
+
+        <!-- プロジェクト選択 -->
+        <action
+            name="prj210Form"
+            path="/project/prj210"
+            input="/WEB-INF/plugin/project/jsp/prj210.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj210.Prj210Action">
+        </action>
+
+        <!-- TODOポップアップ画面 -->
+        <action
+            name="prj230Form"
+            path="/project/prj230"
+            input="/WEB-INF/plugin/project/jsp/prj230.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj230.Prj230Action">
+            <forward name="redraw" path="/project/prj230.do" />
+        </action>
+
+        <!-- ユーザ選択画面 -->
+        <action
+            name="prj240Form"
+            path="/project/prj240"
+            input="/WEB-INF/plugin/project/jsp/prj240.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.prj240.Prj240Action">
+        </action>
+
+        <!-- ポータル ポートレット プロジェクトTODO状態内訳 -->
+        <action
+            name="prjptl010Form"
+            path="/project/prjptl010"
+            input="/WEB-INF/plugin/project/jsp/prjptl010.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.ptl010.PrjPtl010Action">
+        </action>
+
+        <!-- ポータル ポートレット プロジェクトTODO状態内訳 -->
+        <action
+            name="prjptl011Form"
+            path="/project/prjptl011"
+            input="/WEB-INF/plugin/project/jsp/prjptl011.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.ptl011.PrjPtl011Action">
+           <forward name="project_todo" path="/project/prj010.do" />
+        </action>
+
+        <!-- ポータル ポートレット プロジェクトTODO状態内訳 -->
+        <action
+            name="prjptl020Form"
+            path="/project/prjptl020"
+            input="/WEB-INF/plugin/project/jsp/prjptl020.jsp"
+            validate="false"
+            scope="request"
+            type="jp.groupsession.v2.prj.ptl020.PrjPtl020Action">
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+        </action>
+    </action-mappings>
+
+</struts-config>

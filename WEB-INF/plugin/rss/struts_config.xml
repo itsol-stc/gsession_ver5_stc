@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="rssmainForm" type="jp.groupsession.v2.rss.main.RssMainForm" />
+      <form-bean name="rssNewRankingForm" type="jp.groupsession.v2.rss.newranking.RssNewRankingForm" />
+      <form-bean name="rss010Form" type="jp.groupsession.v2.rss.rss010.Rss010Form" />
+      <form-bean name="rss020Form" type="jp.groupsession.v2.rss.rss020.Rss020Form" />
+      <form-bean name="rss030Form" type="jp.groupsession.v2.rss.rss030.Rss030Form" />
+      <form-bean name="rss040Form" type="jp.groupsession.v2.rss.rss040.Rss040Form" />
+      <form-bean name="rss050Form" type="jp.groupsession.v2.rss.rss050.Rss050Form" />
+      <form-bean name="rss060Form" type="jp.groupsession.v2.rss.rss060.Rss060Form" />
+      <form-bean name="rss070Form" type="jp.groupsession.v2.rss.rss070.Rss070Form" />
+      <form-bean name="rss080Form" type="jp.groupsession.v2.rss.rss080.Rss080Form" />
+      <form-bean name="rss090Form" type="jp.groupsession.v2.rss.rss090.Rss090Form" />
+      <form-bean name="rss100Form" type="jp.groupsession.v2.rss.rss100.Rss100Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+       <!-- メイン -->
+       <action
+            name="rssmainForm"
+            path="/rss/rssmain"
+            scope="request"
+            input="/WEB-INF/plugin/rss/jsp/rssmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rss.main.RssMainAction">
+       </action>
+
+       <!-- メイン新着RSS -->
+       <action
+            name="rssNewRankingForm"
+            path="/rss/rssnewranking"
+            scope="request"
+            input="/WEB-INF/plugin/rss/jsp/newranking.jsp"
+            validate="false"
+            type="jp.groupsession.v2.rss.newranking.RssNewRankingAction">
+           <forward name="redraw" path="/main/man001.do" />
+       </action>
+
+        <!-- RSSポータル -->
+        <action
+            name="rss010Form"
+            path="/rss/rss010"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss010.jsp"
+            type="jp.groupsession.v2.rss.rss010.Rss010Action">
+           <forward name="redraw" path="/rss/rss010.do" />
+           <forward name="main" path="/main/man001.do" />
+           <forward name="feedUrlInput" path="/rss/rss020.do" />
+           <forward name="rssInput" path="/rss/rss030.do" />
+           <forward name="ranking" path="/rss/rss040.do" />
+           <forward name="pconf" path="/rss/rss050.do" />
+           <forward name="aconf" path="/rss/rss070.do" />
+        </action>
+
+        <!-- RSSフィードURL入力 -->
+        <action
+            name="rss020Form"
+            path="/rss/rss020"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss020.jsp"
+            type="jp.groupsession.v2.rss.rss020.Rss020Action">
+
+           <forward name="rssData" path="/rss/rss030.do" />
+           <forward name="backRssList" path="/rss/rss010.do" />
+        </action>
+
+        <!-- RSS登録 -->
+        <action
+            name="rss030Form"
+            path="/rss/rss030"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss030.jsp"
+            type="jp.groupsession.v2.rss.rss030.Rss030Action">
+
+           <forward name="mine" path="/rss/rss030.do" />
+           <forward name="feedUrlInput" path="/rss/rss020.do" />
+           <forward name="backRssList" path="/rss/rss010.do" />
+        </action>
+
+        <!-- 登録ランキング -->
+        <action
+            name="rss040Form"
+            path="/rss/rss040"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss040.jsp"
+            type="jp.groupsession.v2.rss.rss040.Rss040Action">
+
+           <forward name="mine" path="/rss/rss040.do" />
+           <forward name="backRssList" path="/rss/rss010.do" />
+        </action>
+
+        <!-- 個人設定 -->
+        <action
+            name="rss050Form"
+            path="/rss/rss050"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss050.jsp"
+            type="jp.groupsession.v2.rss.rss050.Rss050Action">
+
+           <forward name="mainEdit" path="/rss/rss060.do" />
+           <forward name="newRssDate" path="/rss/rss100.do" />
+           <forward name="backRssList" path="/rss/rss010.do" />
+           <forward name="mainPriSetting" path="/main/man030.do" />
+        </action>
+
+        <!-- メイン画面表示設定 -->
+        <action
+            name="rss060Form"
+            path="/rss/rss060"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss060.jsp"
+            type="jp.groupsession.v2.rss.rss060.Rss060Action">
+
+           <forward name="backPconf" path="/rss/rss050.do" />
+        </action>
+
+        <!-- 管理者設定 -->
+        <action
+            name="rss070Form"
+            path="/rss/rss070"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss070.jsp"
+            type="jp.groupsession.v2.rss.rss070.Rss070Action">
+           <forward name="backMain" path="/rss/rss010.do" />
+           <forward name="rssMaintenance" path="/rss/rss080.do" />
+        </action>
+
+        <!-- メンテナンス画面 -->
+        <action
+            name="rss080Form"
+            path="/rss/rss080"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss080.jsp"
+            type="jp.groupsession.v2.rss.rss080.Rss080Action">
+           <forward name="mine" path="/rss/rss080.do" />
+           <forward name="backAconf" path="/rss/rss070.do" />
+        </action>
+
+        <!-- ユーザポップアップ画面 -->
+        <action
+            name="rss090Form"
+            path="/rss/rss090"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss090.jsp"
+            type="jp.groupsession.v2.rss.rss090.Rss090Action">
+        </action>
+
+        <!-- 新着RSS表示日数設定画面 -->
+        <action
+            name="rss100Form"
+            path="/rss/rss100"
+            scope="request"
+            validate="false"
+            input="/WEB-INF/plugin/rss/jsp/rss100.jsp"
+            type="jp.groupsession.v2.rss.rss100.Rss100Action">
+           <forward name="backPconf" path="/rss/rss050.do" />
+        </action>
+
+    </action-mappings>
+
+</struts-config>

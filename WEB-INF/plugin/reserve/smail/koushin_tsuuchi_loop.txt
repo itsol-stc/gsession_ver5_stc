@@ -1,0 +1,16 @@
+◎Group Session 施設予約 更新通知
+
+$UDATEに下記の施設予約が更新されました。
+
+┏━
+┃繰り返し登録
+┃
+┃利用目的: $RESERVE
+┃期間: $FRDATE　～　$TODATE
+┃時間: $FRTIME　～　$TOTIME
+┃内容:${NAIYOU}
+┗━
+URL:$URL
+
+更新者:$UNAME
+

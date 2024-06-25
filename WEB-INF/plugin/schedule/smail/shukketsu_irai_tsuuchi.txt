@@ -1,0 +1,19 @@
+◎Group Session スケジュール 出欠確認依頼通知
+
+$ADATEに下記のスケジュールが登録されました。
+登録者が出欠確認を要求してますので、ご回答をお願いします。
+
+┏━
+┃$TITLE
+┃ $FRDATE　～　$TODATE
+┗━
+URL:$URL
+
+被登録者:$NAME
+登録者:$UNAME
+
+◆内容
+${BODY}
+
+◆備考
+${BIKO}

@@ -1,0 +1,15 @@
+◎Group Session 回覧板確認情報更新通知
+
+┏━
+┃$TITLE
+┃　$DATE
+┗━
+URL:$URL
+
+確認者:$NAME
+
+確認時添付:$FILES
+
+◆内容
+${BODY}
+

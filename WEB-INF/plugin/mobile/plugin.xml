@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>mobile</id>
+
+  <!-- 名称  -->
+  <name>GSモバイル</name>
+  <name-eng>Mobile</name-eng>
+
+  <!-- 説明  -->
+  <description>
+GroupSessionを携帯端末からアクセスし活用することが出来ます。
+  </description>
+  <!-- リスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>batchjob</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v3.mbh.MbhBatchListnerImpl</listener-class>
+  </listener>
+
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン個人設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>false</view>
+    <!-- 個人設定メニューURL -->
+    <url></url>
+    <!-- アイコン -->
+    <icon>../mobile/images/original/menu_icon_single.png</icon>
+    <iconClassic>../mobile/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+</plugin>

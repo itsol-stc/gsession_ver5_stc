@@ -1,0 +1,26 @@
+create table RSV_USER
+(
+  USR_SID       integer not null,
+  RSG_SID       integer not null,
+  RSU_DIT_1     integer,
+  RSU_DIT_2     integer,
+  RSU_DIT_3     integer,
+  RSU_DIT_4     integer,
+  RSU_DIT_5     integer,
+  RSU_DTM_FR    integer not null,
+  RSU_DTM_TO    integer not null,
+  RSU_MAX_DSP   integer,
+  RSU_RELOAD    integer not null,
+  RSU_INI_FR_DATE timestamp,
+  RSU_INI_TO_DATE timestamp,
+  RSU_INI_EDIT  integer,
+  RSU_IMG_DSP   integer,
+  RSU_INI_DSP   integer not null,
+  RSU_AUID      integer not null,
+  RSU_ADATE     timestamp not null,
+  RSU_EUID      integer not null,
+  RSU_EDATE     timestamp not null,
+  RSU_SMAIL_KBN  integer not null,
+  RSU_INI_PUBLIC integer default 0 not null,
+  primary key 	(USR_SID)
+);

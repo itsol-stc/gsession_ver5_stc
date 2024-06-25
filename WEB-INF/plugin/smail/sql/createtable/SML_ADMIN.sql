@@ -1,0 +1,28 @@
+create table SML_ADMIN
+(
+    SMA_MAILFW       integer      not null,
+    SMA_AUTH_TYPE    integer      not null,
+    SMA_SMTPURL      varchar(200),
+    SMA_SMTP_PORT    varchar(5),
+    SMA_SMTP_USER    varchar(100),
+    SMA_SMTP_PASS    varchar(140),
+    SMA_FROM_ADD     varchar(256),
+    SMA_FWLMT_KBN    integer      not null,
+    SMA_AUID         integer      not null,
+    SMA_ADATE        timestamp    not null,
+    SMA_EUID         integer      not null,
+    SMA_EDATE        timestamp    not null,
+    SMA_SSL          integer      not null,
+    SMA_ACNT_MAKE    integer      not null,
+    SMA_AUTO_DEL_KBN integer      not null,
+    SMA_ACNT_USER       integer      not null,
+    SMA_MAX_DSP_STYPE      integer not null,
+    SMA_MAX_DSP                 integer not null,
+    SMA_RELOAD_STYPE        integer not null,
+    SMA_RELOAD                   integer not null,
+    SMA_PHOTO_DSP_STYPE  integer not null,
+    SMA_PHOTO_DSP             integer not null,
+    SMA_ATTACH_DSP_STYPE integer not null,
+    SMA_ATTACH_DSP            integer not null,
+    COT_SID          integer      not null
+) ;

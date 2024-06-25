@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>schedule</id>
+  <short-id>sch</short-id>
+
+  <!-- 名称  -->
+  <name>スケジュール</name>
+  <name-eng>Schedule</name-eng>
+
+  <!-- 説明  -->
+  <description>
+スケジュールを登録し、日間、週間、月間の単位でスケジュールを確認することができます。
+自分のスケジュール登録時にグループメンバーのスケジュールも同時に登録することができます。
+登録するスケジュールの公開区分を「公開 」「非公開」「予定有り（詳細は非表示）」の中から選択できます。
+  </description>
+
+  <!-- リスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>userlistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchIUserGroupListenerImpl</listener-class>
+  </listener>
+  <!-- バッチ処理の実行を行うリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>batchjob</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.ScheduleBatchListenerImpl</listener-class>
+  </listener>
+  <!-- リスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>appendInfo</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchCmn100AppendInfo</listener-class>
+  </listener>
+  <!-- リスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>topMenuInfolistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchTopMenuInfoListenerImpl</listener-class>
+  </listener>
+  <!-- ショートメール通知設定の際に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>smailSendSettinglistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchISmlSendSettingListenerImpl</listener-class>
+  </listener>
+  <!-- 自動削除設定の際に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>autoManualDeletelistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchIAutoManualDeleteListenerImpl</listener-class>
+  </listener>
+
+  <!-- データ使用量の操作時に呼び出されるリスナー  -->
+  <listener>
+    <!-- リスナー名  -->
+    <listener-name>useddatalistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.sch.SchUsedDetailListenerImpl</listener-class>
+  </listener>
+
+  <!-- メイン画面表示 メイン画面に表示する情報を記述する -->
+  <mainscreen-info>
+    <!-- メイン画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- メイン画面へ表示する画面のID javascriptを使用したい場合はこの名前で作成する 未設定の場合は表示しない -->
+    <id>schmain</id>
+    <!-- 表示位置の設定 左=1 右=2  未設定の場合は左へ表示する -->
+    <position>1</position>
+    <!-- 表示順の設定 未設定の場合は表示順が設定されているプラグインの下に表示する -->
+    <order>1</order>
+    <!-- 表示の際、scriptの実行を行うか -->
+    <loadScript>true</loadScript>
+    <!-- ポートレット画面への表示/非表示 pluginPortletタグ未記入の場合は非表示 -->
+    <pluginPortlet>true</pluginPortlet>
+  </mainscreen-info>
+
+  <!-- トップメニュー トップメニューの情報を記述する 記述しない場合はメニューに表示しない  -->
+  <topmenu-info>
+    <!-- メニューへの表示/非表示 -->
+    <view>true</view>
+    <!-- メニューアイコンクリック時に遷移するURL -->
+    <url>../schedule/sch010.do</url>
+    <!-- メニューアイコンの表示順 未設定の場合は表示順が設定されているプラグインの次に表示する -->
+    <order>3</order>
+  </topmenu-info>
+
+  <!-- ヘルプ情報を設定する。 -->
+  <help-info>
+    <!-- メニューの表示/非表示 -->
+    <view>true</view>
+  </help-info>
+
+  <!-- メイン管理者設定画面に表示する情報を記述する  -->
+  <adminsetting-info>
+    <!-- メイン管理者設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 管理者設定メニューURL -->
+    <url>../schedule/sch080.do</url>
+    <!-- アイコン -->
+    <icon>../schedule/images/original/menu_icon_single.png</icon>
+    <iconClassic>../schedule/images/classic/menu_icon_single.gif</iconClassic>
+  </adminsetting-info>
+
+  <!-- メイン個人設定画面に表示する情報を記述する  -->
+  <privatesetting-info>
+    <!-- メイン個人設定画面への表示/非表示 未設定の場合は表示しない -->
+    <view>true</view>
+    <!-- 個人設定メニューURL -->
+    <url>../schedule/sch090.do</url>
+    <!-- アイコン -->
+    <icon>../schedule/images/original/menu_icon_single.png</icon>
+    <iconClassic>../schedule/images/classic/menu_icon_single.gif</iconClassic>
+  </privatesetting-info>
+
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+
+  <!-- プラグインポートレットに関する情報を記述する  -->
+  <!-- ポートレット - グループスケジュール -->
+  <portlet-info>
+    <!-- ポートレットの画面ID javascriptを使用したい場合はこの名前で作成する 未設定の場合は表示しない -->
+    <id>schptl010</id>
+    <!-- ポートレットのbizクラス -->
+    <biz-class>jp.groupsession.v2.sch.ptl010.SchPtl010Biz</biz-class>
+    <!-- ポートレット選択画面の画面ID 未設定の場合は表示しない -->
+    <list-id>schptl020</list-id>
+    <!-- ポートレット選択画面の画面名を取得するためのメッセージID -->
+    <list-nameid>mainscreeninfo.schedule.schptl010</list-nameid>
+    <!-- プラグインポートレット一覧(セレクトボックスへの表示順) -->
+    <order>5</order>
+  </portlet-info>
+
+</plugin>

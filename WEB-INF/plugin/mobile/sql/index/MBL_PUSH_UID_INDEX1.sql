@@ -1,0 +1,1 @@
+create index MBL_PUSH_UID_INDEX1 on MBL_PUSH_UID(USR_SID, CMU_UID);

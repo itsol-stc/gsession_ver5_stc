@@ -1,0 +1,18 @@
+◎Group Session スケジュール登録通知
+
+$ADATEに下記のスケジュールが登録されました。
+
+┏━
+┃$TITLE
+┃ $FRDATE　～　$TODATE
+┗━
+URL:$URL
+
+被登録者:$NAME
+登録者:$UNAME
+
+◆内容
+${BODY}
+
+◆備考
+${BIKO}

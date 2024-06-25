@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="schmainForm" type="jp.groupsession.v2.sch.main.SchMainForm" />
+      <form-bean name="sch010Form" type="jp.groupsession.v2.sch.sch010.Sch010Form" />
+      <form-bean name="sch020Form" type="jp.groupsession.v2.sch.sch020.Sch020Form" />
+      <form-bean name="sch030Form" type="jp.groupsession.v2.sch.sch030.Sch030Form" />
+      <form-bean name="sch040Form" type="jp.groupsession.v2.sch.sch040.Sch040Form" />
+      <form-bean name="sch040knForm" type="jp.groupsession.v2.sch.sch040kn.Sch040knForm" />
+      <form-bean name="sch041Form" type="jp.groupsession.v2.sch.sch041.Sch041Form" />
+      <form-bean name="sch041knForm" type="jp.groupsession.v2.sch.sch041kn.Sch041knForm" />
+
+      <form-bean name="sch080Form" type="jp.groupsession.v2.sch.sch080.Sch080Form" />
+      <form-bean name="sch081Form" type="jp.groupsession.v2.sch.sch081.Sch081Form" />
+      <form-bean name="sch082Form" type="jp.groupsession.v2.sch.sch082.Sch082Form" />
+      <form-bean name="sch083Form" type="jp.groupsession.v2.sch.sch083.Sch083Form" />
+      <form-bean name="sch084Form" type="jp.groupsession.v2.sch.sch084.Sch084Form" />
+      <form-bean name="sch084knForm" type="jp.groupsession.v2.sch.sch084kn.Sch084knForm" />
+      <form-bean name="sch085Form" type="jp.groupsession.v2.sch.sch085.Sch085Form" />
+      <form-bean name="sch086Form" type="jp.groupsession.v2.sch.sch086.Sch086Form" />
+      <form-bean name="sch088Form" type="jp.groupsession.v2.sch.sch088.Sch088Form" />
+
+      <form-bean name="sch090Form" type="jp.groupsession.v2.sch.sch090.Sch090Form" />
+      <form-bean name="sch091Form" type="jp.groupsession.v2.sch.sch091.Sch091Form" />
+      <form-bean name="sch092Form" type="jp.groupsession.v2.sch.sch092.Sch092Form" />
+      <form-bean name="sch095Form" type="jp.groupsession.v2.sch.sch095.Sch095Form" />
+      <form-bean name="sch097Form" type="jp.groupsession.v2.sch.sch097.Sch097Form" />
+      <form-bean name="sch100Form" type="jp.groupsession.v2.sch.sch100.Sch100Form" />
+      <form-bean name="sch110Form" type="jp.groupsession.v2.sch.sch110.Sch110Form" />
+      <form-bean name="sch110knForm" type="jp.groupsession.v2.sch.sch110kn.Sch110knForm" />
+      <form-bean name="sch120Form" type="jp.groupsession.v2.sch.sch120.Sch120Form" />
+
+      <form-bean name="sch200Form" type="jp.groupsession.v2.sch.sch200.Sch200Form" />
+      <form-bean name="sch210Form" type="jp.groupsession.v2.sch.sch210.Sch210Form" />
+      <form-bean name="sch220Form" type="jp.groupsession.v2.sch.sch220.Sch220Form" />
+      <form-bean name="sch230Form" type="jp.groupsession.v2.sch.sch230.Sch230Form" />
+      <form-bean name="sch240Form" type="jp.groupsession.v2.sch.sch240.Sch240Form" />
+      <form-bean name="sch240knForm" type="jp.groupsession.v2.sch.sch240kn.Sch240knForm" />
+      <form-bean name="sch250Form" type="jp.groupsession.v2.sch.sch250.Sch250Form" />
+      <form-bean name="sch260Form" type="jp.groupsession.v2.sch.sch260.Sch260Form" />
+      <form-bean name="schptl010Form" type="jp.groupsession.v2.sch.ptl010.SchPtl010Form" />
+      <form-bean name="schptl020Form" type="jp.groupsession.v2.sch.ptl020.SchPtl020Form" />
+
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="ktool" path="/schedule/sch080.do" />
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+       <!-- メイン -->
+       <action
+            name="schmainForm"
+            path="/schedule/schmain"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/schmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.main.SchMainAction">
+            <forward name="sch040" path="/schedule/sch040.do" />
+            <forward name="sch040kn" path="/schedule/sch040kn.do" />
+            <forward name="sch010" path="/schedule/sch010.do" />
+            <forward name="sch020" path="/schedule/sch020.do" />
+            <forward name="sch030" path="/schedule/sch030.do" />
+            <forward name="sch200" path="/schedule/sch200.do" />
+            <forward name="man001" path="/main/man001.do" />
+            <forward name="ptl010" path="/portal/ptl010.do" />
+       </action>
+
+       <!-- スケジュール一覧(週間) -->
+       <action
+            name="sch010Form"
+            path="/schedule/sch010"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch010.Sch010Action">
+            <forward name="month" path="/schedule/sch020.do" />
+            <forward name="day" path="/schedule/sch030.do" />
+            <forward name="kojin" path="/schedule/sch200.do" />
+            <forward name="add" path="/schedule/sch040.do" />
+            <forward name="edit" path="/schedule/sch040.do" />
+            <forward name="dsp" path="/schedule/sch040kn.do" />
+            <forward name="msg" path="/smail/sml010.do" />
+            <forward name="pset" path="/schedule/sch090.do" />
+            <forward name="list" path="/schedule/sch100.do" />
+            <forward name="imp" path="/schedule/sch110.do" />
+            <forward name="register" path="/schedule/sch010.do" />
+       </action>
+
+       <!-- スケジュール一覧(月間) -->
+       <action
+            name="sch020Form"
+            path="/schedule/sch020"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch020.Sch020Action">
+            <forward name="020_week" path="/schedule/sch010.do" />
+            <forward name="020_day" path="/schedule/sch030.do" />
+            <forward name="020_add" path="/schedule/sch040.do" />
+            <forward name="020_edit" path="/schedule/sch040.do" />
+            <forward name="020_dsp" path="/schedule/sch040kn.do" />
+            <forward name="020_dsp" path="/schedule/sch040kn.do" />
+            <forward name="pset" path="/schedule/sch090.do" />
+            <forward name="020_list" path="/schedule/sch100.do" />
+            <forward name="020_imp" path="/schedule/sch110.do" />
+            <forward name="020_kojin" path="/schedule/sch200.do" />
+            <forward name="register" path="/schedule/sch020.do" />
+       </action>
+
+       <!-- スケジュール一覧(日間) -->
+       <action
+            name="sch030Form"
+            path="/schedule/sch030"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch030.Sch030Action">
+            <forward name="030_month" path="/schedule/sch020.do" />
+            <forward name="030_week" path="/schedule/sch010.do" />
+            <forward name="030_add" path="/schedule/sch040.do" />
+            <forward name="030_edit" path="/schedule/sch040.do" />
+            <forward name="030_dsp" path="/schedule/sch040kn.do" />
+            <forward name="030_msg" path="/smail/sml010.do" />
+            <forward name="pset" path="/schedule/sch090.do" />
+            <forward name="030_list" path="/schedule/sch100.do" />
+            <forward name="030_imp" path="/schedule/sch110.do" />
+            <forward name="030_kojin" path="/schedule/sch200.do" />
+            <forward name="register" path="/schedule/sch030.do" />
+       </action>
+
+       <!-- スケジュール登録 -->
+       <action
+            name="sch040Form"
+            path="/schedule/sch040"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch040.Sch040Action">
+            <forward name="040_week" path="/schedule/sch010.do" />
+            <forward name="040_month" path="/schedule/sch020.do" />
+            <forward name="040_day" path="/schedule/sch030.do" />
+            <forward name="040_kojin" path="/schedule/sch200.do" />
+            <forward name="040_dsp" path="/schedule/sch040kn.do" />
+            <forward name="040_del_ok" path="/schedule/sch040.do?CMD=040_del_ok" />
+            <forward name="040_del_cancel" path="/schedule/sch040.do" />
+            <forward name="040_warning_ok" path="/schedule/sch040.do?CMD=040_ok_dup_nocheck" />
+            <forward name="040_warning_cancel" path="/schedule/sch040.do" />
+            <forward name="040_main" path="/main/man001.do" />
+            <forward name="040_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="040_extend" path="/schedule/sch041.do" />
+            <forward name="040_week_ikkatu_finish" path="/schedule/sch010.do?CMD=040IkkatuFinish" />
+            <forward name="040_month_ikkatu_finish" path="/schedule/sch020.do?CMD=040IkkatuFinish" />
+            <forward name="040_day_ikkatu_finish" path="/schedule/sch030.do?CMD=040IkkatuFinish" />
+       </action>
+
+       <!-- スケジュール詳細・確認 -->
+       <action
+            name="sch040knForm"
+            path="/schedule/sch040kn"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch040kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch040kn.Sch040knAction">
+            <forward name="040kn_week" path="/schedule/sch010.do" />
+            <forward name="040kn_month" path="/schedule/sch020.do" />
+            <forward name="040kn_day" path="/schedule/sch030.do" />
+            <forward name="040kn_add" path="/schedule/sch040.do" />
+            <forward name="040kn_kojin" path="/schedule/sch200.do" />
+            <forward name="040kn_main" path="/main/man001.do" />
+            <forward name="040kn_list" path="/schedule/sch100.do?CMD=research" />
+       </action>
+
+       <!-- スケジュール繰り返し登録 -->
+       <action
+            name="sch041Form"
+            path="/schedule/sch041"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch041.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch041.Sch041Action">
+            <forward name="041_week" path="/schedule/sch010.do" />
+            <forward name="041_month" path="/schedule/sch020.do" />
+            <forward name="041_day" path="/schedule/sch030.do" />
+            <forward name="041_kojin" path="/schedule/sch200.do" />
+            <forward name="041_dsp" path="/schedule/sch040kn.do" />
+            <forward name="041_del_ok" path="/schedule/sch040.do?CMD=040_del_ok" />
+            <forward name="041_del_cancel" path="/schedule/sch040.do" />
+            <forward name="041_main" path="/main/man001.do" />
+            <forward name="041_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="041_default" path="/schedule/sch040.do" />
+            <forward name="041_ok" path="/schedule/sch041kn.do" />
+       </action>
+
+       <!-- スケジュール繰り返し登録確認 -->
+       <action
+            name="sch041knForm"
+            path="/schedule/sch041kn"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch041kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch041kn.Sch041knAction">
+            <forward name="041kn_back" path="/schedule/sch041.do" />
+            <forward name="041kn_week" path="/schedule/sch010.do" />
+            <forward name="041kn_month" path="/schedule/sch020.do" />
+            <forward name="041kn_day" path="/schedule/sch030.do" />
+            <forward name="041kn_kojin" path="/schedule/sch200.do" />
+            <forward name="041kn_main" path="/main/man001.do" />
+            <forward name="041kn_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="040kn_warning_ok" path="/schedule/sch041kn.do?CMD=041kn_commit_dup_nocheck" />
+            <forward name="040kn_warning_cancel" path="/schedule/sch041kn.do" />
+       </action>
+
+       <!-- 管理者設定メニュー -->
+       <action
+            name="sch080Form"
+            path="/schedule/sch080"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch080.Sch080Action">
+            <forward name="crange" path="/schedule/sch081.do" />
+            <forward name="adel" path="/schedule/sch082.do" />
+            <forward name="sdel" path="/schedule/sch083.do" />
+            <forward name="simp" path="/schedule/sch084.do" />
+            <forward name="gmdspset" path="/schedule/sch085.do" />
+            <forward name="iniset" path="/schedule/sch086.do" />
+            <forward name="smailAdmset" path="/schedule/sch088.do" />
+            <forward name="040_week" path="/schedule/sch010.do" />
+            <forward name="040_month" path="/schedule/sch020.do" />
+            <forward name="040_day" path="/schedule/sch030.do" />
+            <forward name="040_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="040_kojin_week" path="/schedule/sch200.do" />
+            <forward name="spAccess" path="/schedule/sch230.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+       </action>
+
+       <!-- 管理者設定 スケジュール基本設定 -->
+       <action
+            name="sch081Form"
+            path="/schedule/sch081"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch081.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch081.Sch081Action">
+            <forward name="sch081back" path="/schedule/sch080.do" />
+            <forward name="changeOk" path="/schedule/sch081.do?CMD=sch081commit" />
+            <forward name="changeCancel" path="/schedule/sch081.do" />
+       </action>
+
+       <!-- 管理者設定 自動データ削除設定 -->
+       <action
+            name="sch082Form"
+            path="/schedule/sch082"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch082.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch082.Sch082Action">
+            <forward name="sch082back" path="/schedule/sch080.do" />
+            <forward name="changeOk" path="/schedule/sch082.do?CMD=sch082commit" />
+            <forward name="changeCancel" path="/schedule/sch082.do?CMD=sch082cancel" />
+       </action>
+
+       <!-- 管理者設定 手動データ削除設定 -->
+       <action
+            name="sch083Form"
+            path="/schedule/sch083"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch083.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch083.Sch083Action">
+            <forward name="sch083back" path="/schedule/sch080.do" />
+            <forward name="changeOk" path="/schedule/sch083.do?CMD=sch083delete" />
+            <forward name="changeCancel" path="/schedule/sch083.do" />
+       </action>
+
+       <!-- 管理者設定 インポート -->
+       <action
+            name="sch084Form"
+            path="/schedule/sch084"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch084.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch084.Sch084Action">
+            <forward name="doImport" path="/schedule/sch084kn.do" />
+       </action>
+
+       <!-- 管理者設定 インポート確認 -->
+       <action
+            name="sch084knForm"
+            path="/schedule/sch084kn"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch084kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch084kn.Sch084knAction">
+            <forward name="importComp" path="/schedule/sch080.do" />
+            <forward name="back_to_import_input" path="/schedule/sch084.do" />
+       </action>
+
+       <!-- 管理者設定 メンバーデフォルト表示設定 -->
+       <action
+            name="sch085Form"
+            path="/schedule/sch085"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch085.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch085.Sch085Action">
+            <forward name="sch085back" path="/schedule/sch080.do" />
+            <forward name="changeOk" path="/schedule/sch085.do?CMD=sch085commit" />
+            <forward name="changeCancel" path="/schedule/sch085.do?CMD=sch085reload" />
+       </action>
+
+       <!-- 管理者設定 初期値設定 -->
+       <action
+            name="sch086Form"
+            path="/schedule/sch086"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch086.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch086.Sch086Action">
+            <forward name="mine" path="/schedule/sch086.do" />
+       </action>
+
+       <!-- 管理者設定 ショートメール通知設定 -->
+       <action
+            name="sch088Form"
+            path="/schedule/sch088"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch088.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch088.Sch088Action">
+            <forward name="sch088back" path="/schedule/sch080.do" />
+            <forward name="changeOk" path="/schedule/sch088.do?CMD=sch088commit" />
+            <forward name="changeCancel" path="/schedule/sch088.do" />
+       </action>
+
+       <!-- 個人設定メニュー -->
+       <action
+            name="sch090Form"
+            path="/schedule/sch090"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch090.Sch090Action">
+            <forward name="iniset" path="/schedule/sch091.do" />
+            <forward name="daydspset" path="/schedule/sch092.do" />
+            <forward name="smailset" path="/schedule/sch095.do" />
+            <forward name="repeatset" path="/schedule/sch097.do" />
+            <forward name="viewlistset" path="/schedule/sch250.do" />
+            <forward name="040_week" path="/schedule/sch010.do" />
+            <forward name="040_month" path="/schedule/sch020.do" />
+            <forward name="040_day" path="/schedule/sch030.do" />
+            <forward name="040_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="040_kojin_week" path="/schedule/sch200.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+       </action>
+
+       <!-- 個人設定 初期値設定 -->
+       <action
+            name="sch091Form"
+            path="/schedule/sch091"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch091.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch091.Sch091Action">
+            <forward name="sch091back" path="/schedule/sch090.do" />
+            <forward name="changeOk" path="/schedule/sch091.do?CMD=sch091commit" />
+            <forward name="changeCancel" path="/schedule/sch091.do?CMD=sch091reload" />
+       </action>
+
+       <!-- 個人設定 日間表示時間帯設定 -->
+       <action
+            name="sch092Form"
+            path="/schedule/sch092"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch092.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch092.Sch092Action">
+            <forward name="sch092back" path="/schedule/sch090.do" />
+            <forward name="changeOk" path="/schedule/sch092.do?CMD=sch092commit" />
+            <forward name="changeCancel" path="/schedule/sch092.do" />
+       </action>
+
+       <!-- 個人設定 ショートメール通知設定 -->
+       <action
+            name="sch095Form"
+            path="/schedule/sch095"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch095.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch095.Sch095Action">
+            <forward name="sch095back" path="/schedule/sch090.do" />
+            <forward name="changeOk" path="/schedule/sch095.do?CMD=sch095commit" />
+            <forward name="changeCancel" path="/schedule/sch095.do" />
+       </action>
+
+       <!-- 個人設定 重複登録設定 -->
+       <action
+            name="sch097Form"
+            path="/schedule/sch097"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch097.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch097.Sch097Action">
+            <forward name="sch097back" path="/schedule/sch090.do" />
+            <forward name="changeOk" path="/schedule/sch097.do?CMD=sch097commit" />
+            <forward name="changeCancel" path="/schedule/sch097.do" />
+       </action>
+
+       <!-- スケジュール一覧 -->
+       <action
+            name="sch100Form"
+            path="/schedule/sch100"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch100.Sch100Action">
+            <forward name="100_week" path="/schedule/sch010.do" />
+            <forward name="100_month" path="/schedule/sch020.do" />
+            <forward name="100_day" path="/schedule/sch030.do" />
+            <forward name="100_edit" path="/schedule/sch040.do" />
+            <forward name="100_dsp" path="/schedule/sch040kn.do" />
+            <forward name="ktool" path="/schedule/sch080.do" />
+            <forward name="pset" path="/schedule/sch090.do" />
+            <forward name="mine" path="/schedule/sch100.do" />
+            <forward name="100_imp" path="/schedule/sch110.do" />
+            <forward name="100_kojin" path="/schedule/sch200.do" />
+            <forward name="100_research" path="/schedule/sch100.do?CMD=research" />
+       </action>
+
+       <!-- インポート(一般) -->
+       <action
+            name="sch110Form"
+            path="/schedule/sch110"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch110.Sch110Action">
+            <forward name="110_impOk" path="/schedule/sch110kn.do" />
+            <forward name="110_week" path="/schedule/sch010.do" />
+            <forward name="110_month" path="/schedule/sch020.do" />
+            <forward name="110_day" path="/schedule/sch030.do" />
+            <forward name="110_list" path="/schedule/sch100.do?CMD=research" />
+            <forward name="doImport" path="/schedule/sch110kn.do" />
+       </action>
+
+       <!-- インポート確認(一般) -->
+       <action
+            name="sch110knForm"
+            path="/schedule/sch110kn"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch110kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch110kn.Sch110knAction">
+            <forward name="importComp" path="/schedule/sch110kn.do?CMD=comp" />
+            <forward name="back_to_import_input" path="/schedule/sch110.do" />
+            <forward name="110kn_week" path="/schedule/sch010.do" />
+            <forward name="110kn_month" path="/schedule/sch020.do" />
+            <forward name="110kn_day" path="/schedule/sch030.do" />
+            <forward name="110kn_list" path="/schedule/sch100.do?CMD=research" />
+       </action>
+
+       <!-- スケジュール・施設予約POPUP(日間) -->
+       <action
+            name="sch120Form"
+            path="/schedule/sch120"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch120.Sch120Action">
+       </action>
+
+       <!-- スケジュール個人週間 -->
+       <action
+            name="sch200Form"
+            path="/schedule/sch200"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch200.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch200.Sch200Action">
+            <forward name="200_week" path="/schedule/sch010.do" />
+            <forward name="200_month" path="/schedule/sch020.do" />
+            <forward name="200_day" path="/schedule/sch030.do" />
+            <forward name="200_add" path="/schedule/sch040.do" />
+            <forward name="200_edit" path="/schedule/sch040.do" />
+            <forward name="200_dsp" path="/schedule/sch040kn.do" />
+            <forward name="200_list" path="/schedule/sch100.do" />
+            <forward name="pset" path="/schedule/sch090.do" />
+       </action>
+
+       <!-- スケジュール確認 -->
+       <action
+            name="sch210Form"
+            path="/schedule/sch210"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch210.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch210.Sch210Action">
+       </action>
+
+       <!-- スケジュール 出欠確認一覧POPUP -->
+       <action
+            name="sch220Form"
+            path="/schedule/sch220"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch220.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch220.Sch220Action">
+       </action>
+
+       <!-- スケジュール 特例アクセス管理 -->
+       <action
+            name="sch230Form"
+            path="/schedule/sch230"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch230.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch230.Sch230Action">
+            <forward name="mine" path="/schedule/sch230.do" />
+            <forward name="entry" path="/schedule/sch240.do" />
+       </action>
+
+       <!-- スケジュール 特例アクセス登録 -->
+       <action
+            name="sch240Form"
+            path="/schedule/sch240"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch240.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch240.Sch240Action">
+            <forward name="mine" path="/schedule/sch240.do" />
+            <forward name="backList" path="/schedule/sch230.do" />
+            <forward name="confirm" path="/schedule/sch240kn.do" />
+       </action>
+
+       <!-- スケジュール 特例アクセス登録確認 -->
+       <action
+            name="sch240knForm"
+            path="/schedule/sch240kn"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch240kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch240kn.Sch240knAction">
+            <forward name="backInput" path="/schedule/sch240.do" />
+            <forward name="backList" path="/schedule/sch230.do" />
+       </action>
+
+       <!-- スケジュール 表示リスト設定 -->
+       <action
+            name="sch250Form"
+            path="/schedule/sch250"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch250.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch250.Sch250Action">
+            <forward name="sch250back" path="/schedule/sch090.do" />
+            <forward name="addViewList" path="/schedule/sch260.do" />
+       </action>
+
+       <!-- スケジュール 表示リスト登録 -->
+       <action
+            name="sch260Form"
+            path="/schedule/sch260"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/sch260.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.sch260.Sch260Action">
+            <forward name="mine" path="/schedule/sch260.do" />
+            <forward name="backList" path="/schedule/sch250.do" />
+       </action>
+
+       <!-- スケジュールポートレット グループスケジュール -->
+       <action
+            name="schptl010Form"
+            path="/schedule/schptl010"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/schptl010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.ptl010.SchPtl010Action">
+
+            <forward name="sch010" path="/schedule/sch010.do" />
+            <forward name="sch020" path="/schedule/sch020.do" />
+            <forward name="sch030" path="/schedule/sch030.do" />
+            <forward name="sch040" path="/schedule/sch040.do" />
+            <forward name="sch040kn" path="/schedule/sch040kn.do" />
+            <forward name="sch200" path="/schedule/sch200.do" />
+            <forward name="register" path="/portal/ptl010.do" />
+       </action>
+
+       <!-- スケジュールポートレット グループスケジュール選択 -->
+       <action
+            name="schptl020Form"
+            path="/schedule/schptl020"
+            scope="request"
+            input="/WEB-INF/plugin/schedule/jsp/schptl020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.sch.ptl020.SchPtl020Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+    </action-mappings>
+
+</struts-config>

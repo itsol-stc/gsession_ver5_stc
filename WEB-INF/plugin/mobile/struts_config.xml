@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="emptyForm" type="jp.groupsession.v2.struts.EmptyForm" />
+      <form-bean name="mbhApiSaveFCMTokenForm" type="jp.groupsession.v3.mbh.api.saveFCMToken.MbhApiSaveFCMTokenForm" />
+      <form-bean name="mbhApiSmailConfigForm" type="jp.groupsession.v3.mbh.api.smailConfig.MbhApiSmailConfigForm" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+        <!-- モバイル 旧URL(MH) -->
+        <action
+            name="oldUrl"
+            path="/mobile/mh_*"
+            scope="request"
+            validate="false"
+            include="/WEB-INF/plugin/mobile/jsp/mblDelete.jsp">
+        </action>
+
+        <!-- モバイル 旧URL(SP) -->
+        <action
+            name="oldUrl"
+            path="/mobile/sp_*"
+            scope="request"
+            validate="false"
+            include="/WEB-INF/plugin/mobile/jsp/mblDelete.jsp">
+        </action>
+
+
+        <!-- モバイル端末トークン登録処理(仮登録) -->
+        <action
+            name="restApiForm"
+            path="/mobile/devicetoken/prerequest"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v3.mbh.restapi.devicetoken.prerequest.MbhDevicetokenPrerequestAction">
+        </action>
+
+        <!-- モバイル端末トークン登録処理 削除処理 -->
+        <action
+            name="restApiForm"
+            path="/mobile/devicetoken"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v3.mbh.restapi.devicetoken.MbhDevicetokenAction">
+        </action>
+
+        <!-- 通知設定取得 -->
+        <action
+            name="restApiForm"
+            path="/mobile/configs/notification"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v3.mbh.restapi.configs.notification.MbhConfigsNotificationAction">
+        </action>
+
+        <!-- 通知設定登録(プラグイン指定) -->
+        <action
+            name="restApiForm"
+            path="/mobile/configs/notification/plugins/*"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v3.mbh.restapi.configs.notification.MbhConfigsNotificationAction">
+            <set-property key="pluginId" value="{1}" />
+        </action>
+
+        <!-- 通知設定登録(アカウント指定) -->
+        <action
+            name="restApiForm"
+            path="/mobile/configs/notification/plugins/*/**"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v3.mbh.restapi.configs.notification.MbhConfigsNotificationAction">
+            <set-property key="pluginId" value="{1}" />
+            <set-property key="accountId" value="{2}" />
+        </action>
+
+    </action-mappings>
+</struts-config>

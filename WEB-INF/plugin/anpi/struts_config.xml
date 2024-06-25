@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="anpMainForm" type="jp.groupsession.v2.anp.main.AnpMainForm" />
+        <form-bean name="anp010Form" type="jp.groupsession.v2.anp.anp010.Anp010Form" />
+        <form-bean name="anp020Form" type="jp.groupsession.v2.anp.anp020.Anp020Form" />
+        <form-bean name="anp020knForm" type="jp.groupsession.v2.anp.anp020kn.Anp020knForm" />
+        <form-bean name="anp030Form" type="jp.groupsession.v2.anp.anp030.Anp030Form" />
+        <form-bean name="anp040Form" type="jp.groupsession.v2.anp.anp040.Anp040Form" />
+        <form-bean name="anp040knForm" type="jp.groupsession.v2.anp.anp040kn.Anp040knForm" />
+        <form-bean name="anp050Form" type="jp.groupsession.v2.anp.anp050.Anp050Form" />
+        <form-bean name="anp050knForm" type="jp.groupsession.v2.anp.anp050kn.Anp050knForm" />
+        <form-bean name="anp060Form" type="jp.groupsession.v2.anp.anp060.Anp060Form" />
+        <form-bean name="anp060knForm" type="jp.groupsession.v2.anp.anp060kn.Anp060knForm" />
+        <form-bean name="anp070Form" type="jp.groupsession.v2.anp.anp070.Anp070Form" />
+        <form-bean name="anp080Form" type="jp.groupsession.v2.anp.anp080.Anp080Form" />
+        <form-bean name="anp080knForm" type="jp.groupsession.v2.anp.anp080kn.Anp080knForm" />
+        <form-bean name="anp090Form" type="jp.groupsession.v2.anp.anp090.Anp090Form" />
+        <form-bean name="anp100Form" type="jp.groupsession.v2.anp.anp100.Anp100Form" />
+        <form-bean name="anp100knForm" type="jp.groupsession.v2.anp.anp100kn.Anp100knForm" />
+        <form-bean name="anp110Form" type="jp.groupsession.v2.anp.anp110.Anp110Form" />
+        <form-bean name="anp120Form" type="jp.groupsession.v2.anp.anp120.Anp120Form" />
+        <form-bean name="anp120knForm" type="jp.groupsession.v2.anp.anp120kn.Anp120knForm" />
+        <form-bean name="anp121Form" type="jp.groupsession.v2.anp.anp121.Anp121Form" />
+        <form-bean name="anp121knForm" type="jp.groupsession.v2.anp.anp121kn.Anp121knForm" />
+        <form-bean name="anp130Form" type="jp.groupsession.v2.anp.anp130.Anp130Form" />
+        <form-bean name="anp140Form" type="jp.groupsession.v2.anp.anp140.Anp140Form" />
+        <form-bean name="anp150Form" type="jp.groupsession.v2.anp.anp150.Anp150Form" />
+        <form-bean name="anp150knForm" type="jp.groupsession.v2.anp.anp150kn.Anp150knForm" />
+        <form-bean name="anp160Form" type="jp.groupsession.v2.anp.anp160.Anp160Form" />
+        <form-bean name="anp170Form" type="jp.groupsession.v2.anp.anp170.Anp170Form" />
+        <form-bean name="anp999Form" type="jp.groupsession.v2.anp.anp999.Anp999Form" />
+    </form-beans>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="anpimain" path="/anpi/anp010.do" />
+        <forward name="anpinput" path="/mobile/mh_anp021.do" />
+        <forward name="anpimb_gf_msg" path="/anpi/anp999.do?CMD=INFO" redirect="false"/>
+        <forward name="anpimb_gf_system" path="/anpi/anp999.do?CMD=SYSETEM_ERROR" redirect="false"/>
+        <forward name="anpimb_gf_submit" path="/anpi/anp999.do?CMD=SUBMIT_ERROR" redirect="false"/>
+        <forward name="anpimb_gf_power" path="/anpi/anp999.do?CMD=POWER_ERROR" redirect="false"/>
+        <forward name="anpimb_gf_msg_backupprogress" path="/anpi/anp999.do?CMD=BACKUP_PROG" redirect="false"/>
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+
+        <!-- 安否状況画面  -->
+        <action
+            name="anpMainForm"
+            path="/anpi/anpmain"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anpmain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.main.AnpMainAction">
+            <forward name="anpiSyosai" path="/anpi/anp010.do" />
+        </action>
+
+        <!-- 安否状況一覧画面  -->
+        <action
+            name="anp010Form"
+            path="/anpi/anp010"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp010.Anp010Action">
+            <forward name="admtool" path="/anpi/anp070.do" />
+            <forward name="pritool" path="/anpi/anp030.do" />
+            <forward name="haisin" path="/anpi/anp060.do" />
+            <forward name="saisou" path="/anpi/anp060kn.do?CMD=saisou" />
+            <forward name="syosai" path="/anpi/anp020.do" />
+        </action>
+
+        <!-- 安否状況登録画面  -->
+        <action
+            name="anp020Form"
+            path="/anpi/anp020"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp020.Anp020Action">
+            <forward name="back" path="/anpi/anp010.do" />
+            <forward name="excute" path="/anpi/anp020kn.do" />
+        </action>
+
+        <!-- 安否状況登録確認画面  -->
+        <action
+            name="anp020knForm"
+            path="/anpi/anp020kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp020kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp020kn.Anp020knAction">
+            <forward name="back" path="/anpi/anp020.do" />
+            <forward name="excute" path="/anpi/anp010.do" />
+        </action>
+
+         <!-- 個人設定メニュー画面  -->
+        <action
+            name="anp030Form"
+            path="/anpi/anp030"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp030.Anp030Action">
+            <forward name="base" path="/anpi/anp040.do" />
+            <forward name="contact" path="/anpi/anp050.do" />
+            <forward name="mainPriSetting" path="/main/man030.do" />
+        </action>
+
+        <!-- 個人設定・表示設定画面 -->
+        <action
+            name="anp040Form"
+            path="/anpi/anp040"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp040.Anp040Action">
+            <forward name="back" path="/anpi/anp030.do" />
+            <forward name="excute" path="/anpi/anp040kn.do" />
+        </action>
+
+        <!-- 個人設定・表示設定確認画面  -->
+        <action
+            name="anp040knForm"
+            path="/anpi/anp040kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp040kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp040kn.Anp040knAction">
+            <forward name="back" path="/anpi/anp040.do" />
+            <forward name="pritool" path="/anpi/anp030.do" />
+        </action>
+
+        <!-- 個人設定・連絡先設定画面  -->
+        <action
+            name="anp050Form"
+            path="/anpi/anp050"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp050.Anp050Action">
+            <forward name="back" path="/anpi/anp030.do" />
+            <forward name="excute" path="/anpi/anp050kn.do" />
+        </action>
+
+        <!-- 個人設定・連絡先設定確認画面  -->
+        <action
+            name="anp050knForm"
+            path="/anpi/anp050kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp050kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp050kn.Anp050knAction">
+            <forward name="back" path="/anpi/anp050.do" />
+            <forward name="pritool" path="/anpi/anp030.do" />
+        </action>
+
+        <!-- 安否確認メッセージ配信画面  -->
+        <action
+            name="anp060Form"
+            path="/anpi/anp060"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp060.Anp060Action">
+            <forward name="back" path="/anpi/anp010.do" />
+            <forward name="back_his" path="/anpi/anp140.do" />
+            <forward name="haisin" path="/anpi/anp060.do" />
+            <forward name="excute" path="/anpi/anp060kn.do" />
+            <forward name="cmnConf" path="/anpi/anp080.do?CMD=backHaisin" />
+        </action>
+
+        <!-- 安否確認メッセージ配信確認画面  -->
+        <action
+            name="anp060knForm"
+            path="/anpi/anp060kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp060kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp060kn.Anp060knAction">
+            <forward name="back" path="/anpi/anp060.do" />
+            <forward name="history" path="/anpi/anp130.do" />
+        </action>
+
+        <!-- 管理者設定メニュー画面  -->
+        <action
+            name="anp070Form"
+            path="/anpi/anp070"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp070.Anp070Action">
+            <forward name="base" path="/anpi/anp080.do" />
+            <forward name="mailtemp" path="/anpi/anp090.do" />
+            <forward name="contact" path="/anpi/anp110.do" />
+            <forward name="history" path="/anpi/anp130.do" />
+            <forward name="allset" path="/anpi/anp150.do" />
+            <forward name="mainAdmSetting" path="/main/man002.do" />
+        </action>
+
+        <!-- 管理者設定・基本設定画面  -->
+        <action
+            name="anp080Form"
+            path="/anpi/anp080"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp080.Anp080Action">
+            <forward name="back" path="/anpi/anp070.do" />
+            <forward name="excute" path="/anpi/anp080kn.do" />
+        </action>
+
+        <!-- 管理者設定・基本設定確認画面  -->
+        <action
+            name="anp080knForm"
+            path="/anpi/anp080kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp080kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp080kn.Anp080knAction">
+            <forward name="back" path="/anpi/anp080.do" />
+            <forward name="admtool" path="/anpi/anp070.do" />
+            <forward name="haisin" path="/anpi/anp060.do" />
+        </action>
+
+        <!-- 管理者設定・メールテンプレート選択画面  -->
+        <action
+            name="anp090Form"
+            path="/anpi/anp090"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp090.Anp090Action">
+            <forward name="back" path="/anpi/anp070.do" />
+            <forward name="edit" path="/anpi/anp100.do?CMD=tempEdit" />
+        </action>
+
+        <!-- 管理者設定・メールテンプレート編集画面  -->
+        <action
+            name="anp100Form"
+            path="/anpi/anp100"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp100.Anp100Action">
+            <forward name="back" path="/anpi/anp090.do" />
+            <forward name="edit" path="/anpi/anp100.do" />
+            <forward name="excute" path="/anpi/anp100kn.do" />
+            <forward name="list" path="/anpi/anp090.do" />
+        </action>
+
+        <!-- 管理者設定・メールテンプレート編集確認画面  -->
+        <action
+            name="anp100knForm"
+            path="/anpi/anp100kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp100kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp100kn.Anp100knAction">
+            <forward name="back" path="/anpi/anp100.do" />
+            <forward name="list" path="/anpi/anp090.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先設定状況画面  -->
+        <action
+            name="anp110Form"
+            path="/anpi/anp110"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp110.Anp110Action">
+            <forward name="back" path="/anpi/anp070.do" />
+            <forward name="edit" path="/anpi/anp120.do" />
+            <forward name="import" path="/anpi/anp121.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先編集画面  -->
+        <action
+            name="anp120Form"
+            path="/anpi/anp120"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp120.Anp120Action">
+            <forward name="back" path="/anpi/anp110.do" />
+            <forward name="excute" path="/anpi/anp120kn.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先編集確認画面  -->
+        <action
+            name="anp120knForm"
+            path="/anpi/anp120kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp120kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp120kn.Anp120knAction">
+            <forward name="back" path="/anpi/anp120.do" />
+            <forward name="list" path="/anpi/anp110.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先インポート画面  -->
+        <action
+            name="anp121Form"
+            path="/anpi/anp121"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp121.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp121.Anp121Action">
+            <forward name="back" path="/anpi/anp110.do" />
+            <forward name="excute" path="/anpi/anp121kn.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先インポート確認画面  -->
+        <action
+            name="anp121knForm"
+            path="/anpi/anp121kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp121kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp121kn.Anp121knAction">
+            <forward name="back" path="/anpi/anp121.do" />
+            <forward name="list" path="/anpi/anp110.do" />
+        </action>
+
+        <!-- 管理者設定・配信履歴画面  -->
+        <action
+            name="anp130Form"
+            path="/anpi/anp130"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp130.Anp130Action">
+            <forward name="back" path="/anpi/anp070.do" />
+            <forward name="return" path="/anpi/anp130.do" />
+            <forward name="syokai" path="/anpi/anp140.do" />
+        </action>
+
+        <!-- 管理者設定・配信履歴 状況内容確認画面  -->
+        <action
+            name="anp140Form"
+            path="/anpi/anp140"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp140.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp140.Anp140Action">
+            <forward name="back" path="/anpi/anp130.do" />
+            <forward name="copyNew" path="/anpi/anp060.do?CMD=copyNew" />
+            <forward name="list" path="/anpi/anp130.do" />
+            <forward name="return" path="/anpi/anp140.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先一括設定 -->
+        <action
+            name="anp150Form"
+            path="/anpi/anp150"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp150.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp150.Anp150Action">
+            <forward name="back" path="/anpi/anp070.do" />
+            <forward name="excute" path="/anpi/anp150kn.do" />
+        </action>
+
+        <!-- 管理者設定・緊急連絡先一括設定確認画面  -->
+        <action
+            name="anp150knForm"
+            path="/anpi/anp150kn"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp150kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp150kn.Anp150knAction">
+            <forward name="back" path="/anpi/anp150.do" />
+            <forward name="admtool" path="/anpi/anp070.do" />
+        </action>
+
+        <!-- 安否確認メッセージ配信確認画面用グループユーザ一覧画面(ポップアップ)  -->
+        <action
+            name="anp160Form"
+            path="/anpi/anp160"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp160.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp160.Anp160Action">
+        </action>
+
+        <!-- 管理者設定・配信履歴 状況内容確認画面用グループユーザ一覧画面(ポップアップ)  -->
+        <action
+            name="anp170Form"
+            path="/anpi/anp170"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp170.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp170.Anp170Action">
+        </action>
+
+        <!-- 完了メッセージ画面  -->
+        <action
+            name="anp999Form"
+            path="/anpi/anp999"
+            scope="request"
+            input="/WEB-INF/plugin/anpi/jsp/anp999.jsp"
+            validate="false"
+            type="jp.groupsession.v2.anp.anp999.Anp999Action">
+        </action>
+
+    </action-mappings>
+
+</struts-config>

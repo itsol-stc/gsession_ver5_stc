@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>help</id>
+
+  <!-- 名称  -->
+  <name>ヘルプ</name>
+  <name-eng>Help</name-eng>
+
+  <!-- 説明  -->
+  <description>ヘルプエンジン機能</description>
+
+  <!-- リスナー  -->
+  <!-- none -->
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>false</output>
+  </log-info>
+  <!-- プラグインマネージャ  -->
+  <managesetting-info>
+    <!-- プラグインマネージャ設定画面への表示/非表示 未設定の場合は表示する -->
+    <view>false</view>
+  </managesetting-info>
+
+</plugin>

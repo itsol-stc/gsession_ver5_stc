@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+      <form-bean name="hlp000Form" type="jp.groupsession.v2.hlp.hlp000.Hlp000Form" />
+      <form-bean name="hlp000topForm" type="jp.groupsession.v2.hlp.hlp000top.Hlp000topForm" />
+      <form-bean name="hlp000ptopForm" type="jp.groupsession.v2.hlp.hlp000ptop.Hlp000ptopForm" />
+      <form-bean name="hlp001Form" type="jp.groupsession.v2.hlp.hlp001.Hlp001Form" />
+      <form-bean name="hlp002Form" type="jp.groupsession.v2.hlp.hlp002.Hlp002Form" />
+      <form-bean name="hlp010Form" type="jp.groupsession.v2.hlp.hlp010.Hlp010Form" />
+      <form-bean name="hlp020Form" type="jp.groupsession.v2.hlp.hlp020.Hlp020Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+  <global-forwards type="org.apache.struts.action.ActionForward">
+  </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+      <!-- メニュー画面 -->
+       <action
+            name="hlp000Form"
+            path="/help/hlp000"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp000.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp000.Hlp000Action">
+       </action>
+
+      <!-- プラグイン一覧画面 -->
+       <action
+            name="hlp000topForm"
+            path="/help/hlp000top"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp000top.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp000top.Hlp000topAction">
+       </action>
+
+      <!-- プラグインTOP画面 -->
+       <action
+            name="hlp000ptopForm"
+            path="/help/hlp000ptop"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp000ptop.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp000ptop.Hlp000ptopAction">
+       </action>
+
+      <!-- フレーム画面 -->
+       <action
+            name="hlp001Form"
+            path="/help/hlp001"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp001.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp001.Hlp001Action">
+            <forward name="main" path="/help/hlp010.do" />
+       </action>
+
+       <!-- ヘッダー -->
+       <action
+            name="hlp002Form"
+            path="/help/hlp002"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp002.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp002.Hlp002Action">
+            <forward name="menu" path="/WEB-INF/plugin/help/jsp/hlp010.jsp" />
+            <forward name="hlp010" path="/help/hlp010.do" />
+            <forward name="hlp020" path="/help/hlp020.do" />
+       </action>
+
+       <!-- ヘルプメインボディ画面 -->
+       <action
+            name="hlp010Form"
+            path="/help/hlp010"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp010.Hlp010Action">
+            <forward name="#######" path="/help/hlp020.do" />
+       </action>
+
+       <!-- ヘッダー -->
+       <action
+            name="hlp020Form"
+            path="/help/hlp020"
+            scope="request"
+            input="/WEB-INF/plugin/help/jsp/hlp020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.hlp.hlp020.Hlp020Action">
+            <forward name="hlp010" path="/help/hlp010.do" />
+            <forward name="hlp020" path="/WEB-INF/plugin/help/jsp/hlp020.jsp" />
+       </action>
+
+
+    </action-mappings>
+
+</struts-config>

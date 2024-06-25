@@ -1,0 +1,13 @@
+◎Group Session ファイル管理 更新通知
+
+$UDATEに下記のファイルが登録・更新されました。
+
+┏━
+┃$FILENAME
+┗━
+URL:$URL
+
+更新者:$UNAME
+
+備考:${BIKO}
+

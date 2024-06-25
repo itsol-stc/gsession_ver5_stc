@@ -1,0 +1,10 @@
+◎Group Session 日報登録通知
+
+$ADATEに下記の日報が登録されました。
+
+┏━
+┃$TITLE
+┗━
+URL:$URL
+
+登録者:$UNAME

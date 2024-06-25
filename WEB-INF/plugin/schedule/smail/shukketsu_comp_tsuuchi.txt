@@ -1,0 +1,16 @@
+◎Group Session スケジュール 出欠確認完了通知
+
+$ADATEに下記のスケジュールの出欠確認が完了しました。
+
+┏━
+┃$TITLE
+┃ $FRDATE　～　$TODATE
+┗━
+URL:$URL
+
+
+◆内容
+${BODY}
+
+◆備考
+${BIKO}

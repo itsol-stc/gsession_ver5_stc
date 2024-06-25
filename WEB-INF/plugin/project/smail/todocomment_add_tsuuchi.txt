@@ -1,0 +1,14 @@
+◎Group Session TODOコメント登録通知
+
+┏━
+┃プロジェクト:$PROJECT
+┃管理番号:$KNUMBER
+┗━
+URL:$URL
+
+登録者:$NAME
+
+◆コメント
+${BODY}
+
+

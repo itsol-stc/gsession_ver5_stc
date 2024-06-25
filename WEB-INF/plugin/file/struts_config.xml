@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+<!-- ========== Form Bean Definitions =================================== -->
+
+    <form-beans>
+        <form-bean name="fil010Form" type="jp.groupsession.v2.fil.fil010.Fil010Form" />
+        <form-bean name="fil020Form" type="jp.groupsession.v2.fil.fil020.Fil020Form" />
+        <form-bean name="fil030Form" type="jp.groupsession.v2.fil.fil030.Fil030Form" />
+        <form-bean name="fil030knForm" type="jp.groupsession.v2.fil.fil030kn.Fil030knForm" />
+        <form-bean name="fil040Form" type="jp.groupsession.v2.fil.fil040.Fil040Form" />
+        <form-bean name="fil050Form" type="jp.groupsession.v2.fil.fil050.Fil050Form" />
+        <form-bean name="fil060Form" type="jp.groupsession.v2.fil.fil060.Fil060Form" />
+        <form-bean name="fil070Form" type="jp.groupsession.v2.fil.fil070.Fil070Form" />
+        <form-bean name="fil080Form" type="jp.groupsession.v2.fil.fil080.Fil080Form" />
+        <form-bean name="fil090Form" type="jp.groupsession.v2.fil.fil090.Fil090Form" />
+        <form-bean name="fil100Form" type="jp.groupsession.v2.fil.fil100.Fil100Form" />
+        <form-bean name="fil110Form" type="jp.groupsession.v2.fil.fil110.Fil110Form" />
+        <form-bean name="fil120Form" type="jp.groupsession.v2.fil.fil120.Fil120Form" />
+        <form-bean name="fil120knForm" type="jp.groupsession.v2.fil.fil120kn.Fil120knForm" />
+        <form-bean name="fil130Form" type="jp.groupsession.v2.fil.fil130.Fil130Form" />
+        <form-bean name="fil130knForm" type="jp.groupsession.v2.fil.fil130kn.Fil130knForm" />
+
+        <form-bean name="fil200Form" type="jp.groupsession.v2.fil.fil200.Fil200Form" />
+        <form-bean name="fil210Form" type="jp.groupsession.v2.fil.fil210.Fil210Form" />
+        <form-bean name="fil210knForm" type="jp.groupsession.v2.fil.fil210kn.Fil210knForm" />
+        <form-bean name="fil220Form" type="jp.groupsession.v2.fil.fil220.Fil220Form" />
+        <form-bean name="fil230Form" type="jp.groupsession.v2.fil.fil230.Fil230Form" />
+        <form-bean name="fil230knForm" type="jp.groupsession.v2.fil.fil230kn.Fil230knForm" />
+        <form-bean name="fil240Form" type="jp.groupsession.v2.fil.fil240.Fil240Form" />
+        <form-bean name="fil250Form" type="jp.groupsession.v2.fil.fil250.Fil250Form" />
+        <form-bean name="fil250knForm" type="jp.groupsession.v2.fil.fil250kn.Fil250knForm" />
+        <form-bean name="fil260Form" type="jp.groupsession.v2.fil.fil260.Fil260Form" />
+        <form-bean name="fil260knForm" type="jp.groupsession.v2.fil.fil260kn.Fil260knForm" />
+        <form-bean name="fil270Form" type="jp.groupsession.v2.fil.fil270.Fil270Form" />
+        <form-bean name="fil280Form" type="jp.groupsession.v2.fil.fil280.Fil280Form" />
+        <form-bean name="fil290Form" type="jp.groupsession.v2.fil.fil290.Fil290Form" />
+        <form-bean name="fil290knForm" type="jp.groupsession.v2.fil.fil290kn.Fil290knForm" />
+        <form-bean name="fil300Form" type="jp.groupsession.v2.fil.fil300.Fil300Form" />
+        <form-bean name="fil310Form" type="jp.groupsession.v2.fil.fil310.Fil310Form" />
+        <form-bean name="fil320Form" type="jp.groupsession.v2.fil.fil320.Fil320Form" />
+        <form-bean name="fil330Form" type="jp.groupsession.v2.fil.fil330.Fil330Form" />
+        <form-bean name="fil330knForm" type="jp.groupsession.v2.fil.fil330kn.Fil330knForm" />
+        <form-bean name="filMainForm" type="jp.groupsession.v2.fil.main.FilMainForm" />
+        <form-bean name="filptl010Form" type="jp.groupsession.v2.fil.ptl010.FilPtl010Form" />
+        <form-bean name="filptl020Form" type="jp.groupsession.v2.fil.ptl020.FilPtl020Form" />
+        <form-bean name="filptl030Form" type="jp.groupsession.v2.fil.ptl030.FilPtl030Form" />
+        <form-bean name="filptl040Form" type="jp.groupsession.v2.fil.ptl040.FilPtl040Form" />
+        <form-bean name="filptl050Form" type="jp.groupsession.v2.fil.ptl050.FilPtl050Form" />
+        <form-bean name="filptl060Form" type="jp.groupsession.v2.fil.ptl060.FilPtl060Form" />
+    </form-beans>
+
+<!-- ================================================ Global Exception -->
+
+    <global-exceptions>
+    </global-exceptions>
+
+<!-- ========== Global Forward Definitions ============================== -->
+
+    <global-forwards type="org.apache.struts.action.ActionForward">
+        <forward name="cabinetMain" path="/file/fil010.do" />
+        <forward name="mainPriSetting" path="/main/man030.do" />
+        <forward name="mainAdmSetting" path="/main/man002.do" />
+    </global-forwards>
+
+<!-- ========== Action Mapping Definitions ============================== -->
+
+    <action-mappings>
+       <!-- キャビネット一覧 -->
+       <action
+            name="fil010Form"
+            path="/file/fil010"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil010.Fil010Action">
+           <forward name="fil020" path="/file/fil020.do" />
+           <forward name="fil030" path="/file/fil030.do" />
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil050" path="/file/fil050.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="fil080" path="/file/fil080.do" />
+           <forward name="fil090" path="/file/fil090.do" />
+           <forward name="fil100" path="/file/fil100.do" />
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil240" path="/file/fil240.do" />
+           <forward name="fil300" path="/file/fil300.do" />
+       </action>
+
+       <!-- キャビネット詳細 -->
+       <action
+            name="fil020Form"
+            path="/file/fil020"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil020.Fil020Action">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil030" path="/file/fil030.do" />
+           <forward name="fil020shortUpdate" path="/file/fil020.do?CMD=fil020shortUpdate" />
+           <forward name="fil020callUpdate" path="/file/fil020.do?CMD=fil020callUpdate" />
+           <forward name="fil020restUpdate" path="/file/fil020.do?CMD=fil020restUpdate" />
+           <forward name="fil020cancel" path="/file/fil020.do?CMD=fil020cancel" />
+       </action>
+
+
+       <!-- キャビネット登録 -->
+       <action
+            name="fil030Form"
+            path="/file/fil030"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil030.Fil030Action">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil020" path="/file/fil020.do" />
+           <forward name="fil030kn" path="/file/fil030kn.do" />
+           <forward name="fil220" path="/file/fil220.do" />
+           <forward name="fil280" path="/file/fil280.do" />
+           <forward name="fil030_del_ok" path="/file/fil030.do?CMD=fil030deleteOk" />
+           <forward name="fil030_del_cancel" path="/file/fil030.do" />
+       </action>
+
+       <!-- キャビネット登録確認 -->
+       <action
+            name="fil030knForm"
+            path="/file/fil030kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil030kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil030kn.Fil030knAction">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil020" path="/file/fil020.do" />
+           <forward name="fil030" path="/file/fil030.do" />
+           <forward name="fil220" path="/file/fil220.do" />
+           <forward name="fil280" path="/file/fil280.do" />
+
+       </action>
+
+       <!-- フォルダ情報一覧 -->
+       <action
+            name="fil040Form"
+            path="/file/fil040"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil040.Fil040Action">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil050" path="/file/fil050.do" />
+           <forward name="fil060" path="/file/fil060.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="fil080" path="/file/fil080.do" />
+           <forward name="fil090" path="/file/fil090.do" />
+           <forward name="fil100" path="/file/fil100.do" />
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil300" path="/file/fil300.do" />
+           <forward name="fil040_del_ok" path="/file/fil040.do?CMD=fil040deleteOk" />
+           <forward name="fil040_unlock_ok" path="/file/fil040.do?CMD=fil040unlockOk" />
+           <forward name="fil040_back" path="/file/fil040.do" />
+           <forward name="main" path="/main/man001.do" />
+
+       </action>
+
+       <!-- フォルダ詳細 -->
+       <action
+            name="fil050Form"
+            path="/file/fil050"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil050.Fil050Action">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil060" path="/file/fil060.do" />
+           <forward name="fil050" path="/file/fil050.do?CMD=init" />
+           <forward name="fil100" path="/file/fil100.do" />
+           <forward name="fil050shortcutOnOk" path="/file/fil050.do?CMD=shortcutOnOk" />
+           <forward name="fil050shortcutOffOk" path="/file/fil050.do?CMD=shortcutOffOk" />
+           <forward name="fil050callOnOk" path="/file/fil050.do?CMD=callOnOk" />
+           <forward name="fil050callOffOk" path="/file/fil050.do?CMD=callOffOk" />
+           <forward name="fil050repairOk" path="/file/fil050.do?CMD=repairOk" />
+
+       </action>
+
+       <!-- フォルダ登録 -->
+       <action
+            name="fil060Form"
+            path="/file/fil060"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil060.Fil060Action">
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil050" path="/file/fil050.do" />
+           <forward name="fil060" path="/file/fil060.do" />
+           <forward name="fil060deleteOk" path="/file/fil060.do?CMD=deleteOk" />
+
+       </action>
+
+       <!-- ファイル詳細 -->
+       <action
+            name="fil070Form"
+            path="/file/fil070"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil070.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil070.Fil070Action">
+           <forward name="fil010" path="/file/fil010.do" />
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="fil080" path="/file/fil080.do" />
+           <forward name="fil100" path="/file/fil100.do" />
+           <forward name="fil240" path="/file/fil240.do" />
+           <forward name="fil070shortcutOnOk" path="/file/fil070.do?CMD=shortcutOnOk" />
+           <forward name="fil070shortcutOffOk" path="/file/fil070.do?CMD=shortcutOffOk" />
+           <forward name="fil070repairOk" path="/file/fil070.do?CMD=repairOk" />
+           <forward name="main" path="/main/man001.do" />
+       </action>
+
+       <!-- ファイル登録 -->
+       <action
+            name="fil080Form"
+            path="/file/fil080"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil080.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil080.Fil080Action">
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="fil080" path="/file/fil080.do" />
+           <forward name="fil080deleteOk" path="/file/fil080.do?CMD=deleteOk" />
+           <forward name="fil240" path="/file/fil240.do" />
+           <forward name="fil300" path="/file/fil300.do?CMD=entryFile" />
+
+       </action>
+
+       <!-- フォルダ・ファイル移動 -->
+       <action
+            name="fil090Form"
+            path="/file/fil090"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil090.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil090.Fil090Action">
+           <forward name="fil040" path="/file/fil040.do" />
+
+       </action>
+
+       <!-- ファイル詳細検索 -->
+       <action
+            name="fil100Form"
+            path="/file/fil100"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil100.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil100.Fil100Action">
+           <forward name="fil020" path="/file/fil020.do" />
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil050" path="/file/fil050.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+
+       </action>
+
+       <!-- 個人設定メニュー -->
+       <action
+            name="fil110Form"
+            path="/file/fil110"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil110.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil110.Fil110Action">
+           <forward name="fil120" path="/file/fil120.do" />
+           <forward name="fil130" path="/file/fil130.do" />
+           <forward name="fil040" path="/file/fil040.do" />
+       </action>
+
+       <!-- 表示設定 -->
+       <action
+            name="fil120Form"
+            path="/file/fil120"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil120.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil120.Fil120Action">
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil120kn" path="/file/fil120kn.do" />
+           <forward name="main" path="/main/man001.do" />
+
+       </action>
+
+       <!-- 表示設定確認 -->
+       <action
+            name="fil120knForm"
+            path="/file/fil120kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil120kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil120kn.Fil120knAction">
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil120" path="/file/fil120.do" />
+           <forward name="main" path="/main/man001.do" />
+
+       </action>
+
+       <!-- ショートメール通知設定 -->
+       <action
+            name="fil130Form"
+            path="/file/fil130"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil130.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil130.Fil130Action">
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil130kn" path="/file/fil130kn.do" />
+
+       </action>
+
+       <!-- ショートメール通知設定確認 -->
+       <action
+            name="fil130knForm"
+            path="/file/fil130kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil130kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil130kn.Fil130knAction">
+           <forward name="fil110" path="/file/fil110.do" />
+           <forward name="fil130" path="/file/fil130.do" />
+
+       </action>
+
+
+       <!-- 管理者設定メニュー -->
+       <action
+            name="fil200Form"
+            path="/file/fil200"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil200.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil200.Fil200Action">
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil210" path="/file/fil210.do" />
+           <forward name="fil220" path="/file/fil220.do" />
+           <forward name="fil230" path="/file/fil230.do" />
+           <forward name="fil250" path="/file/fil250.do" />
+           <forward name="fil260" path="/file/fil260.do" />
+           <forward name="fil270" path="/file/fil270.do" />
+           <forward name="fil280" path="/file/fil280.do" />
+           <forward name="fil290" path="/file/fil290.do" />
+           <forward name="fil310" path="/file/fil310.do" />
+           <forward name="mainAdmSetting" path="/main/man002.do" />
+
+       </action>
+
+       <!-- 基本設定 -->
+       <action
+            name="fil210Form"
+            path="/file/fil210"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil210.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil210.Fil210Action">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil210kn" path="/file/fil210kn.do" />
+
+       </action>
+
+       <!-- 基本設定確認 -->
+       <action
+            name="fil210knForm"
+            path="/file/fil210kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil210kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil210kn.Fil210knAction">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil210" path="/file/fil210.do" />
+
+       </action>
+
+       <!-- キャビネット管理設定 -->
+       <action
+            name="fil220Form"
+            path="/file/fil220"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil220.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil220.Fil220Action">
+           <forward name="fil030" path="/file/fil030.do" />
+           <forward name="fil200" path="/file/fil200.do" />
+
+       </action>
+
+       <!-- ファイル一括削除 -->
+       <action
+            name="fil230Form"
+            path="/file/fil230"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil230.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil230.Fil230Action">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil230kn" path="/file/fil230kn.do" />
+
+       </action>
+
+       <!-- ファイル一括削除確認 -->
+       <action
+            name="fil230knForm"
+            path="/file/fil230kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil230kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil230kn.Fil230knAction">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil230" path="/file/fil230.do" />
+
+       </action>
+
+       <!-- 更新通知一覧 -->
+       <action
+            name="fil240Form"
+            path="/file/fil240"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil240.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil240.Fil240Action">
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="main" path="/main/man001.do" />
+       </action>
+
+       <!-- 更新通知一括設定 -->
+       <action
+            name="fil250Form"
+            path="/file/fil250"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil250.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil250.Fil250Action">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil250kn" path="/file/fil250kn.do" />
+
+       </action>
+
+       <!-- 更新通知一括設定確認 -->
+       <action
+            name="fil250knForm"
+            path="/file/fil250kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil250kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil250kn.Fil250knAction">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil250" path="/file/fil250.do" />
+
+       </action>
+
+       <!-- 管理者設定 ショートメール通知設定 -->
+       <action
+            name="fil260Form"
+            path="/file/fil260"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil260.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil260.Fil260Action">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil260kn" path="/file/fil260kn.do" />
+       </action>
+
+       <!-- 管理者設定 ショートメール通知設定確認 -->
+       <action
+            name="fil260knForm"
+            path="/file/fil260kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil260kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil260kn.Fil260knAction">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil260" path="/file/fil260.do" />
+       </action>
+
+       <!-- 管理者設定 統計情報 -->
+       <action
+            name="fil270Form"
+            path="/file/fil270"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil270.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil270.Fil270Action">
+            <forward name="backToMenu" path="/file/fil200.do" />
+
+            <forward name="adminCircular" path="/circular/cir100.do" />
+            <forward name="adminSmail" path="/smail/sml100.do" />
+            <forward name="adminBulletin" path="/bulletin/bbs110.do" />
+            <forward name="adminWebmail" path="/webmail/wml020.do" />
+            <forward name="adminChat" path="/chat/cht020.do" />
+            <forward name="adminMain" path="/main/man002.do" />
+
+            <forward name="statsCircular" path="/circular/cir210.do" />
+            <forward name="statsSmail" path="/smail/sml370.do" />
+            <forward name="statsBulletin" path="/bulletin/bbs180.do" />
+            <forward name="statsWebmail" path="/webmail/wml300.do" />
+            <forward name="statsChat" path="/chat/cht070.do" />
+            <forward name="statsMain" path="/main/man390.do" />
+       </action>
+
+       <!-- 管理者設定 個人キャビネット使用許可設定 -->
+       <action
+            name="fil290Form"
+            path="/file/fil290"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil290.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil290.Fil290Action">
+            <forward name="fil200" path="/file/fil200.do" />
+            <forward name="fil290kn" path="/file/fil290kn.do" />
+       </action>
+
+       <!-- 管理者設定 個人キャビネット使用許可設定確認 -->
+       <action
+            name="fil290knForm"
+            path="/file/fil290kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil290kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil290kn.Fil290knAction">
+           <forward name="fil200" path="/file/fil200.do" />
+           <forward name="fil290" path="/file/fil290.do" />
+       </action>
+
+       <!-- 管理者設定 個人キャビネット管理設定 -->
+       <action
+            name="fil280Form"
+            path="/file/fil280"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil280.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil280.Fil280Action">
+            <forward name="fil030" path="/file/fil030.do" />
+            <forward name="fil100" path="/file/fil100.do" />
+            <forward name="fil200" path="/file/fil200.do" />
+       </action>
+
+       <!-- 取引情報登録 -->
+       <action
+            name="fil300Form"
+            path="/file/fil300"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil300.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil300.Fil300Action">
+            <forward name="fil010" path="/file/fil010.do" />
+            <forward name="fil040" path="/file/fil040.do" />
+            <forward name="fil080" path="/file/fil080.do" />
+            <forward name="fil300" path="/file/fil300.do" />
+            <forward name="fil330" path="/file/fil330.do" />
+            <forward name="main" path="/main/man001.do" />
+       </action>
+
+       <!-- 管理者設定 外貨マスタ -->
+       <action
+            name="fil310Form"
+            path="/file/fil310"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil310.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil310.Fil310Action">
+            <forward name="fil200" path="/file/fil200.do" />
+            <forward name="fil310" path="/file/fil310.do" />
+            <forward name="fil310delCancel" path="/file/fil310.do?CMD=fil310delCancel" />
+            <forward name="fil310delOk" path="/file/fil310.do?CMD=fil310delOk" />
+            <forward name="fil320" path="/file/fil320.do" />
+       </action>
+
+       <!-- 管理者設定 外貨登録 -->
+       <action
+            name="fil320Form"
+            path="/file/fil320"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil320.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil320.Fil320Action">
+            <forward name="fil310" path="/file/fil310.do" />
+       </action>
+
+       <!-- 仮登録ファイル削除 -->
+       <action
+            name="fil330Form"
+            path="/file/fil330"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil330.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil330.Fil330Action">
+            <forward name="fil010" path="/file/fil010.do" />
+            <forward name="fil040" path="/file/fil040.do" />
+            <forward name="fil080" path="/file/fil080.do" />
+            <forward name="fil300" path="/file/fil300.do" />
+            <forward name="fil330_dellist" path="/WEB-INF/plugin/file/jsp/fil330_dellist.jsp" />
+            <forward name="fil330_body" path="/WEB-INF/plugin/file/jsp/fil330_body.jsp" />
+            <forward name="fil330del" path="/file/fil330kn.do" />
+            <forward name="main" path="/main/man001.do" />
+       </action>
+       <!-- 仮登録ファイル削除確認 -->
+       <action
+            name="fil330knForm"
+            path="/file/fil330kn"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/fil330kn.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil330kn.Fil330knAction">
+            <forward name="cancel" path="/file/fil330.do" />
+            <forward name="fil330knComp" path="/file/fil330.do?CMD=fil330knComp" />
+       </action>
+
+
+       <!-- ファイル管理設定ファイル再読み込み -->
+       <action
+            name="emptyForm"
+            path="/file/fil900"
+            scope="request"
+            validate="false"
+            type="jp.groupsession.v2.fil.fil900.Fil900Action">
+       </action>
+
+       <!-- ファイル管理メイン -->
+       <action
+            name="filMainForm"
+            path="/file/filMain"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filMain.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.main.FilMainAction">
+           <forward name="fil040" path="/file/fil040.do" />
+           <forward name="fil050" path="/file/fil050.do" />
+           <forward name="fil070" path="/file/fil070.do" />
+           <forward name="fil120" path="/file/fil120.do" />
+           <forward name="fil240" path="/file/fil240.do" />
+
+       </action>
+
+       <!-- ファイル管理ポートレット フォルダ階層 -->
+       <action
+            name="filptl010Form"
+            path="/file/filptl010"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl010.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl010.FilPtl010Action">
+
+           <forward name="fil040" path="/file/fil040.do" />
+       </action>
+
+       <!-- ファイル管理ポートレット フォルダ階層管理 -->
+       <action
+            name="filptl020Form"
+            path="/file/filptl020"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl020.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl020.FilPtl020Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do" />
+           <forward name="filptl050" path="/file/filptl050.do?CMD=init" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+
+       <!-- ポートレット キャビネット一覧 -->
+       <action
+            name="filptl030Form"
+            path="/file/filptl030"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl030.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl030.FilPtl030Action">
+
+           <forward name="fil040" path="/file/fil040.do" />
+       </action>
+
+        <!-- ファイル管理ポートレット ファイル一覧 -->
+       <action
+            name="filptl040Form"
+            path="/file/filptl040"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl040.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl040.FilPtl040Action">
+
+           <forward name="fil040" path="/file/fil040.do" />
+       </action>
+
+       <!-- ファイル管理ポートレット ファイル一覧管理(キャビネット選択) -->
+       <action
+            name="filptl050Form"
+            path="/file/filptl050"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl050.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl050.FilPtl050Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do?CMD=init" />
+           <forward name="filptl060" path="/file/filptl060.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+       <!-- ファイル管理ポートレット ファイル一覧管理(フォルダ選択) -->
+       <action
+            name="filptl060Form"
+            path="/file/filptl060"
+            scope="request"
+            input="/WEB-INF/plugin/file/jsp/filptl060.jsp"
+            validate="false"
+            type="jp.groupsession.v2.fil.ptl060.FilPtl060Action">
+
+           <forward name="ptl080" path="/portal/ptl080.do" />
+           <forward name="filptl020" path="/file/filptl020.do?CMD=init" />
+           <forward name="filptl050" path="/file/filptl050.do" />
+           <forward name="zskptl020" path="/zaiseki/zskptl020.do" />
+           <forward name="bbsptl020" path="/bulletin/bbsptl020.do" />
+           <forward name="prjptl020" path="/project/prjptl020.do" />
+           <forward name="schptl020" path="/schedule/schptl020.do" />
+           <forward name="bmkptl020" path="/bookmark/bmkptl020.do" />
+       </action>
+
+    </action-mappings>
+
+</struts-config>

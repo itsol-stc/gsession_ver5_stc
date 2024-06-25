@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<plugin>
+
+  <!-- プラグインID -->
+  <id>license</id>
+
+  <!-- 名称  -->
+  <name>ライセンス</name>
+  <name-eng>License</name-eng>
+
+  <!-- 説明  -->
+  <description>
+有償プラグインを使用するためのライセンス情報を扱います。
+  </description>
+
+  <listener>
+  <!-- リスナー名  -->
+    <listener-name>gslistener</listener-name>
+    <!-- リスナー実装クラス  -->
+    <listener-class>jp.groupsession.v2.lic.LicGsListenerImpl</listener-class>
+  </listener>
+  <!-- ログ出力を設定する。 -->
+  <log-info>
+    <!-- ログ出力 対象/非対象 -->
+    <output>true</output>
+  </log-info>
+  <!-- プラグインマネージャ  -->
+  <managesetting-info>
+    <!-- プラグインマネージャ設定画面への表示/非表示 未設定の場合は表示する -->
+    <view>false</view>
+  </managesetting-info>
+
+</plugin>

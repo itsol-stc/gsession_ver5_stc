@@ -46,6 +46,11 @@ import jp.groupsession.v2.tcd.model.TcdCsvSearchModel;
 import jp.groupsession.v2.tcd.model.TcdTcdataModel;
 import jp.groupsession.v2.tcd.tcd020.Tcd020Biz;
 
+//--- 追加 2024/08/07 システム開発Gr 塩見和則
+import jp.groupsession.v2.cmn.dao.base.CmnUsrmInfDao;
+import jp.groupsession.v2.cmn.model.base.CmnUsrmInfModel;
+//---
+
 /**
  * <br>[機  能] タイムカード 一覧画面のアクションクラス
  * <br>[解  説]
@@ -770,7 +775,17 @@ public class Tcd010Action extends AbstractTimecardAction {
         String msg = gsMsg.getMessage("tcd.140");
         String msg2 = gsMsg.getMessage("cmn.export");
 
-        String outBookName = msg + date.getStrYear() + date.getStrMonth() + ".xlsx";
+        //--- 追加 2024/08/07 システム開発Gr 塩見和則
+        CmnUsrmInfDao uinfDao = new CmnUsrmInfDao(con);
+        CmnUsrmInfModel uinfModel = uinfDao.select(targetUserSid);
+        String userName = uinfModel.getUsiSei() + uinfModel.getUsiMei();
+        String syainNo = uinfModel.getUsiSyainNo();
+        //---
+
+        //--- 変更 2024/08/07 システム開発Gr 塩見和則
+        String outBookName = syainNo + "_" + userName + "_" + msg + date.getStrYear() + date.getStrMonth() + ".xlsx";
+        //---
+
         String outBookTmpName = date.getStrYear()
                 + date.getStrMonth()
                 + GSConstCommon.ENDSTR_SAVEFILE;

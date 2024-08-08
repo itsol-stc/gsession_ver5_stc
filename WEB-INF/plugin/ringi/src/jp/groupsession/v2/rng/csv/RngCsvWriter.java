@@ -56,7 +56,9 @@ public class RngCsvWriter extends AbstractCSVWriter {
     private Connection con__ = null;
 
     /** 稟議情報一覧ファイル名 */
-    public static final String FILE_NAME = "ringiList.csv";
+    //--- 変更 2024/08/08 システム開発Gr 塩見和則
+    public static final String FILE_NAME = "shinseiList.csv";
+    //---
 
     /** 検索条件 */
     private RingiSearchModel searchModel__ = null;
@@ -84,8 +86,10 @@ public class RngCsvWriter extends AbstractCSVWriter {
      * @param csvPath 出力先
      * @throws CSVException CSV出力時例外
      */
-    public void outputCsv(Connection con, String csvPath)
+    //---- 引数追加 2024/08/08 システム開発Gr 塩見和則
+    public void outputCsv(Connection con, String csvPath, int userSid)
     throws CSVException {
+    //---
 
         setCon(con);
 
@@ -93,17 +97,31 @@ public class RngCsvWriter extends AbstractCSVWriter {
         File tmpDir = new File(csvPath);
         tmpDir.mkdirs();
 
-        //セットファイル名とフルパス
-        String fileName = FILE_NAME;
-        String fileFullPath = IOTools.replaceFileSep(csvPath + File.separator + fileName);
-        log__.debug("CSVファイルのパス = " + fileFullPath);
+        //--- 追加・変更 2024/08/08 システム開発Gr 塩見和則
+        try {
+            CmnUsrmInfDao uinfDao = new CmnUsrmInfDao(con);
+            CmnUsrmInfModel uinfModel = uinfDao.select(userSid);
+            String userName = uinfModel.getUsiSei() + uinfModel.getUsiMei();
+            String syainNo = uinfModel.getUsiSyainNo();
 
-        //出力初期セット
-        setCsvPath(fileFullPath);
+            //セットファイル名とフルパス
+            String fileName = syainNo + "_" + userName + "_" + FILE_NAME;
+            String fileFullPath = IOTools.replaceFileSep(csvPath + File.separator + fileName);
+            log__.debug("CSVファイルのパス = " + fileFullPath);
 
-        log__.debug("開始");
-        write();
-        log__.debug("終了");
+            //出力初期セット
+            setCsvPath(fileFullPath);
+
+            log__.debug("開始");
+            write();
+            log__.debug("終了");
+
+        } catch (SQLException e) {
+            // エラーログを出力し、CSVExceptionとして再スローする
+            log__.error("ユーザー情報の取得に失敗しました", e);
+            throw new CSVException("ユーザー情報の取得に失敗しました", e);
+        }
+        //---
     }
 
     /**

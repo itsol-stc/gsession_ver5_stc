@@ -158,6 +158,12 @@ public class ExcelUtil {
             Cell clName = getCell2(1, 5);
             setCellString(clName, workReportData.getUserName());
 
+            //--- 追加 2024/08/08 システム開発Gr 塩見和則
+            //社員番号
+            Cell clSyainno = getCell2(1, 19);
+            setCellString(clSyainno, workReportData.getSyainNo());
+            //---
+
             //基準稼働時間
             Cell clHour = getCell2(1, 9);
             setCellString(clHour, workReportData.getBaseHour());

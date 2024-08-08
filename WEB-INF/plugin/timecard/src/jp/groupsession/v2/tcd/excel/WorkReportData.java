@@ -47,6 +47,10 @@ public class WorkReportData {
     /** 休日集計情報 集計区分：その他 */
     private String sumOther__ = "";
 
+    //--- 追加 2024/08/08 システム開発Gr 塩見和則
+    private String syainNo__ = "";
+    //---        
+
     /**
      * <p>baseDay を取得します。
      * @return baseDay
@@ -269,4 +273,22 @@ public class WorkReportData {
     public void setSumOther(String sumOther) {
         sumOther__ = sumOther;
     }
+
+    //--- 追加 2024/08/08 システム開発Gr 塩見和則
+    /**
+     * <p>syainNo を取得します。
+     * @return syainNo
+     */
+    public String getSyainNo() {
+        return syainNo__;
+    }
+    /**
+     * <p>syainNo をセットします。
+     * @param syainNo syainNo
+     */
+    public void setSyainNo(String syainNo) {
+        syainNo__ = syainNo;
+    }
+    //---
+
 }

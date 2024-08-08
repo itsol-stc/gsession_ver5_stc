@@ -533,6 +533,12 @@ public class TimecardBiz {
         CmnUsrmInfModel uinfModel = uinfDao.select(userSid);
         String name = uinfModel.getUsiSei() + "　" + uinfModel.getUsiMei();
 
+        //--- 追加 2024/08/08 システム開発Gr 塩見和則
+        //社員番号
+        String syainNo = uinfModel.getUsiSyainNo();
+        //---
+
+
         //対象年
         int year = parmModel.getTargetYear();
         //対象月
@@ -543,6 +549,12 @@ public class TimecardBiz {
         //作業場所
         //名前
         wReportData.setUserName(name);
+
+        //--- 追加 2024/08/08 システム開発Gr 塩見和則
+        //社員番号
+        wReportData.setSyainNo(syainNo); 
+        //---
+
         //該当年
         wReportData.setYear(year);
         //該当月

@@ -305,7 +305,9 @@ public class Rng130Biz {
         //CSVファイルを作成
         RngCsvWriter write = new RngCsvWriter(reqMdl, searchModel);
 
-        write.outputCsv(con__, outDir);
+        //--- 追加 2024/08/07 システム開発Gr 塩見和則
+        write.outputCsv(con__, outDir, userSid);
+        //---
     }
 
     /**

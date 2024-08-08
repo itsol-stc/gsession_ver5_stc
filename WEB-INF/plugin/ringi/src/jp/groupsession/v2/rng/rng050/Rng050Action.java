@@ -36,6 +36,12 @@ import jp.groupsession.v2.rng.csv.RngCsvWriter;
 import jp.groupsession.v2.rng.pdf.RngMultiThread;
 import jp.groupsession.v2.struts.msg.GsMessage;
 
+//--- 追加 2024/08/07 システム開発Gr 塩見和則
+import jp.groupsession.v2.cmn.dao.base.CmnUsrmInfDao;
+import jp.groupsession.v2.cmn.model.base.CmnUsrmInfModel;
+import jp.co.sjts.util.csv.CSVException;
+//---
+
 /**
  * <br>[機  能] 稟議 管理者設定 申請中案件管理画面のアクションクラス
  * <br>[解  説]
@@ -330,25 +336,42 @@ public class Rng050Action extends AbstractRingiAdminAction {
             HttpServletResponse res,
             Connection con) throws Exception {
         
-        log__.debug("エクスポート(CSV)ファイルダウンロード処理");
-        RequestModel reqMdl = getRequestModel(req);
+        //--- 追加・変更 2024/08/08 システム開発Gr 塩見和則
+        try {
+
+            log__.debug("エクスポート(CSV)ファイルダウンロード処理");
+            RequestModel reqMdl = getRequestModel(req);
         
-        GSTemporaryPathModel tempDir = _getRingiDir(req);
-        String fileName = RngCsvWriter.FILE_NAME;
-        String fullPath = tempDir.getTempPath() + fileName;
+            CmnUsrmInfDao uinfDao = new CmnUsrmInfDao(con);
+    	    int userSid = reqMdl.getSmodel().getUsrsid();
+
+            CmnUsrmInfModel uinfModel = uinfDao.select(userSid);
+            String userName = uinfModel.getUsiSei() + uinfModel.getUsiMei();
+            String syainNo = uinfModel.getUsiSyainNo();
+
+            GSTemporaryPathModel tempDir = _getRingiDir(req);
+            String fileName = syainNo + "_" + userName + "_" + RngCsvWriter.FILE_NAME;
+            String fullPath = tempDir.getTempPath() + fileName;
         
-        TempFileUtil.downloadAtachment(req, res, fullPath, fileName, Encoding.UTF_8);
+            TempFileUtil.downloadAtachment(req, res, fullPath, fileName, Encoding.UTF_8);
         
-        //TEMPディレクトリ削除
-        GSTemporaryPathUtil.getInstance().clearTempPath(tempDir);
+            //TEMPディレクトリ削除
+            GSTemporaryPathUtil.getInstance().clearTempPath(tempDir);
         
-        GsMessage gsMsg = new GsMessage();
-        //メッセージエクスポート
-        String export = gsMsg.getMessage(req, "cmn.export");
+            GsMessage gsMsg = new GsMessage();
+            //メッセージエクスポート
+            String export = gsMsg.getMessage(req, "cmn.export");
         
-        //ログ出力処理
-        RngBiz rngBiz = new RngBiz(con);
-        rngBiz.outPutLog(map, export, GSConstLog.LEVEL_INFO, fileName, reqMdl);
+            //ログ出力処理
+            RngBiz rngBiz = new RngBiz(con);
+            rngBiz.outPutLog(map, export, GSConstLog.LEVEL_INFO, fileName, reqMdl);
+
+            } catch (SQLException e) {
+                // エラーログを出力し、CSVExceptionとして再スローする
+                log__.error("ユーザー情報の取得に失敗しました", e);
+                throw new CSVException("ユーザー情報の取得に失敗しました", e);
+             }
+            //---
         
         return null;
     }
